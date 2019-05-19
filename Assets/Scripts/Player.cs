@@ -4,9 +4,9 @@ public class Player : MonoBehaviour
 {
     public int screenWidth;
     public int screenHeight;
-    public Vector3 position1 = new Vector3(-2, -3, 0);
-    public Vector3 position2 = new Vector3(0, -3, 0);
-    public Vector3 position3 = new Vector3(2, -3, 0);
+    public Vector3 position1 = new Vector3(-1.2f, 0, 0);
+    public Vector3 position2 = new Vector3(0, 0, 0);
+    public Vector3 position3 = new Vector3(1.2f, 0, 0);
 
     private void Awake()
     {
