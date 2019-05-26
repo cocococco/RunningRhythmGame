@@ -5,7 +5,7 @@ using UnityEngine;
 public class Track : MonoBehaviour
 {
     public float speed = 0.1f;
-    public int length = 20;
+    public int length = 60;
 
     private void Update()
     {
@@ -16,6 +16,7 @@ public class Track : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            Debug.Log("player enter in trigger");
             Vector3 newPos = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z + length);
             Instantiate(this.gameObject, newPos, Quaternion.identity);
         }
@@ -25,6 +26,7 @@ public class Track : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            Debug.Log("player exit in trigger");
             Destroy(this.gameObject);
         }
     }
