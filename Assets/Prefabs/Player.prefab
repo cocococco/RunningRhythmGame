@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1021365426662184}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.28, z: 0}
+  m_LocalPosition: {x: 0, y: 0.419, z: 0}
   m_LocalScale: {x: 1, y: 1.6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   screenWidth: 0
   screenHeight: 0
-  position1: {x: -1.7, y: 0, z: 0}
-  position2: {x: 0, y: 0, z: 0}
-  position3: {x: 1.7, y: 0, z: 0}
+  posX1: -2
+  posX2: 0
+  posX3: 2
+  speed: 0.5

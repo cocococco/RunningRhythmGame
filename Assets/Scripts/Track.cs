@@ -9,7 +9,7 @@ public class Track : MonoBehaviour
 
     private void Update()
     {
-        this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z - speed);
+        this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z - speed * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)
