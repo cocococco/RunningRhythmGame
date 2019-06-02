@@ -19,7 +19,6 @@ public class Circle : MonoBehaviour
         if (this.transform.localScale.x < 0)
         {
             this.transform.localScale = new Vector3(0, 0, 0);
-            Destroy(this.gameObject);
         }
     }
 }
