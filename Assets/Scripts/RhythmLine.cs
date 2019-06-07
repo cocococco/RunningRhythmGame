@@ -1,16 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RhythmLine : MonoBehaviour
 {
     private bool canDestroy = false;
     private GameObject target;
+    public Text scoreText;
+    private string score;
 
-    //private float lineUpZ;
-    //private float lineLowZ;
-    //private float targetUpZ;
-    //private float targetLowZ;
+    private void Start()
+    {
+        scoreText.text = "";
+    }
 
     private float getUpperZ(Transform transform, float radius)
     {
@@ -32,12 +35,6 @@ public class RhythmLine : MonoBehaviour
 
             canDestroy = true;
             target = other.gameObject;
-
-            //lineUpZ = getUpperZ(this.transform, this.transform.GetComponent<SphereCollider>().radius);
-            //lineLowZ = getLowerZ(this.transform, this.transform.GetComponent<SphereCollider>().radius);
-            //targetUpZ = getUpperZ(target.GetComponent<Transform>(), target.GetComponent<SphereCollider>().radius);
-            //targetLowZ = getLowerZ(target.GetComponent<Transform>(), target.GetComponent<SphereCollider>().radius);
-            //Debug.Log("line up z : " + lineUpZ + " // line low z : " + lineLowZ + " // target up z : " + targetUpZ + "target low z : " + targetLowZ);
         }
     }
 
@@ -77,16 +74,19 @@ public class RhythmLine : MonoBehaviour
         {
             //perfect
             Debug.Log("perfect");
+            score = "Perfect!!!";
         }
         else if ((lineUpZ > targetLowZ && lineLowZ < targetUpZ) || (lineLowZ < targetUpZ && lineUpZ > targetLowZ))
         {
             //good
             Debug.Log("good");
+            score = "Good!!!";
         }
         else if ((lineUpZ <= targetLowZ && lineLowZ < targetUpZ) || (lineLowZ >= targetUpZ && lineUpZ > targetLowZ))
         {
             //bad
             Debug.Log("bad");
+            score = "Bad!!!";
         }
     }
 
@@ -95,6 +95,7 @@ public class RhythmLine : MonoBehaviour
         if (canDestroy)
         {
             Destroy(target.gameObject);
+            scoreText.text = score;
         }
     }
 
@@ -103,6 +104,7 @@ public class RhythmLine : MonoBehaviour
         if (canDestroy)
         {
             Destroy(target.gameObject);
+            scoreText.text = score;
         }
     }
 
@@ -111,6 +113,7 @@ public class RhythmLine : MonoBehaviour
         if (canDestroy)
         {
             Destroy(target.gameObject);
+            scoreText.text = score;
         }
     }
 }
