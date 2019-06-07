@@ -25,17 +25,17 @@ public class Player : MonoBehaviour
         Debug.Log(this.transform.position);
     }
 
-    public void OnClickButton1()
+    public void OnClickTrackButton1()
     {
         this.transform.DOMoveX(posX1, speed);
     }
 
-    public void OnClickButton2()
+    public void OnClickTrackButton2()
     {
         this.transform.DOMoveX(posX2, speed);
     }
 
-    public void OnClickButton3()
+    public void OnClickTrackButton3()
     {
         this.transform.DOMoveX(posX3, speed);
     }
