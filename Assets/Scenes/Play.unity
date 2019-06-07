@@ -549,8 +549,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 537, y: -718.125}
-  m_SizeDelta: {x: 306.75, y: 1436.25}
+  m_AnchoredPosition: {x: 537, y: -1188.4}
+  m_SizeDelta: {x: 306.8, y: 129.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &766044438
 MonoBehaviour:
@@ -600,8 +600,8 @@ MonoBehaviour:
     m_Alignment: 7
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: good!
 --- !u!222 &766044440
@@ -962,7 +962,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4802923161804478, guid: 5dccb21b0ba585b4db46bd2a5489237a, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 2.2
+      value: 3.52
       objectReference: {fileID: 0}
     - target: {fileID: 4802923161804478, guid: 5dccb21b0ba585b4db46bd2a5489237a, type: 2}
       propertyPath: m_LocalRotation.x
