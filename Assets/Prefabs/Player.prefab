@@ -59,7 +59,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 40af9985ab2f6d14cbafb54c4bc7639c, type: 2}
+  - {fileID: 2100000, guid: 72a7045073c69764bb25a5b2dea0ce04, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -99,7 +99,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &65677439280174252
 BoxCollider:
@@ -129,4 +129,4 @@ MonoBehaviour:
   posX1: -2
   posX2: 0
   posX3: 2
-  speed: 0.5
+  speed: 0.3
