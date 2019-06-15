@@ -31,6 +31,6 @@ public class Pause : MonoBehaviour
 
     public void Replay()
     {
-        SceneManager.LoadScene("Play");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
