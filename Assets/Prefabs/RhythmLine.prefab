@@ -177,7 +177,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1315155486762996}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.16, z: 2.2}
+  m_LocalPosition: {x: 0, y: 0.16, z: 3.98}
   m_LocalScale: {x: 0.1, y: 5, z: 0.1}
   m_Children:
   - {fileID: 4459638029748456}
@@ -416,7 +416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 397b30cfa2c28a24194bb7a241ba0f78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}
+  gradeText: {fileID: 0}
 --- !u!114 &114110321049713102
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -428,7 +428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 397b30cfa2c28a24194bb7a241ba0f78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}
+  gradeText: {fileID: 0}
 --- !u!114 &114180156298831344
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -440,7 +440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 397b30cfa2c28a24194bb7a241ba0f78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}
+  gradeText: {fileID: 0}
 --- !u!135 &135256296342474438
 SphereCollider:
   m_ObjectHideFlags: 1

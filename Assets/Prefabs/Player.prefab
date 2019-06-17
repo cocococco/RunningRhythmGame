@@ -389,7 +389,7 @@ GameObject:
   - component: {fileID: 4967426509183178}
   - component: {fileID: 95449686320966824}
   m_Layer: 0
-  m_Name: hansel@Fast Run (1)
+  m_Name: hansel@Fast Run
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1034,8 +1034,6 @@ MonoBehaviour:
   posX2: 0
   posX3: 2
   speed: 0.3
-  distanceText: {fileID: 0}
-  scoreText: {fileID: 0}
 --- !u!137 &137643486751505692
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
