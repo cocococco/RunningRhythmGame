@@ -69,4 +69,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33c9dfc31c20f5242833a9422d910180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGamePause: 0
+  isGameOver: 0
   gameOverPanel: {fileID: 0}
+  gamePausePanel: {fileID: 0}

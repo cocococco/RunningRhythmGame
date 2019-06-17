@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
+    private SystemManager inst_SystemManager;
+
+    private void Start()
+    {
+        inst_SystemManager = SystemManager.GetInstance();
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            Pause.isPause = true;
+            inst_SystemManager.isGameOver = true;
         }
     }
 }
