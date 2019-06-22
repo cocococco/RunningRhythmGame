@@ -1,29 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public int screenWidth;
-    public int screenHeight;
-
     public float posX1 = -2;
     public float posX2 = 0;
     public float posX3 = 2;
     public float speed = 0.5f;
-
-    private void Awake()
-    {
-        screenWidth = Screen.width;
-        screenHeight = Screen.height;
-    }
-
-    private void Start()
-    {
-        Debug.Log(screenWidth);
-        Debug.Log(screenHeight);
-        Debug.Log(this.transform.position);
-    }
 
     public void OnClickTrackButton1()
     {

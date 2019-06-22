@@ -7,12 +7,20 @@ public class RhythmLine : MonoBehaviour
 {
     private bool canDestroy = false;
     private GameObject target;
-    public Text scoreText;
-    private string score;
+    public Text gradeText;
+    private string grade;
+    private int gradeScore;
+
+    private Score inst_Score;
+
+    private void Awake()
+    {
+    }
 
     private void Start()
     {
-        scoreText.text = "";
+        inst_Score = Score.GetInstance();
+        gradeText.text = "";
     }
 
     private float getUpperZ(Transform transform, float radius)
@@ -58,6 +66,7 @@ public class RhythmLine : MonoBehaviour
             Debug.Log("monster exit");
 
             canDestroy = false;
+            inst_Score.gradeScore = 0;
         }
     }
 
@@ -72,30 +81,35 @@ public class RhythmLine : MonoBehaviour
 
         if (lineUpZ >= targetUpZ && lineLowZ <= targetLowZ) // 이게 맨 밑에 있으면 제대로 체크 안되는 문제 나중에 확인해보기
         {
-            //perfect
-            Debug.Log("perfect");
-            score = "Perfect!!!";
+            //excellent
+            Debug.Log("excellent");
+            grade = "Excellent!!!";
+            gradeScore = 500;
         }
         else if ((lineUpZ > targetLowZ && lineLowZ < targetUpZ) || (lineLowZ < targetUpZ && lineUpZ > targetLowZ))
         {
             //good
             Debug.Log("good");
-            score = "Good!!!";
+            grade = "Good!!!";
+            gradeScore = 300;
         }
         else if ((lineUpZ <= targetLowZ && lineLowZ < targetUpZ) || (lineLowZ >= targetUpZ && lineUpZ > targetLowZ))
         {
             //bad
             Debug.Log("bad");
-            score = "Bad!!!";
+            grade = "Bad!!!";
+            gradeScore = 100;
         }
     }
 
+    // 같은 작업을 하는 메서드 3개를 각각 써야할까
     public void OnClickMonsterButton1()
     {
         if (canDestroy)
         {
             Destroy(target.gameObject);
-            scoreText.text = score;
+            gradeText.text = grade;
+            inst_Score.gradeScore = gradeScore;
         }
     }
 
@@ -104,7 +118,8 @@ public class RhythmLine : MonoBehaviour
         if (canDestroy)
         {
             Destroy(target.gameObject);
-            scoreText.text = score;
+            gradeText.text = grade;
+            inst_Score.gradeScore = gradeScore;
         }
     }
 
@@ -113,7 +128,8 @@ public class RhythmLine : MonoBehaviour
         if (canDestroy)
         {
             Destroy(target.gameObject);
-            scoreText.text = score;
+            gradeText.text = grade;
+            inst_Score.gradeScore = gradeScore;
         }
     }
 }
