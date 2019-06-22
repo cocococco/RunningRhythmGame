@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Score : MonoBehaviour
 {
@@ -41,7 +42,8 @@ public class Score : MonoBehaviour
     public Text gradeScoreText;
     public Text itemScoreText;
     public Text distanceText;
-    public Text totalScoreText;
+    public TextMeshProUGUI totalScoreText;
+
 
     private void Awake()
     {
