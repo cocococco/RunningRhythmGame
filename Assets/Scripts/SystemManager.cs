@@ -37,11 +37,11 @@ public class SystemManager : MonoBehaviour
     {
         footStepSound = player.GetComponent<AudioSource>();
 
-        gamePausePanel.SetActive(false);
+        Time.timeScale = 1;
         gameOverPanel.SetActive(false);
-
-        isGamePause = false;
+        gamePausePanel.SetActive(false);
         isGameOver = false;
+        isGamePause = false;
     }
 
     public void GameOver()

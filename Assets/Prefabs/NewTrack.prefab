@@ -124,7 +124,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4301408060727252}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Tracks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 135581664645017830}
   - component: {fileID: 54456397944694934}
   - component: {fileID: 114277474267342348}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Monster
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -237,7 +237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4260400285062908}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Items
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -471,7 +471,7 @@ GameObject:
   - component: {fileID: 135532964634337082}
   - component: {fileID: 54227859176017592}
   - component: {fileID: 114661211961257440}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Monster3
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -905,7 +905,7 @@ GameObject:
   - component: {fileID: 135605719505102342}
   - component: {fileID: 54788511291181124}
   - component: {fileID: 114397791558627976}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Monster2
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -978,7 +978,7 @@ GameObject:
   - component: {fileID: 135415179656477226}
   - component: {fileID: 54773529376253134}
   - component: {fileID: 114699530764382222}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Monster4
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -1050,7 +1050,7 @@ GameObject:
   - component: {fileID: 135026604350216546}
   - component: {fileID: 54887758820448302}
   - component: {fileID: 114662109759796852}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Monster1
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -1148,7 +1148,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4483846666719756}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Monsters
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1224,7 +1224,7 @@ GameObject:
   - component: {fileID: 65436412465324472}
   - component: {fileID: 65041228175239442}
   - component: {fileID: 114450046884418930}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: NewTrack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5335,7 +5335,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  length: 60
 --- !u!114 &114474619091688144
 MonoBehaviour:
   m_ObjectHideFlags: 1
