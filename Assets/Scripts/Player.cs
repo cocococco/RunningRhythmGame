@@ -10,6 +10,15 @@ public class Player : MonoBehaviour
     public float posX3 = 2;
     public float speed = 0.5f;
 
+    private AudioSource footStepSound;
+
+    private void Start()
+    {
+        footStepSound = GetComponent<AudioSource>();
+        footStepSound.Play();
+        footStepSound.loop = true;
+    }
+
     public void OnClickTrackButton1()
     {
         this.transform.DOMoveX(posX1, speed);

@@ -16,6 +16,8 @@ public class SystemManager : MonoBehaviour
     public bool isGameOver = false;
     public GameObject gameOverPanel;
     public GameObject gamePausePanel;
+    private GameObject player;
+    private AudioSource footStepSound;
 
     private void Awake()
     {
@@ -27,10 +29,14 @@ public class SystemManager : MonoBehaviour
         {
             DestroyImmediate(this);
         }
+
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Start()
     {
+        footStepSound = player.GetComponent<AudioSource>();
+
         gamePausePanel.SetActive(false);
         gameOverPanel.SetActive(false);
 
@@ -38,24 +44,10 @@ public class SystemManager : MonoBehaviour
         isGameOver = false;
     }
 
-    private void Update()
+    public void GameOver()
     {
-        if (isGameOver)
-        {
-            GameOver();
-        }
-        else if (isGamePause)
-        {
-            GamePause();
-        }
-        else
-        {
-            GameResume();
-        }
-    }
+        footStepSound.Stop();
 
-    private void GameOver()
-    {
         Time.timeScale = 0;
         gameOverPanel.SetActive(true);
         gamePausePanel.SetActive(false);
@@ -63,8 +55,10 @@ public class SystemManager : MonoBehaviour
         isGamePause = false;
     }
 
-    private void GamePause()
+    public void GamePause()
     {
+        footStepSound.Stop();
+
         Time.timeScale = 0;
         gamePausePanel.SetActive(true);
         gameOverPanel.SetActive(false);
@@ -72,8 +66,11 @@ public class SystemManager : MonoBehaviour
         isGameOver = false;
     }
 
-    private void GameResume()
+    public void GameResume()
     {
+        footStepSound.Play();
+        footStepSound.loop = true;
+
         Time.timeScale = 1;
         gamePausePanel.SetActive(false);
         gameOverPanel.SetActive(false);
