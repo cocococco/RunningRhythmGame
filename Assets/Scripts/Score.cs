@@ -36,12 +36,14 @@ public class Score : MonoBehaviour
     private int totalScore;
     private int distanceScore;
     public int gradeScore;
+    public int combo;
     private int totalGradeScore;
     public int itemScore;
     private int totalItemScore;
     public Text gradeScoreText;
     public Text itemScoreText;
     public Text distanceText;
+    public Text comboText;
     public TextMeshProUGUI totalScoreText;
 
 
@@ -67,6 +69,7 @@ public class Score : MonoBehaviour
         totalScore = 0;
         gradeScoreText.text = "";
         itemScoreText.text = "";
+        comboText.text = "";
     }
 
     private void SyncScore()
@@ -92,6 +95,7 @@ public class Score : MonoBehaviour
 
             totalScore = distanceScore + totalGradeScore + totalItemScore;
 
+            comboText.text = combo.ToString() + " COMBO";
             distanceText.text = distance.ToString() + "M";
             totalScoreText.text = totalScore.ToString();
         }
