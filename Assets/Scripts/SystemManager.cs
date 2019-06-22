@@ -12,10 +12,13 @@ public class SystemManager : MonoBehaviour
         return instance;
     }
 
+    public bool isGamePlay = false;
     public bool isGamePause = false;
     public bool isGameOver = false;
     public GameObject gameOverPanel;
     public GameObject gamePausePanel;
+    public GameObject gameMainPanel;
+    public GameObject gamePlayPanel;
 
     private void Awake()
     {
@@ -33,7 +36,10 @@ public class SystemManager : MonoBehaviour
     {
         gamePausePanel.SetActive(false);
         gameOverPanel.SetActive(false);
+        gameMainPanel.SetActive(true);
+        gamePlayPanel.SetActive(false);
 
+        isGamePlay = false;
         isGamePause = false;
         isGameOver = false;
     }
@@ -48,9 +54,13 @@ public class SystemManager : MonoBehaviour
         {
             GamePause();
         }
-        else
+        else if (isGamePlay)
         {
             GameResume();
+        }
+        else
+        {
+            GameMain();
         }
     }
 
@@ -59,6 +69,9 @@ public class SystemManager : MonoBehaviour
         Time.timeScale = 0;
         gameOverPanel.SetActive(true);
         gamePausePanel.SetActive(false);
+        gameMainPanel.SetActive(false);
+        gamePlayPanel.SetActive(false);
+        isGamePlay = false;
         isGameOver = true;
         isGamePause = false;
     }
@@ -68,6 +81,9 @@ public class SystemManager : MonoBehaviour
         Time.timeScale = 0;
         gamePausePanel.SetActive(true);
         gameOverPanel.SetActive(false);
+        gameMainPanel.SetActive(false);
+        gamePlayPanel.SetActive(false);
+        isGamePlay = false;
         isGamePause = true;
         isGameOver = false;
     }
@@ -77,6 +93,21 @@ public class SystemManager : MonoBehaviour
         Time.timeScale = 1;
         gamePausePanel.SetActive(false);
         gameOverPanel.SetActive(false);
+        gameMainPanel.SetActive(false);
+        gamePlayPanel.SetActive(true);
+        isGamePlay = true;
+        isGamePause = false;
+        isGameOver = false;
+    }
+
+    private void GameMain()
+    {
+        Time.timeScale = 0;
+        gamePausePanel.SetActive(false);
+        gameOverPanel.SetActive(false);
+        gameMainPanel.SetActive(true);
+        gamePlayPanel.SetActive(false);
+        isGamePlay = false;
         isGamePause = false;
         isGameOver = false;
     }
@@ -95,4 +126,10 @@ public class SystemManager : MonoBehaviour
     {
         GameResume();
     }
+    
+    public void OnClickStartButton()
+    {
+        GameResume();
+    }
+
 }
