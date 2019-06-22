@@ -9,6 +9,7 @@ public class RhythmLine : MonoBehaviour
     private GameObject target;
     public Text scoreText;
     private string score;
+    public ParticleSystem touchFX;
 
     private void Start()
     {
@@ -95,6 +96,7 @@ public class RhythmLine : MonoBehaviour
         if (canDestroy)
         {
             Destroy(target.gameObject);
+            Instantiate(touchFX, target.transform.position, Quaternion.identity);
             scoreText.text = score;
         }
     }
@@ -104,6 +106,7 @@ public class RhythmLine : MonoBehaviour
         if (canDestroy)
         {
             Destroy(target.gameObject);
+            Instantiate(touchFX, target.transform.position, Quaternion.identity);
             scoreText.text = score;
         }
     }
@@ -113,6 +116,7 @@ public class RhythmLine : MonoBehaviour
         if (canDestroy)
         {
             Destroy(target.gameObject);
+            Instantiate(touchFX, target.transform.position, Quaternion.identity);
             scoreText.text = score;
         }
     }
