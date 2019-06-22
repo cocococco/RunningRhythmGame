@@ -15,6 +15,7 @@ public class SystemManager : MonoBehaviour
     public bool isGamePlay = false;
     public bool isGamePause = false;
     public bool isGameOver = false;
+    static public bool isReplay = false;
     public GameObject gameOverPanel;
     public GameObject gamePausePanel;
     public GameObject gameMainPanel;
@@ -34,14 +35,21 @@ public class SystemManager : MonoBehaviour
 
     private void Start()
     {
-        gamePausePanel.SetActive(false);
-        gameOverPanel.SetActive(false);
-        gameMainPanel.SetActive(true);
-        gamePlayPanel.SetActive(false);
+        if (isReplay)
+        {
+            GameResume();
+        }
+        else
+        {
+            gamePausePanel.SetActive(false);
+            gameOverPanel.SetActive(false);
+            gameMainPanel.SetActive(true);
+            gamePlayPanel.SetActive(false);
 
-        isGamePlay = false;
-        isGamePause = false;
-        isGameOver = false;
+            isGamePlay = false;
+            isGamePause = false;
+            isGameOver = false;
+        }
     }
 
     private void Update()
@@ -112,11 +120,6 @@ public class SystemManager : MonoBehaviour
         isGameOver = false;
     }
 
-    public void Replay()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
     public void OnClickPauseButtonOn()
     {
         GamePause();
@@ -132,4 +135,20 @@ public class SystemManager : MonoBehaviour
         GameResume();
     }
 
+    public void OnClickContinueButton()
+    {
+        GameResume();
+    }
+
+    public void OnClickHomeButton()
+    {
+        isReplay = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void OnClickRetryButton()
+    {
+        isReplay = true;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }
