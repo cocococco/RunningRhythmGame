@@ -416,6 +416,11 @@ Prefab:
       propertyPath: totalScoreText
       value: 
       objectReference: {fileID: 2133856864}
+    - target: {fileID: 114163099215644730, guid: 31ee74d22cbeec34ca7d56c674354a96,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1483477504}
     - target: {fileID: 114859307313331970, guid: 31ee74d22cbeec34ca7d56c674354a96,
         type: 2}
       propertyPath: gameOverPanel

@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Beat : MonoBehaviour
+public class Beat
 {
     public int time { get; set; }
-    public string noteName { get; set; }
 
-    public Beat(int time, string noteName)
+    public Beat(int time)
     {
         this.time = time;
-        this.noteName = noteName;
     }
 }

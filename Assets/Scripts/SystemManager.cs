@@ -18,6 +18,8 @@ public class SystemManager : MonoBehaviour
     public GameObject gamePausePanel;
     private GameObject player;
     private AudioSource footStepSound;
+    private AudioSource mainMusic;
+    private Music inst_music;
 
     private void Awake()
     {
@@ -29,12 +31,13 @@ public class SystemManager : MonoBehaviour
         {
             DestroyImmediate(this);
         }
-
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Start()
     {
+        inst_music = GetComponent<Music>();
+        mainMusic = inst_music.GetComponent<AudioSource>();
         footStepSound = player.GetComponent<AudioSource>();
 
         Time.timeScale = 1;
@@ -47,6 +50,8 @@ public class SystemManager : MonoBehaviour
     public void GameOver()
     {
         footStepSound.Stop();
+        mainMusic.Stop();
+        inst_music.isPlaying = false;
 
         Time.timeScale = 0;
         gameOverPanel.SetActive(true);
@@ -58,6 +63,8 @@ public class SystemManager : MonoBehaviour
     public void GamePause()
     {
         footStepSound.Stop();
+        mainMusic.Pause();
+        inst_music.isPlaying = false;
 
         Time.timeScale = 0;
         gamePausePanel.SetActive(true);
@@ -70,6 +77,8 @@ public class SystemManager : MonoBehaviour
     {
         footStepSound.Play();
         footStepSound.loop = true;
+        mainMusic.Play();
+        inst_music.isPlaying = true;
 
         Time.timeScale = 1;
         gamePausePanel.SetActive(false);
