@@ -417,6 +417,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gradeText: {fileID: 0}
+  scoreText: {fileID: 0}
+  touchFX: {fileID: 198610435964796724, guid: 620150a0806fc4c479a2e784a6af5873, type: 2}
 --- !u!114 &114110321049713102
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -429,6 +431,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gradeText: {fileID: 0}
+  scoreText: {fileID: 0}
+  touchFX: {fileID: 198610435964796724, guid: 620150a0806fc4c479a2e784a6af5873, type: 2}
 --- !u!114 &114180156298831344
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -441,6 +445,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gradeText: {fileID: 0}
+  scoreText: {fileID: 0}
+  touchFX: {fileID: 198610435964796724, guid: 620150a0806fc4c479a2e784a6af5873, type: 2}
 --- !u!135 &135256296342474438
 SphereCollider:
   m_ObjectHideFlags: 1
