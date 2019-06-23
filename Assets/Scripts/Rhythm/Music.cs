@@ -34,7 +34,6 @@ public class Music : MonoBehaviour
     {
         timer = 0;
         mainMusic = GetComponent<AudioSource>();
-        StartCoroutine(PlayMusic());
     }
 
     private void Update()

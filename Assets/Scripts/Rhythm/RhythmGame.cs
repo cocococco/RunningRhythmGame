@@ -18,20 +18,28 @@ public class RhythmGame : MonoBehaviour
     public Beat[] beats = null;
     private int i = 0;
     private Music inst_music;
+    private int gap = 150;
+    private int beat = 461;
 
     private void Awake()
     {
         playerZPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position.z;
         beats = new Beat[]
         {
-            new Beat(1000),
-            new Beat(3000),
-            new Beat(5000),
-            new Beat(7000),
-            new Beat(9000),
-            new Beat(11000),
-            new Beat(13000),
-            new Beat(15000)
+            new Beat(beat*1 - gap),
+            new Beat(beat*2 - gap),
+            new Beat(beat*3 - gap),
+            new Beat(beat*4 - gap),
+            new Beat(beat*5- gap),
+            new Beat(beat*6 - gap),
+            new Beat(beat*7 - gap),
+            new Beat(beat*8 - gap),
+            new Beat(beat*9 - gap),
+            new Beat(beat*10 - gap),
+            new Beat(beat*11 - gap),
+            new Beat(beat*12 - gap),
+            new Beat(beat*13 - gap),
+            new Beat(beat*14 - gap),
         };
         inst_music = GetComponent<Music>();
     }

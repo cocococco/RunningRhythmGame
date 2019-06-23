@@ -117,6 +117,9 @@ public class SystemManager : MonoBehaviour
 
     private void GameMain()
     {
+        mainMusic.Stop();
+        inst_music.isPlaying = false;
+
         Time.timeScale = 0;
         gamePausePanel.SetActive(false);
         gameOverPanel.SetActive(false);
