@@ -151,10 +151,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gradeScore: 0
+  combo: 0
   itemScore: 0
   gradeScoreText: {fileID: 0}
   itemScoreText: {fileID: 0}
   distanceText: {fileID: 0}
+  comboText: {fileID: 0}
   totalScoreText: {fileID: 0}
 --- !u!114 &114163099215644730
 MonoBehaviour:
@@ -181,10 +183,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33c9dfc31c20f5242833a9422d910180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGamePlay: 0
   isGamePause: 0
   isGameOver: 0
   gameOverPanel: {fileID: 0}
   gamePausePanel: {fileID: 0}
+  gameMainPanel: {fileID: 0}
+  gamePlayPanel: {fileID: 0}
 --- !u!114 &114969906386983422
 MonoBehaviour:
   m_ObjectHideFlags: 1

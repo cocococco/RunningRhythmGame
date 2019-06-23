@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Score : MonoBehaviour
 {
@@ -35,13 +36,15 @@ public class Score : MonoBehaviour
     private int totalScore;
     private int distanceScore;
     public int gradeScore;
+    public int combo;
     private int totalGradeScore;
     public int itemScore;
     private int totalItemScore;
     public Text gradeScoreText;
     public Text itemScoreText;
     public Text distanceText;
-    public Text totalScoreText;
+    public Text comboText;
+    public TextMeshProUGUI totalScoreText;
 
     private void Awake()
     {
@@ -63,8 +66,10 @@ public class Score : MonoBehaviour
         totalGradeScore = 0;
         itemScore = 0;
         totalScore = 0;
+        combo = 0;
         gradeScoreText.text = "";
         itemScoreText.text = "";
+        comboText.text = "";
     }
 
     private void SyncScore()
@@ -81,6 +86,9 @@ public class Score : MonoBehaviour
                 gradeScoreText.text = gradeScore.ToString();
                 gradeScore = 0;
             }
+            else
+                gradeScoreText.text = "";
+
             if (itemScore != 0)
             {
                 totalItemScore += itemScore;
@@ -92,6 +100,11 @@ public class Score : MonoBehaviour
 
             distanceText.text = distance.ToString() + "M";
             totalScoreText.text = totalScore.ToString();
+
+            if (combo != 0)
+                comboText.text = combo.ToString() + " COMBO";
+            else
+                comboText.text = "";
         }
     }
 

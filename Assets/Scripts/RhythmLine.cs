@@ -10,6 +10,7 @@ public class RhythmLine : MonoBehaviour
     public Text gradeText;
     private string grade;
     private int gradeScore;
+    private int combo;
 
     private Score inst_Score;
 
@@ -21,6 +22,7 @@ public class RhythmLine : MonoBehaviour
     {
         inst_Score = Score.GetInstance();
         gradeText.text = "";
+        combo = 0;
     }
 
     private float getUpperZ(Transform transform, float radius)
@@ -67,6 +69,9 @@ public class RhythmLine : MonoBehaviour
 
             canDestroy = false;
             inst_Score.gradeScore = 0;
+            inst_Score.combo = 0;
+            grade = "";
+            gradeText.text = grade;
         }
     }
 
@@ -112,6 +117,7 @@ public class RhythmLine : MonoBehaviour
             inst_Score.gradeScore = gradeScore;
             Instantiate(touchFX, target.transform.position, Quaternion.identity);
             scoreText.text = score;
+            inst_Score.combo++;
         }
     }
 
@@ -124,6 +130,7 @@ public class RhythmLine : MonoBehaviour
             inst_Score.gradeScore = gradeScore;
             Instantiate(touchFX, target.transform.position, Quaternion.identity);
             scoreText.text = score;
+            inst_Score.combo++;
         }
     }
 
@@ -136,6 +143,7 @@ public class RhythmLine : MonoBehaviour
             inst_Score.gradeScore = gradeScore;
             Instantiate(touchFX, target.transform.position, Quaternion.identity);
             scoreText.text = score;
+            inst_Score.combo++;
         }
     }
 }
