@@ -10,7 +10,6 @@ public class RhythmLine : MonoBehaviour
     public Text gradeText;
     private string grade;
     private int gradeScore;
-    private int combo;
 
     private Score inst_Score;
 
@@ -22,7 +21,6 @@ public class RhythmLine : MonoBehaviour
     {
         inst_Score = Score.GetInstance();
         gradeText.text = "";
-        combo = 0;
     }
 
     private float getUpperZ(Transform transform, float radius)
