@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class Track : MonoBehaviour
 {
-    public float speed = 0.1f;
-    public int length = 60;
+    public float speed = 4;
+    private float length;
+
+    private void Start()
+    {
+        length = GetComponent<Transform>().localScale.z;
+    }
 
     private void Update()
     {

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    private Score inst_Score;
+    protected Score inst_Score;
 
-    private int itemScore;
+    protected int itemScore;
 
     private void Start()
     {
@@ -14,7 +14,7 @@ public class Item : MonoBehaviour
         inst_Score = Score.GetInstance();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    protected void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.GetComponent<Player>())
         {

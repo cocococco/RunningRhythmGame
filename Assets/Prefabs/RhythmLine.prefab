@@ -177,7 +177,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1315155486762996}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.16, z: 3.98}
+  m_LocalPosition: {x: 0, y: 0.16, z: 5.39}
   m_LocalScale: {x: 0.1, y: 5, z: 0.1}
   m_Children:
   - {fileID: 4459638029748456}
@@ -207,7 +207,7 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1497739502465724}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -277,7 +277,7 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1607292718523760}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -312,7 +312,7 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1176506295359320}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -417,6 +417,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gradeText: {fileID: 0}
+  scoreText: {fileID: 0}
+  touchFX: {fileID: 198610435964796724, guid: 620150a0806fc4c479a2e784a6af5873, type: 2}
 --- !u!114 &114110321049713102
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -429,6 +431,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gradeText: {fileID: 0}
+  scoreText: {fileID: 0}
+  touchFX: {fileID: 198610435964796724, guid: 620150a0806fc4c479a2e784a6af5873, type: 2}
 --- !u!114 &114180156298831344
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -441,6 +445,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gradeText: {fileID: 0}
+  scoreText: {fileID: 0}
+  touchFX: {fileID: 198610435964796724, guid: 620150a0806fc4c479a2e784a6af5873, type: 2}
 --- !u!135 &135256296342474438
 SphereCollider:
   m_ObjectHideFlags: 1
