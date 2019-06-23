@@ -13,9 +13,9 @@ public class RhythmLine : MonoBehaviour
 
     private Score inst_Score;
 
-    private void Awake()
-    {
-    }
+    public Text scoreText;
+    private string score;
+    public ParticleSystem touchFX;
 
     private void Start()
     {
@@ -110,6 +110,8 @@ public class RhythmLine : MonoBehaviour
             Destroy(target.gameObject);
             gradeText.text = grade;
             inst_Score.gradeScore = gradeScore;
+            Instantiate(touchFX, target.transform.position, Quaternion.identity);
+            scoreText.text = score;
         }
     }
 
@@ -120,6 +122,8 @@ public class RhythmLine : MonoBehaviour
             Destroy(target.gameObject);
             gradeText.text = grade;
             inst_Score.gradeScore = gradeScore;
+            Instantiate(touchFX, target.transform.position, Quaternion.identity);
+            scoreText.text = score;
         }
     }
 
@@ -130,6 +134,8 @@ public class RhythmLine : MonoBehaviour
             Destroy(target.gameObject);
             gradeText.text = grade;
             inst_Score.gradeScore = gradeScore;
+            Instantiate(touchFX, target.transform.position, Quaternion.identity);
+            scoreText.text = score;
         }
     }
 }
