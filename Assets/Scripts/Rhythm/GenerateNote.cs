@@ -11,7 +11,7 @@ public class GenerateNote : MonoBehaviour
     public GameObject monsterNote;
     public GameObject itemNote;
     private float playerZPos;
-    private float interval = 50;
+    private float zPosInterval = 50;
 
     private void Awake()
     {
@@ -61,7 +61,7 @@ public class GenerateNote : MonoBehaviour
         {
             if (beats[i].time <= inst_music.time)
             {
-                Instantiate(beats[i].typeNum == 0 ? obstacleNote : (beats[i].typeNum == 1 ? monsterNote : itemNote), new Vector3(beats[i].xPos, 0, playerZPos + interval), Quaternion.identity);
+                Instantiate(beats[i].typeNum == 0 ? obstacleNote : (beats[i].typeNum == 1 ? monsterNote : itemNote), new Vector3(beats[i].xPos, 0, playerZPos + zPosInterval), Quaternion.identity);
                 i++;
             }
         }
