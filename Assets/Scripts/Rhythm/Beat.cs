@@ -1,13 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Beat
+﻿public class Beat
 {
     public int time { get; set; }
+    public float xPos { get; set; }
 
-    public Beat(int time)
+    public Beat(int time, float xPos)
     {
         this.time = time;
+        this.xPos = xPos;
     }
 }
