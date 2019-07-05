@@ -7,8 +7,9 @@ public class GenerateNote : MonoBehaviour
     public List<NoteContainer> beats = new List<NoteContainer>();
     private int i = 0;
     private Music inst_music;
-    public GameObject monsterNote;
     public GameObject obstacleNote;
+    public GameObject monsterNote;
+    public GameObject itemNote;
     private float playerZPos;
     private float interval = 50;
 
@@ -27,6 +28,7 @@ public class GenerateNote : MonoBehaviour
         MakeNote(1, 1, 1, 1);
         MakeNote(1, 2, 1, 1);
         MakeNote(1, 2.5f, 2, 1);
+        MakeNote(1, 3, 2, 2);
 
         MakeNote(2, -0.3f, 2, 0);
         MakeNote(2, 0.2f, 1, 0);
@@ -59,7 +61,7 @@ public class GenerateNote : MonoBehaviour
         {
             if (beats[i].time <= inst_music.time)
             {
-                Instantiate(beats[i].typeNum == 0 ? obstacleNote : monsterNote, new Vector3(beats[i].xPos, 0, playerZPos + interval), Quaternion.identity);
+                Instantiate(beats[i].typeNum == 0 ? obstacleNote : (beats[i].typeNum == 1 ? monsterNote : itemNote), new Vector3(beats[i].xPos, 0, playerZPos + interval), Quaternion.identity);
                 i++;
             }
         }
