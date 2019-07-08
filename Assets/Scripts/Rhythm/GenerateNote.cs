@@ -16,41 +16,11 @@ public class GenerateNote : MonoBehaviour
     private void Awake()
     {
         playerZPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position.z;
-
-        MakeNote(0, 0, 0, 0);
-        MakeNote(0, 0, 1, 0);
-        MakeNote(0, 1, 1, 1);
-        MakeNote(0, 1.5f, 2, 0);
-        MakeNote(0, 3, 1, 0);
-
-        MakeNote(1, 0.3f, 0, 0);
-        MakeNote(1, 0.3f, 2, 0);
-        MakeNote(1, 1, 1, 1);
-        MakeNote(1, 2, 1, 1);
-        MakeNote(1, 2.5f, 2, 1);
-        MakeNote(1, 3, 2, 2);
-
-        MakeNote(2, -0.3f, 2, 0);
-        MakeNote(2, 0.2f, 1, 0);
-        MakeNote(2, 1, 2, 1);
-        MakeNote(2, 1.5f, 0, 0);
-        MakeNote(2, 2, 0, 1);
-        MakeNote(2, 3.3f, 2, 0);
-
-        MakeNote(3, 0.3f, 1, 0);
-        MakeNote(3, 1, 1, 1);
-        MakeNote(3, 1.7f, 0, 0);
-        MakeNote(3, 2, 1, 1);
-        MakeNote(3, 1.7f, 2, 0);
-        MakeNote(3, 2.5f, 2, 1);
-        MakeNote(3, 3.3f, 1, 0);
-        MakeNote(3, 3, 2, 1);
-        MakeNote(3, 3.5f, 0, 1);
-
+        ReadFile read = new ReadFile();
         inst_music = GetComponent<Music>();
     }
 
-    private void MakeNote(int barNum, float beatNum, int posNum, int typeNum)
+    public void MakeNote(int barNum, float beatNum, int posNum, int typeNum)
     {
         beats.Add(new NoteContainer(barNum, beatNum, posNum, typeNum));
     }
