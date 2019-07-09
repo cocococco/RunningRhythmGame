@@ -16,7 +16,7 @@ public class GenerateNote : MonoBehaviour
     private void Awake()
     {
         playerZPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position.z;
-        ReadFile read = new ReadFile();
+        //ReadFile read = new ReadFile();
         inst_music = GetComponent<Music>();
     }
 
