@@ -163,9 +163,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bfbc6905c022b34ea35fa73abb2de71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distance: 0
+  totalScore: 0
   gradeScore: 0
   combo: 0
+  totalGradeScore: 0
   itemScore: 0
+  totalItemScore: 0
   gradeScoreText: {fileID: 0}
   itemScoreText: {fileID: 0}
   distanceText: {fileID: 0}
@@ -186,6 +190,11 @@ MonoBehaviour:
   imgMainFXSound: {fileID: 0}
   imgPauseBGSound: {fileID: 0}
   imgPauseFXSound: {fileID: 0}
+  distanceText: {fileID: 0}
+  obstacleText: {fileID: 0}
+  monsterText: {fileID: 0}
+  bonusText: {fileID: 0}
+  totalText: {fileID: 0}
 --- !u!114 &114825020670655378
 MonoBehaviour:
   m_ObjectHideFlags: 1

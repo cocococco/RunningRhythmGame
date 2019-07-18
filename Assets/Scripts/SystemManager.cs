@@ -25,6 +25,8 @@ public class SystemManager : MonoBehaviour
     public GameObject gameMainPanel;
     public GameObject gamePlayPanel;
 
+    private UIManager inst_UIManager;
+
     private void Awake()
     {
         if (instance == null)
@@ -43,6 +45,7 @@ public class SystemManager : MonoBehaviour
         inst_music = GetComponent<Music>();
         mainMusic = inst_music.BGSound;
         footStepSound = player.GetComponent<AudioSource>();
+        inst_UIManager = GetComponent<UIManager>();
 
         Time.timeScale = 1;
         gameOverPanel.SetActive(false);
@@ -80,6 +83,7 @@ public class SystemManager : MonoBehaviour
         isGamePlay = false;
         isGameOver = true;
         isGamePause = false;
+        inst_UIManager.GenerateGameOverScore();
     }
 
     public void GamePause()
