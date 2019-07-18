@@ -55,7 +55,7 @@ public class RhythmLine : MonoBehaviour
         if (other.gameObject.tag == "Monster")
         {
             Debug.Log("monster stay");
-            CalculateSync();
+            //CalculateSync();
         }
     }
 
@@ -112,13 +112,15 @@ public class RhythmLine : MonoBehaviour
     {
         if (canDestroy)
         {
+            CalculateSync();
             if (target.GetComponent<Monster>().mySoundFXDie != null)
             {
                 soundFXDie.clip = target.GetComponent<Monster>().mySoundFXDie.clip;
                 soundFXDie.Play();
             }
             Destroy(target.gameObject);
-            gradeText.text = grade;
+            //gradeText.text = grade;
+            inst_Score.gradeLevelText.text = grade;
             inst_Score.gradeScore = gradeScore;
             Instantiate(touchFX, target.transform.position, Quaternion.identity);
             scoreText.text = score;
@@ -130,6 +132,7 @@ public class RhythmLine : MonoBehaviour
     {
         if (canDestroy)
         {
+            CalculateSync();
             if (target.GetComponent<Monster>().mySoundFXDie != null)
             {
                 soundFXDie.clip = target.GetComponent<Monster>().mySoundFXDie.clip;
@@ -137,7 +140,8 @@ public class RhythmLine : MonoBehaviour
             }
 
             Destroy(target.gameObject);
-            gradeText.text = grade;
+            //gradeText.text = grade;
+            inst_Score.gradeLevelText.text = grade;
             inst_Score.gradeScore = gradeScore;
             Instantiate(touchFX, target.transform.position, Quaternion.identity);
             scoreText.text = score;
@@ -149,13 +153,15 @@ public class RhythmLine : MonoBehaviour
     {
         if (canDestroy)
         {
+            CalculateSync();
             if (target.GetComponent<Monster>().mySoundFXDie != null)
             {
                 soundFXDie.clip = target.GetComponent<Monster>().mySoundFXDie.clip;
                 soundFXDie.Play();
             }
             Destroy(target.gameObject);
-            gradeText.text = grade;
+            //gradeText.text = grade;
+            inst_Score.gradeLevelText.text = grade;
             inst_Score.gradeScore = gradeScore;
             Instantiate(touchFX, target.transform.position, Quaternion.identity);
             scoreText.text = score;

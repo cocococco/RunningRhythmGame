@@ -171,6 +171,7 @@ MonoBehaviour:
   itemScore: 0
   totalItemScore: 0
   gradeScoreText: {fileID: 0}
+  gradeLevelText: {fileID: 0}
   itemScoreText: {fileID: 0}
   distanceText: {fileID: 0}
   comboText: {fileID: 0}

@@ -41,6 +41,7 @@ public class Score : MonoBehaviour
     public int itemScore;
     public int totalItemScore;
     public Text gradeScoreText;
+    public Text gradeLevelText;
     public Text itemScoreText;
     public Text distanceText;
     public Text comboText;
@@ -84,32 +85,38 @@ public class Score : MonoBehaviour
             {
                 totalGradeScore += gradeScore;
                 gradeScoreText.text = gradeScore.ToString();
+                StartCoroutine(TextVanish(gradeScoreText));
+                StartCoroutine(TextVanish(gradeLevelText));
                 gradeScore = 0;
             }
-            else
-                gradeScoreText.text = "";
-
             if (itemScore != 0)
             {
                 totalItemScore += itemScore;
                 itemScoreText.text = itemScore.ToString();
+                StartCoroutine(TextVanish(itemScoreText));
                 itemScore = 0;
+            }
+            if (combo != 0)
+            {
+                comboText.text = combo.ToString() + " COMBO";
+                StartCoroutine(TextVanish(comboText));
             }
 
             totalScore = distanceScore + totalGradeScore + totalItemScore;
 
             distanceText.text = distance.ToString() + "M";
             totalScoreText.text = totalScore.ToString();
-
-            if (combo != 0)
-                comboText.text = combo.ToString() + " COMBO";
-            else
-                comboText.text = "";
         }
     }
 
     private void Update()
     {
         SyncScore();
+    }
+
+    private IEnumerator TextVanish(Text text)
+    {
+        yield return new WaitForSeconds(1);
+        text.text = "";
     }
 }
