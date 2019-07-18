@@ -20,7 +20,7 @@ public class SystemManager : MonoBehaviour
     public GameObject gamePausePanel;
     private GameObject player;
     private AudioSource footStepSound;
-    public static AudioSource mainMusic;
+    private AudioSource mainMusic;
     private Music inst_music;
     public GameObject gameMainPanel;
     public GameObject gamePlayPanel;
@@ -41,7 +41,7 @@ public class SystemManager : MonoBehaviour
     private void Start()
     {
         inst_music = GetComponent<Music>();
-        mainMusic = inst_music.GetComponent<AudioSource>();
+        mainMusic = inst_music.BGSound;
         footStepSound = player.GetComponent<AudioSource>();
 
         Time.timeScale = 1;

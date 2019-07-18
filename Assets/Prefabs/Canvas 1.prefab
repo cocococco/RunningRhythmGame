@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 222486653511723614}
   - component: {fileID: 114511546249764020}
   - component: {fileID: 114790848795164080}
-  - component: {fileID: 114882006600557648}
   m_Layer: 5
   m_Name: BGsound_ON
   m_TagString: Untagged
@@ -181,7 +180,6 @@ GameObject:
   - component: {fileID: 222470722289146864}
   - component: {fileID: 114160167570127080}
   - component: {fileID: 114846794798101004}
-  - component: {fileID: 114950863194681724}
   m_Layer: 5
   m_Name: SFX_ON
   m_TagString: Untagged
@@ -445,7 +443,6 @@ GameObject:
   - component: {fileID: 222339605729042122}
   - component: {fileID: 114282358245529258}
   - component: {fileID: 114478830276144180}
-  - component: {fileID: 114821793945427662}
   m_Layer: 5
   m_Name: BGSound_ON
   m_TagString: Untagged
@@ -481,7 +478,6 @@ GameObject:
   - component: {fileID: 222575215186937358}
   - component: {fileID: 114414902181402656}
   - component: {fileID: 114550133850278812}
-  - component: {fileID: 114735251382586720}
   m_Layer: 5
   m_Name: SFX_ON
   m_TagString: Untagged
@@ -2134,8 +2130,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114821793945427662}
-        m_MethodName: OnClickMainBGSoundButton
+      - m_Target: {fileID: 0}
+        m_MethodName: OnClickBGSoundButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2308,8 +2304,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114735251382586720}
-        m_MethodName: OnClickMainFXSoundButton
+      - m_Target: {fileID: 0}
+        m_MethodName: OnClickFXSoundButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2735,29 +2731,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114735251382586720
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1487949637096916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ec5cd1823257b9439dd1c7b055ea351, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  imgMainBGSounds:
-  - {fileID: 21300000, guid: f1241db0b9bb5d444b21ab188897f531, type: 3}
-  - {fileID: 21300000, guid: 027b656803a62184b9e80a0ebd0e111e, type: 3}
-  imgMainFXSounds:
-  - {fileID: 21300000, guid: 94d10f19d8c5c9e46b83a2b674ffe52a, type: 3}
-  - {fileID: 21300000, guid: db76e9dcedc6cc243b27d7999488b053, type: 3}
-  imgPauseBGSounds:
-  - {fileID: 21300000, guid: 19a6b3a8d70215c43a5ccf8ee54531e5, type: 3}
-  - {fileID: 21300000, guid: ad99cd567443d3b4fafee91eb2f7dc51, type: 3}
-  imgPauseFXSounds:
-  - {fileID: 21300000, guid: 601374996c493ff46bd62026f54352f3, type: 3}
-  - {fileID: 21300000, guid: 74e7e469410c69e4da717b64b10e7d40, type: 3}
 --- !u!114 &114745313724825604
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2873,8 +2846,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114882006600557648}
-        m_MethodName: OnClickPauseBGSoundButton
+      - m_Target: {fileID: 0}
+        m_MethodName: OnClickBGSoundButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2913,29 +2886,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114821793945427662
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1478712669452760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ec5cd1823257b9439dd1c7b055ea351, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  imgMainBGSounds:
-  - {fileID: 21300000, guid: f1241db0b9bb5d444b21ab188897f531, type: 3}
-  - {fileID: 21300000, guid: 027b656803a62184b9e80a0ebd0e111e, type: 3}
-  imgMainFXSounds:
-  - {fileID: 21300000, guid: 94d10f19d8c5c9e46b83a2b674ffe52a, type: 3}
-  - {fileID: 21300000, guid: db76e9dcedc6cc243b27d7999488b053, type: 3}
-  imgPauseBGSounds:
-  - {fileID: 21300000, guid: 19a6b3a8d70215c43a5ccf8ee54531e5, type: 3}
-  - {fileID: 21300000, guid: ad99cd567443d3b4fafee91eb2f7dc51, type: 3}
-  imgPauseFXSounds:
-  - {fileID: 21300000, guid: 601374996c493ff46bd62026f54352f3, type: 3}
-  - {fileID: 21300000, guid: 74e7e469410c69e4da717b64b10e7d40, type: 3}
 --- !u!114 &114830732506161320
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3076,8 +3026,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114950863194681724}
-        m_MethodName: OnClickPauseFXSoundButton
+      - m_Target: {fileID: 0}
+        m_MethodName: OnClickFXSoundButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3193,29 +3143,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114882006600557648
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1007420391068242}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ec5cd1823257b9439dd1c7b055ea351, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  imgMainBGSounds:
-  - {fileID: 21300000, guid: f1241db0b9bb5d444b21ab188897f531, type: 3}
-  - {fileID: 21300000, guid: 027b656803a62184b9e80a0ebd0e111e, type: 3}
-  imgMainFXSounds:
-  - {fileID: 21300000, guid: 94d10f19d8c5c9e46b83a2b674ffe52a, type: 3}
-  - {fileID: 21300000, guid: db76e9dcedc6cc243b27d7999488b053, type: 3}
-  imgPauseBGSounds:
-  - {fileID: 21300000, guid: 19a6b3a8d70215c43a5ccf8ee54531e5, type: 3}
-  - {fileID: 21300000, guid: ad99cd567443d3b4fafee91eb2f7dc51, type: 3}
-  imgPauseFXSounds:
-  - {fileID: 21300000, guid: 601374996c493ff46bd62026f54352f3, type: 3}
-  - {fileID: 21300000, guid: 74e7e469410c69e4da717b64b10e7d40, type: 3}
 --- !u!114 &114885116871710206
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3531,29 +3458,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114950863194681724
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1321312852915462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ec5cd1823257b9439dd1c7b055ea351, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  imgMainBGSounds:
-  - {fileID: 21300000, guid: f1241db0b9bb5d444b21ab188897f531, type: 3}
-  - {fileID: 21300000, guid: 027b656803a62184b9e80a0ebd0e111e, type: 3}
-  imgMainFXSounds:
-  - {fileID: 21300000, guid: 94d10f19d8c5c9e46b83a2b674ffe52a, type: 3}
-  - {fileID: 21300000, guid: db76e9dcedc6cc243b27d7999488b053, type: 3}
-  imgPauseBGSounds:
-  - {fileID: 21300000, guid: 19a6b3a8d70215c43a5ccf8ee54531e5, type: 3}
-  - {fileID: 21300000, guid: ad99cd567443d3b4fafee91eb2f7dc51, type: 3}
-  imgPauseFXSounds:
-  - {fileID: 21300000, guid: 601374996c493ff46bd62026f54352f3, type: 3}
-  - {fileID: 21300000, guid: 74e7e469410c69e4da717b64b10e7d40, type: 3}
 --- !u!114 &114959726118707942
 MonoBehaviour:
   m_ObjectHideFlags: 1
