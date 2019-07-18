@@ -25,8 +25,8 @@ public class UIManager : MonoBehaviour
 
     public void OnClickFXSoundButton()
     {
-        inst_Music.BGSoundMute();
-        imgMainFXSound.sprite = inst_Music.imgMainFXSound;
-        imgPauseFXSound.sprite = inst_Music.imgPauseFXSound;
+        //inst_Music.BGSoundMute();
+        //imgMainFXSound.sprite = inst_Music.imgMainFXSound;
+        //imgPauseFXSound.sprite = inst_Music.imgPauseFXSound;
     }
 }
