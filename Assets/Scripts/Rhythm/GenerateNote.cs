@@ -31,7 +31,11 @@ public class GenerateNote : MonoBehaviour
         {
             if (beats[i].time <= inst_music.time)
             {
-                Instantiate(beats[i].typeNum == 0 ? obstacleNote : (beats[i].typeNum == 1 ? monsterNote : itemNote), new Vector3(beats[i].xPos, 0, playerZPos + zPosInterval), Quaternion.identity);
+                GameObject note = Instantiate(beats[i].typeNum == 0 ? obstacleNote : (beats[i].typeNum == 1 ? monsterNote : itemNote), new Vector3(beats[i].xPos, 0, playerZPos + zPosInterval), Quaternion.identity);
+                if (beats[i].typeNum == 1)
+                {
+                    note.GetComponent<Monster>().pitchNum = beats[i].pitchNum;
+                }
                 i++;
             }
         }

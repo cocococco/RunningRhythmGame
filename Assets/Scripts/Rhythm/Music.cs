@@ -42,7 +42,7 @@ public class Music : MonoBehaviour
         {
             timer += Time.deltaTime;
             time = Mathf.FloorToInt(timer * 1000);
-            Debug.Log("music : " + time);
+            //Debug.Log("music : " + time);
         }
     }
 
