@@ -20,7 +20,7 @@ public class SystemManager : MonoBehaviour
     public GameObject gamePausePanel;
     private GameObject player;
     private AudioSource footStepSound;
-    private AudioSource mainMusic;
+    public static AudioSource mainMusic;
     private Music inst_music;
     public GameObject gameMainPanel;
     public GameObject gamePlayPanel;
