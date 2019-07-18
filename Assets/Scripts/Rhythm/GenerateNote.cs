@@ -20,9 +20,9 @@ public class GenerateNote : MonoBehaviour
         inst_music = GetComponent<Music>();
     }
 
-    public void MakeNote(int barNum, float beatNum, int posNum, int typeNum)
+    public void MakeNote(int barNum, float beatNum, int posNum, int typeNum, int pitchNum)
     {
-        beats.Add(new NoteContainer(barNum, beatNum, posNum, typeNum));
+        beats.Add(new NoteContainer(barNum, beatNum, posNum, typeNum, pitchNum));
     }
 
     private void Update()

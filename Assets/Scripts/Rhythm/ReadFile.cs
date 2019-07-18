@@ -35,14 +35,15 @@ public class ReadFile : MonoBehaviour
         {
             char delimiter = ' '; // parsing할 문자 : 공백
             textOneLine = sr.ReadLine();
-            if (textOneLine.Length != 1)
+            if (textOneLine.Length > 3)
             {
                 nums = textOneLine.Split(delimiter); // strings[]에 각각 parsing되어 저장됨
                 int barNum = int.Parse(nums[0]);
                 float beatNum = float.Parse(nums[1]);
                 int posNum = int.Parse(nums[2]);
                 int typeNum = int.Parse(nums[3]);
-                inst_GenerateNote.MakeNote(barNum, beatNum, posNum, typeNum);
+                int pitchNum = int.Parse(nums[4]);
+                inst_GenerateNote.MakeNote(barNum, beatNum, posNum, typeNum, pitchNum);
             }
             else
             {
@@ -50,6 +51,7 @@ public class ReadFile : MonoBehaviour
                 lineCount++;
             }
         }
+
         //textValues = System.IO.File.ReadAllLines(path); // textValues의 각 index에 한 줄씩 string이 저장됨
         //if (textValues.Length > 0) // 텍스트가 존재한다면
         //{
