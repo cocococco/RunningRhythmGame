@@ -20,4 +20,15 @@ public class Monster : Obstacle
             mySoundFXDie.clip = soundFXDie[pitchNum];
         }
     }
+
+    protected override void Update()
+    {
+        this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z - speed * Time.deltaTime);
+
+        if (this.transform.position.z < playerTransform.position.z && isGone == false)
+        {
+            inst_Score.comboCount = 0;
+            isGone = true;
+        }
+    }
 }

@@ -26,6 +26,8 @@ public class Score : MonoBehaviour
 
     public int comboCount;
     public Text comboCountText;
+    private int comboScore;
+    private int totalComboScore;
 
     public int totalObstacleScore;
     public Text totalObstacleScoreText;
@@ -56,13 +58,14 @@ public class Score : MonoBehaviour
         monsterScoreGradeText.text = "";
         totalObstacleScoreText.text = "";
         itemScoreText.text = "";
+        comboCountText.text = "";
     }
 
     public void RenewMonsterScore(int score, string gradeText)
     {
         monsterScore = score;
         totalMonsterScore += score;
-        monsterScoreText.text = monsterScore.ToString();
+        monsterScoreText.text = "+" + monsterScore.ToString();
         monsterScoreGradeText.text = gradeText;
         StartCoroutine(TextVanish(monsterScoreText));
         StartCoroutine(TextVanish(monsterScoreGradeText));
@@ -71,20 +74,27 @@ public class Score : MonoBehaviour
     public void RenewObstacleScore(int score)
     {
         totalObstacleScore += score;
-        totalObstacleScoreText.text = totalObstacleScore.ToString();
-        StartCoroutine(TextVanish(totalObstacleScoreText));
+        totalObstacleScoreText.text = "Obstacle +" + totalObstacleScore.ToString();
+        //StartCoroutine(TextVanish(totalObstacleScoreText)); // 너무 빨라서 사라지게 안함
     }
 
     public void RenewItemScore(int score)
     {
         itemScore = score;
         totalItemScore += itemScore;
-        itemScoreText.text = itemScore.ToString();
+        itemScoreText.text = "Item +" + itemScore.ToString();
         StartCoroutine(TextVanish(itemScoreText));
     }
 
-    public void RenewComboScore(int score)
+    public void RenewComboScore()
     {
+        comboCount++;
+        comboCountText.text = comboCount.ToString() + " COMBO";
+        StartCoroutine(TextVanish(comboCountText));
+        if (comboCount > 10)
+        {
+            //추가 구현
+        }
     }
 
     private void SyncScore()
@@ -93,13 +103,7 @@ public class Score : MonoBehaviour
         distance = Mathf.FloorToInt(timer);
         distanceScore = distance * 100;
 
-        if (comboCount != 0)
-        {
-            comboCountText.text = comboCount.ToString() + " COMBO";
-            StartCoroutine(TextVanish(comboCountText));
-        }
-
-        totalScore = distanceScore + totalMonsterScore + totalObstacleScore + totalItemScore;
+        totalScore = distanceScore + totalMonsterScore + totalObstacleScore + totalItemScore; // add combo score
 
         distanceText.text = distance.ToString() + "M";
         totalScoreText.text = totalScore.ToString();
@@ -112,7 +116,7 @@ public class Score : MonoBehaviour
 
     private IEnumerator TextVanish(Text text)
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1);
         text.text = "";
     }
 }

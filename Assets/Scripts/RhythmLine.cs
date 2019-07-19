@@ -10,11 +10,8 @@ public class RhythmLine : MonoBehaviour
     private bool canKill = false;
     private GameObject targetMonster;
 
-    public Text gradeText;
     private string monsterScoreTextString;
     private int monsterScore;
-    public Text scoreText;
-    private string scoreTextString;
 
     public ParticleSystem touchFX;
     private AudioSource soundFXDie;
@@ -90,13 +87,10 @@ public class RhythmLine : MonoBehaviour
 
             if (monsterScore != 0 && monsterScoreTextString != "")
             {
-                inst_Score.RenewMonsterScore(monsterScore, scoreTextString);
+                inst_Score.RenewMonsterScore(monsterScore, monsterScoreTextString);
+                inst_Score.RenewComboScore();
+                Instantiate(touchFX, targetMonster.transform.position, Quaternion.identity);
             }
-            //inst_Score.monsterScoreGradeText.text = monsterScoreTextString;
-            //inst_Score.monsterScore = monsterScore;
-            Instantiate(touchFX, targetMonster.transform.position, Quaternion.identity);
-            //scoreText.text = scoreTextString;
-            inst_Score.comboCount++;
         }
     }
 }

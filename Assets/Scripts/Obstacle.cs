@@ -8,11 +8,11 @@ public class Obstacle : MonoBehaviour
 
     protected float speed;
 
-    private Transform playerTransform;
+    protected Transform playerTransform;
 
-    private Score inst_Score;
+    protected Score inst_Score;
     private int obstacleScore = 200;
-    private bool isGetScore = false;
+    protected bool isGone = false;
 
     protected virtual void Start()
     {
@@ -22,14 +22,14 @@ public class Obstacle : MonoBehaviour
         playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
-    protected void Update()
+    protected virtual void Update()
     {
         this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z - speed * Time.deltaTime);
 
-        if (this.transform.position.z < playerTransform.position.z && isGetScore == false)
+        if (this.transform.position.z < playerTransform.position.z && isGone == false)
         {
             inst_Score.RenewObstacleScore(obstacleScore);
-            isGetScore = true;
+            isGone = true;
         }
     }
 
