@@ -164,17 +164,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 0
-  totalScore: 0
-  gradeScore: 0
-  combo: 0
-  totalGradeScore: 0
+  distanceText: {fileID: 0}
+  monsterScore: 0
+  monsterScoreText: {fileID: 0}
+  monsterScoreGradeText: {fileID: 0}
+  totalMonsterScore: 0
+  comboCount: 0
+  comboCountText: {fileID: 0}
+  totalObstacleScore: 0
+  totalObstacleScoreText: {fileID: 0}
   itemScore: 0
   totalItemScore: 0
-  gradeScoreText: {fileID: 0}
-  gradeLevelText: {fileID: 0}
   itemScoreText: {fileID: 0}
-  distanceText: {fileID: 0}
-  comboText: {fileID: 0}
+  totalScore: 0
   totalScoreText: {fileID: 0}
 --- !u!114 &114802690768556346
 MonoBehaviour:

@@ -17,7 +17,11 @@ public class GenerateNote : MonoBehaviour
     {
         playerZPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position.z;
         //ReadFile read = new ReadFile();
-        inst_music = GetComponent<Music>();
+    }
+
+    private void Start()
+    {
+        inst_music = Music.GetInstance();
     }
 
     public void MakeNote(int barNum, float beatNum, int posNum, int typeNum, int pitchNum)

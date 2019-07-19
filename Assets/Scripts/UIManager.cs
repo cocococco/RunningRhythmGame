@@ -40,8 +40,8 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        inst_Music = GetComponent<Music>();
-        inst_Score = GetComponent<Score>();
+        inst_Music = Music.GetInstance();
+        inst_Score = Score.GetInstance();
     }
 
     public void OnClickBGSoundButton()
@@ -61,8 +61,8 @@ public class UIManager : MonoBehaviour
     public void GenerateGameOverScore()
     {
         distanceText.text = inst_Score.distance.ToString() + "M";
-        obstacleText.text = "0";
-        monsterText.text = inst_Score.totalGradeScore.ToString();
+        obstacleText.text = inst_Score.totalObstacleScore.ToString();
+        monsterText.text = inst_Score.totalMonsterScore.ToString();
         bonusText.text = inst_Score.totalItemScore.ToString();
         totalText.text = inst_Score.totalScore.ToString();
     }

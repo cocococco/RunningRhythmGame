@@ -42,10 +42,10 @@ public class SystemManager : MonoBehaviour
 
     private void Start()
     {
-        inst_music = GetComponent<Music>();
+        inst_music = Music.GetInstance();
         mainMusic = inst_music.BGSound;
         footStepSound = player.GetComponent<AudioSource>();
-        inst_UIManager = GetComponent<UIManager>();
+        inst_UIManager = UIManager.GetInstance();
 
         Time.timeScale = 1;
         gameOverPanel.SetActive(false);
