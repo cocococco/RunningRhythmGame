@@ -13,6 +13,7 @@ public class SystemManager : MonoBehaviour
     }
 
     public bool isGamePlaying = false;
+    private static bool isReplay = false;
 
     public GameObject gameOverPanel;
     public GameObject gamePausePanel;
@@ -47,17 +48,86 @@ public class SystemManager : MonoBehaviour
 
         gameOverPanel.SetActive(false);
         gamePausePanel.SetActive(false);
-        if (isGamePlaying)
+        if (isReplay)
         {
             GameResume();
         }
         else
         {
-            gameMainPanel.SetActive(true);
-            gamePausePanel.SetActive(false);
-            gameOverPanel.SetActive(false);
-            gamePlayPanel.SetActive(false);
+            GameMain();
         }
+    }
+
+    private void Update()
+    {
+#if UNITY_ANDROID
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+#endif
+    }
+
+    private void GameMain()
+    {
+        mainMusic.Stop();
+        inst_music.isPlaying = false;
+
+        isGamePlaying = false;
+        Time.timeScale = 1;
+        gameMainPanel.SetActive(true);
+        gamePausePanel.SetActive(false);
+        gameOverPanel.SetActive(false);
+        gamePlayPanel.SetActive(false);
+    }
+
+    public void OnClickStartButton()
+    {
+        GameResume();
+    }
+
+    public void OnClickContinueButton()
+    {
+        GameResume();
+    }
+
+    public void OnClickPauseButtonOff()
+    {
+        GameResume();
+    }
+
+    public void GameResume()
+    {
+        footStepSound.Play();
+        footStepSound.loop = true;
+        mainMusic.Play();
+        inst_music.isPlaying = true;
+
+        isGamePlaying = true;
+        Time.timeScale = 1;
+        gamePlayPanel.SetActive(true);
+        gamePausePanel.SetActive(false);
+        gameOverPanel.SetActive(false);
+        gameMainPanel.SetActive(false);
+    }
+
+    public void OnClickPauseButtonOn()
+    {
+        GamePause();
+    }
+
+    public void GamePause()
+    {
+        footStepSound.Stop();
+        mainMusic.Pause();
+        inst_music.isPlaying = false;
+
+        isGamePlaying = false;
+        Time.timeScale = 0;
+        gamePausePanel.SetActive(true);
+        gameOverPanel.SetActive(false);
+        gameMainPanel.SetActive(false);
+        gamePlayPanel.SetActive(false);
     }
 
     public void GameOver()
@@ -75,77 +145,15 @@ public class SystemManager : MonoBehaviour
         inst_UIManager.GenerateGameOverScore();
     }
 
-    public void GamePause()
-    {
-        footStepSound.Stop();
-        mainMusic.Pause();
-        inst_music.isPlaying = false;
-
-        isGamePlaying = false;
-        Time.timeScale = 0;
-        gamePausePanel.SetActive(true);
-        gameOverPanel.SetActive(false);
-        gameMainPanel.SetActive(false);
-        gamePlayPanel.SetActive(false);
-    }
-
-    public void GameResume()
-    {
-        footStepSound.Play();
-        footStepSound.loop = true;
-        mainMusic.Play();
-        inst_music.isPlaying = true;
-
-        isGamePlaying = true;
-        Time.timeScale = 1;
-        gamePausePanel.SetActive(false);
-        gameOverPanel.SetActive(false);
-        gameMainPanel.SetActive(false);
-        gamePlayPanel.SetActive(true);
-    }
-
-    private void GameMain()
-    {
-        mainMusic.Stop();
-        inst_music.isPlaying = false;
-
-        isGamePlaying = false;
-        Time.timeScale = 0;
-        gamePausePanel.SetActive(false);
-        gameOverPanel.SetActive(false);
-        gameMainPanel.SetActive(true);
-        gamePlayPanel.SetActive(false);
-    }
-
-    public void OnClickPauseButtonOn()
-    {
-        GamePause();
-    }
-
-    public void OnClickPauseButtonOff()
-    {
-        GameResume();
-    }
-
-    public void OnClickStartButton()
-    {
-        GameResume();
-    }
-
-    public void OnClickContinueButton()
-    {
-        GameResume();
-    }
-
     public void OnClickHomeButton()
     {
-        isGamePlaying = false;
+        isReplay = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void OnClickRetryButton()
     {
-        isGamePlaying = true;
+        isReplay = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
