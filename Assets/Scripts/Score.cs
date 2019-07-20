@@ -110,8 +110,8 @@ public class Score : MonoBehaviour
 
         totalScore = distanceScore + totalMonsterScore + totalObstacleScore + totalItemScore; // add combo score
 
-        distanceText.text = distance.ToString() + "M";
-        totalScoreText.text = totalScore.ToString();
+        distanceText.text = distance.ToString("#,##0") + "M";
+        totalScoreText.text = totalScore.ToString("#,##0");
 
         if (totalScore > highScore)
         {

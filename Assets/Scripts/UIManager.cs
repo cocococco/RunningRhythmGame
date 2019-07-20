@@ -61,11 +61,11 @@ public class UIManager : MonoBehaviour
 
     public void GenerateGameOverScore()
     {
-        highScoreText.text = inst_Score.highScore.ToString();
-        distanceText.text = inst_Score.distance.ToString() + " M";
-        obstacleText.text = inst_Score.totalObstacleScore.ToString();
-        monsterText.text = inst_Score.totalMonsterScore.ToString();
-        bonusText.text = inst_Score.totalItemScore.ToString();
-        totalText.text = inst_Score.totalScore.ToString();
+        highScoreText.text = inst_Score.highScore.ToString("#,##0");
+        distanceText.text = inst_Score.distance.ToString("#,##0") + " M";
+        obstacleText.text = inst_Score.totalObstacleScore.ToString("#,##0");
+        monsterText.text = inst_Score.totalMonsterScore.ToString("#,##0");
+        bonusText.text = inst_Score.totalItemScore.ToString("#,##0");
+        totalText.text = inst_Score.totalScore.ToString("#,##0");
     }
 }
