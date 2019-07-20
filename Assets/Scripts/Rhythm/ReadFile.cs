@@ -29,12 +29,10 @@ public class ReadFile : MonoBehaviour
         string textOneLine = null;
         int lineCount = 0;
         string[] nums = { "0" };
-        textOneLine = sr.ReadLine();
 
-        while (textOneLine != null)
+        while ((textOneLine = sr.ReadLine()) != null)
         {
             char delimiter = ' '; // parsing할 문자 : 공백
-            textOneLine = sr.ReadLine();
             if (textOneLine.Length > 3)
             {
                 nums = textOneLine.Split(delimiter); // strings[]에 각각 parsing되어 저장됨
