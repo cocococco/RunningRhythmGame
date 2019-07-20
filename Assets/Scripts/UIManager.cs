@@ -37,12 +37,15 @@ public class UIManager : MonoBehaviour
         {
             DestroyImmediate(this);
         }
+        //DontDestroyOnLoad(this);
     }
 
     private void Start()
     {
         inst_Music = Music.GetInstance();
         inst_Score = Score.GetInstance();
+        imgMainBGSound.sprite = inst_Music.imgMainBGSound;
+        imgPauseBGSound.sprite = inst_Music.imgPauseBGSound;
     }
 
     public void OnClickBGSoundButton()

@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114969906386983422}
   - component: {fileID: 114825020670655378}
   - component: {fileID: 114017616009765282}
-  - component: {fileID: 114802690768556346}
+  - component: {fileID: 114630629450169474}
   m_Layer: 0
   m_Name: System
   m_TagString: Untagged
@@ -179,7 +179,7 @@ MonoBehaviour:
   totalScore: 0
   totalScoreText: {fileID: 0}
   highScore: 0
---- !u!114 &114802690768556346
+--- !u!114 &114630629450169474
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}

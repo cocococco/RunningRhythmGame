@@ -27,6 +27,11 @@ public class Music : MonoBehaviour
     public Sprite[] imgPauseBGSounds = new Sprite[2];
     public Sprite[] imgPauseFXSounds = new Sprite[2];
 
+    private const int mute = 0;
+    private const int dontMute = 1;
+    private int isMute;
+    private string keyString = "BGSoundMute";
+
     private void Awake()
     {
         if (instance == null)
@@ -39,12 +44,25 @@ public class Music : MonoBehaviour
         }
         timer = 0;
         //DontDestroyOnLoad(this);
-    }
 
-    private void Start()
-    {
-        timer = 0;
         BGSound = GetComponent<AudioSource>();
+        isMute = PlayerPrefs.GetInt(keyString, dontMute);
+        if (isMute == mute)
+        {
+            BGSound.mute = true;
+            imgMainBGSound = imgMainBGSounds[0];
+            imgPauseBGSound = imgPauseBGSounds[0];
+        }
+        else if (isMute == dontMute)
+        {
+            BGSound.mute = false;
+            imgMainBGSound = imgMainBGSounds[1];
+            imgPauseBGSound = imgPauseBGSounds[1];
+        }
+        else
+        {
+            Debug.LogError("wrong mute number");
+        }
     }
 
     private void Update()
@@ -73,11 +91,13 @@ public class Music : MonoBehaviour
         {
             imgMainBGSound = imgMainBGSounds[0];
             imgPauseBGSound = imgPauseBGSounds[0];
+            PlayerPrefs.SetInt(keyString, mute);
         }
         else
         {
             imgMainBGSound = imgMainBGSounds[1];
             imgPauseBGSound = imgPauseBGSounds[1];
+            PlayerPrefs.SetInt(keyString, dontMute);
         }
     }
 }
