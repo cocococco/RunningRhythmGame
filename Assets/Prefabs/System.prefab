@@ -178,6 +178,7 @@ MonoBehaviour:
   itemScoreText: {fileID: 0}
   totalScore: 0
   totalScoreText: {fileID: 0}
+  highScore: 0
 --- !u!114 &114802690768556346
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -193,6 +194,7 @@ MonoBehaviour:
   imgMainFXSound: {fileID: 0}
   imgPauseBGSound: {fileID: 0}
   imgPauseFXSound: {fileID: 0}
+  highScoreText: {fileID: 0}
   distanceText: {fileID: 0}
   obstacleText: {fileID: 0}
   monsterText: {fileID: 0}

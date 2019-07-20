@@ -19,6 +19,7 @@ public class UIManager : MonoBehaviour
     public Image imgPauseFXSound;
     private Music inst_Music;
 
+    public TextMeshProUGUI highScoreText;
     public TextMeshProUGUI distanceText;
     public TextMeshProUGUI obstacleText;
     public TextMeshProUGUI monsterText;
@@ -60,7 +61,8 @@ public class UIManager : MonoBehaviour
 
     public void GenerateGameOverScore()
     {
-        distanceText.text = inst_Score.distance.ToString() + "M";
+        highScoreText.text = inst_Score.highScore.ToString();
+        distanceText.text = inst_Score.distance.ToString() + " M";
         obstacleText.text = inst_Score.totalObstacleScore.ToString();
         monsterText.text = inst_Score.totalMonsterScore.ToString();
         bonusText.text = inst_Score.totalItemScore.ToString();

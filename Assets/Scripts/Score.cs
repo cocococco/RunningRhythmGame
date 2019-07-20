@@ -39,6 +39,9 @@ public class Score : MonoBehaviour
     public int totalScore;
     public TextMeshProUGUI totalScoreText;
 
+    public int highScore;
+    private string keyString = "HighScore";
+
     private void Awake()
     {
         if (instance == null)
@@ -50,6 +53,8 @@ public class Score : MonoBehaviour
             DestroyImmediate(this);
         }
         //DontDestroyOnLoad(this);
+
+        highScore = PlayerPrefs.GetInt(keyString, 0);
     }
 
     private void Start()
@@ -107,6 +112,12 @@ public class Score : MonoBehaviour
 
         distanceText.text = distance.ToString() + "M";
         totalScoreText.text = totalScore.ToString();
+
+        if (totalScore > highScore)
+        {
+            highScore = totalScore;
+            PlayerPrefs.SetInt(keyString, totalScore);
+        }
     }
 
     private void Update()
