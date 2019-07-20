@@ -16,6 +16,7 @@ public class Music : MonoBehaviour
     private float timer;
     public bool isPlaying = false;
     public AudioSource BGSound;
+    public AudioSource[] FXSounds;
 
     public Sprite imgMainBGSound;
     public Sprite imgMainFXSound;
@@ -29,8 +30,12 @@ public class Music : MonoBehaviour
 
     private const int mute = 0;
     private const int dontMute = 1;
-    private int isMute;
-    private string keyString = "BGSoundMute";
+
+    private int isBGSoundMute;
+    private string BGKeyString = "BGSoundMute";
+
+    private int isFXSoundMute;
+    private string FXKeyString = "FXSoundMute";
 
     private void Awake()
     {
@@ -46,18 +51,42 @@ public class Music : MonoBehaviour
         //DontDestroyOnLoad(this);
 
         BGSound = GetComponent<AudioSource>();
-        isMute = PlayerPrefs.GetInt(keyString, dontMute);
-        if (isMute == mute)
+        isBGSoundMute = PlayerPrefs.GetInt(BGKeyString, dontMute);
+        if (isBGSoundMute == mute)
         {
             BGSound.mute = true;
             imgMainBGSound = imgMainBGSounds[0];
             imgPauseBGSound = imgPauseBGSounds[0];
         }
-        else if (isMute == dontMute)
+        else if (isBGSoundMute == dontMute)
         {
             BGSound.mute = false;
             imgMainBGSound = imgMainBGSounds[1];
             imgPauseBGSound = imgPauseBGSounds[1];
+        }
+        else
+        {
+            Debug.LogError("wrong mute number");
+        }
+
+        isFXSoundMute = PlayerPrefs.GetInt(FXKeyString, dontMute);
+        if (isFXSoundMute == mute)
+        {
+            for (int i = 0; i < FXSounds.Length; i++)
+            {
+                FXSounds[i].mute = true;
+            }
+            imgMainFXSound = imgMainFXSounds[0];
+            imgPauseFXSound = imgPauseFXSounds[0];
+        }
+        else if (isFXSoundMute == dontMute)
+        {
+            for (int i = 0; i < FXSounds.Length; i++)
+            {
+                FXSounds[i].mute = false;
+            }
+            imgMainFXSound = imgMainFXSounds[1];
+            imgPauseFXSound = imgPauseFXSounds[1];
         }
         else
         {
@@ -91,13 +120,33 @@ public class Music : MonoBehaviour
         {
             imgMainBGSound = imgMainBGSounds[0];
             imgPauseBGSound = imgPauseBGSounds[0];
-            PlayerPrefs.SetInt(keyString, mute);
+            PlayerPrefs.SetInt(BGKeyString, mute);
         }
         else
         {
             imgMainBGSound = imgMainBGSounds[1];
             imgPauseBGSound = imgPauseBGSounds[1];
-            PlayerPrefs.SetInt(keyString, dontMute);
+            PlayerPrefs.SetInt(BGKeyString, dontMute);
+        }
+    }
+
+    public void FXSoundMute()
+    {
+        for (int i = 0; i < FXSounds.Length; i++)
+        {
+            FXSounds[i].mute = !FXSounds[i].mute;
+        }
+        if (FXSounds[0].mute == true)
+        {
+            imgMainFXSound = imgMainFXSounds[0];
+            imgPauseFXSound = imgPauseFXSounds[0];
+            PlayerPrefs.SetInt(FXKeyString, mute);
+        }
+        else
+        {
+            imgMainFXSound = imgMainFXSounds[1];
+            imgPauseFXSound = imgPauseFXSounds[1];
+            PlayerPrefs.SetInt(FXKeyString, dontMute);
         }
     }
 }

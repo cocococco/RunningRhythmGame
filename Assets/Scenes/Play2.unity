@@ -181,6 +181,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 766530046}
   m_Script: {fileID: 11500000, guid: 397b30cfa2c28a24194bb7a241ba0f78, type: 3}
+--- !u!82 &196779856 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 82241055665673648, guid: 5dde85456ad09024785a9e3dbbb25c8b,
+    type: 2}
+  m_PrefabInternal: {fileID: 766530046}
 --- !u!1 &352121860
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,6 +248,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &455541620 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 82868492228053118, guid: 5dde85456ad09024785a9e3dbbb25c8b,
+    type: 2}
+  m_PrefabInternal: {fileID: 766530046}
 --- !u!114 &651076145 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114254643997557162, guid: c3d9cc352b121c149b36eeeb528c76ae,
@@ -303,6 +313,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dde85456ad09024785a9e3dbbb25c8b, type: 2}
   m_IsPrefabAsset: 0
+--- !u!82 &785032706 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 82192947337065272, guid: 5dde85456ad09024785a9e3dbbb25c8b,
+    type: 2}
+  m_PrefabInternal: {fileID: 766530046}
 --- !u!1001 &794918143
 Prefab:
   m_ObjectHideFlags: 0
@@ -351,6 +366,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1269406210}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!82 &931241941 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 82327087897350198, guid: e93b3f9b63bb37549b3fb1525ca41fc3,
+    type: 2}
+  m_PrefabInternal: {fileID: 794918143}
 --- !u!114 &983753779 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114160167570127080, guid: c3d9cc352b121c149b36eeeb528c76ae,
@@ -721,6 +741,26 @@ Prefab:
       propertyPath: totalText
       value: 
       objectReference: {fileID: 1835548223}
+    - target: {fileID: 114969906386983422, guid: 31ee74d22cbeec34ca7d56c674354a96,
+        type: 2}
+      propertyPath: FXSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 931241941}
+    - target: {fileID: 114969906386983422, guid: 31ee74d22cbeec34ca7d56c674354a96,
+        type: 2}
+      propertyPath: FXSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 785032706}
+    - target: {fileID: 114969906386983422, guid: 31ee74d22cbeec34ca7d56c674354a96,
+        type: 2}
+      propertyPath: FXSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 455541620}
+    - target: {fileID: 114969906386983422, guid: 31ee74d22cbeec34ca7d56c674354a96,
+        type: 2}
+      propertyPath: FXSounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 196779856}
     - target: {fileID: 114052960212567342, guid: 31ee74d22cbeec34ca7d56c674354a96,
         type: 2}
       propertyPath: distanceText

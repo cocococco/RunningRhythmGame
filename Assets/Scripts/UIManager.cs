@@ -46,6 +46,8 @@ public class UIManager : MonoBehaviour
         inst_Score = Score.GetInstance();
         imgMainBGSound.sprite = inst_Music.imgMainBGSound;
         imgPauseBGSound.sprite = inst_Music.imgPauseBGSound;
+        imgMainFXSound.sprite = inst_Music.imgMainFXSound;
+        imgPauseFXSound.sprite = inst_Music.imgPauseFXSound;
     }
 
     public void OnClickBGSoundButton()
@@ -57,9 +59,9 @@ public class UIManager : MonoBehaviour
 
     public void OnClickFXSoundButton()
     {
-        //inst_Music.BGSoundMute();
-        //imgMainFXSound.sprite = inst_Music.imgMainFXSound;
-        //imgPauseFXSound.sprite = inst_Music.imgPauseFXSound;
+        inst_Music.FXSoundMute();
+        imgMainFXSound.sprite = inst_Music.imgMainFXSound;
+        imgPauseFXSound.sprite = inst_Music.imgPauseFXSound;
     }
 
     public void GenerateGameOverScore()

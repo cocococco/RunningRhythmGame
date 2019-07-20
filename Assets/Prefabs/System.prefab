@@ -247,6 +247,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlaying: 0
   BGSound: {fileID: 82889658454970198}
+  FXSounds:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   imgMainBGSound: {fileID: 0}
   imgMainFXSound: {fileID: 0}
   imgPauseBGSound: {fileID: 0}
