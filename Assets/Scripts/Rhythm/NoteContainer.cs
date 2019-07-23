@@ -8,6 +8,9 @@ public class NoteContainer
     public float xPos { get; set; }
     public int typeNum { get; set; }
     public int pitchNum { get; set; }
+    public int barNum { get; set; }
+    public float beatNum { get; set; }
+    public int posNum { get; set; }
 
     private int beatInterval = 462; //한 박자 간격
     private int barInterval = 1848; //한 마디 간격
@@ -35,5 +38,8 @@ public class NoteContainer
         }
         this.typeNum = typeNum;
         this.pitchNum = pitchNum;
+        this.barNum = barNum;
+        this.beatNum = beatNum;
+        this.posNum = posNum;
     }
 }
