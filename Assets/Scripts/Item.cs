@@ -12,6 +12,7 @@ public class Item : MonoBehaviour
     protected ObjectPool inst_ObjectPool;
     protected string poolItemName = "Item";
     protected Transform playerTransform;
+    protected int interval = 2;
 
     private void Start()
     {
@@ -26,7 +27,7 @@ public class Item : MonoBehaviour
     {
         this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z - speed * Time.deltaTime);
 
-        if (this.transform.position.z < playerTransform.position.z)
+        if (this.transform.position.z < playerTransform.position.z - interval)
         {
             inst_ObjectPool.PushToPool(poolItemName, gameObject); // push to pool
         }

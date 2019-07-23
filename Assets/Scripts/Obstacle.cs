@@ -16,6 +16,7 @@ public class Obstacle : MonoBehaviour
 
     protected ObjectPool inst_ObjectPool;
     protected string poolItemName = "Obstacle";
+    protected int interval = 2;
 
     protected virtual void Start()
     {
@@ -30,18 +31,19 @@ public class Obstacle : MonoBehaviour
     {
         this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z - speed * Time.deltaTime);
 
-        if (this.transform.position.z > playerTransform.position.z) // reset
+        if (this.transform.position.z > playerTransform.position.z - interval) // reset
         {
             isGone = false;
         }
 
-        if (this.transform.position.z < playerTransform.position.z && isGone == false)
+        if (this.transform.position.z < playerTransform.position.z - interval && isGone == false)
         {
             inst_Score.RenewObstacleScore(obstacleScore);
             isGone = true;
             inst_ObjectPool.PushToPool(poolItemName, gameObject); // push to pool
         }
 
+        //cheat
         if (inst_SystemManager.canDamage == false)
         {
             gameObject.GetComponent<SphereCollider>().isTrigger = true;

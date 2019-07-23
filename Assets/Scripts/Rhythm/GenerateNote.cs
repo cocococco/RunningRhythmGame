@@ -43,8 +43,11 @@ public class GenerateNote : MonoBehaviour
                 GameObject beat = inst_ObjectPool.PopFromPool(beats[i].typeNum == 0 ? "Obstacle" : (beats[i].typeNum == 1 ? "Monster" : "Item"));
                 beat.transform.position = new Vector3(beats[i].xPos, 0, playerZPos + zPosInterval);
                 beat.SetActive(true);
-                Debug.Log(beats[i].barNum + " " + beats[i].beatNum + " " + beats[i].posNum + " " + beats[i].typeNum + " " + beats[i].pitchNum);
+
+                /* 버그 확인용 변수*/
+                //Debug.Log(beats[i].barNum + " " + beats[i].beatNum + " " + beats[i].posNum + " " + beats[i].typeNum + " " + beats[i].pitchNum);
                 //GameObject note = Instantiate(beats[i].typeNum == 0 ? obstacleNote : (beats[i].typeNum == 1 ? monsterNote : itemNote), new Vector3(beats[i].xPos, 0, playerZPos + zPosInterval), Quaternion.identity);
+
                 if (beats[i].typeNum == 1)
                 {
                     beat.GetComponent<Monster>().pitchNum = beats[i].pitchNum;

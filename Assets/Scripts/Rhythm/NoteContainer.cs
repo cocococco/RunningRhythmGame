@@ -8,6 +8,8 @@ public class NoteContainer
     public float xPos { get; set; }
     public int typeNum { get; set; }
     public int pitchNum { get; set; }
+
+    /* 버그 확인용 변수*/
     public int barNum { get; set; }
     public float beatNum { get; set; }
     public int posNum { get; set; }
