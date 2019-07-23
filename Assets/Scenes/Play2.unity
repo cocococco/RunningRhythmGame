@@ -1125,6 +1125,63 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1269406210}
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+--- !u!1001 &1893371514
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4878599792241778, guid: 2f4e86e944facbf4d9406a6dffdbf5ee, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 550.5742
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878599792241778, guid: 2f4e86e944facbf4d9406a6dffdbf5ee, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1027.8309
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878599792241778, guid: 2f4e86e944facbf4d9406a6dffdbf5ee, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -5.6250405
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878599792241778, guid: 2f4e86e944facbf4d9406a6dffdbf5ee, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878599792241778, guid: 2f4e86e944facbf4d9406a6dffdbf5ee, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878599792241778, guid: 2f4e86e944facbf4d9406a6dffdbf5ee, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878599792241778, guid: 2f4e86e944facbf4d9406a6dffdbf5ee, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878599792241778, guid: 2f4e86e944facbf4d9406a6dffdbf5ee, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114865830134211028, guid: 2f4e86e944facbf4d9406a6dffdbf5ee,
+        type: 2}
+      propertyPath: objectPool.Array.data[0].poolCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114865830134211028, guid: 2f4e86e944facbf4d9406a6dffdbf5ee,
+        type: 2}
+      propertyPath: objectPool.Array.data[1].poolCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114865830134211028, guid: 2f4e86e944facbf4d9406a6dffdbf5ee,
+        type: 2}
+      propertyPath: objectPool.Array.data[2].poolCount
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2f4e86e944facbf4d9406a6dffdbf5ee, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!114 &1951382843 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114630629450169474, guid: 31ee74d22cbeec34ca7d56c674354a96,

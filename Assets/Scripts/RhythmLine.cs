@@ -16,10 +16,13 @@ public class RhythmLine : MonoBehaviour
     public ParticleSystem touchFX;
     private AudioSource soundFXDie;
 
+    private ObjectPool inst_ObjectPool;
+
     private void Start()
     {
         inst_Score = Score.GetInstance();
         soundFXDie = GetComponent<AudioSource>();
+        inst_ObjectPool = ObjectPool.GetInstance();
     }
 
     private float getUpperZ(Transform transform, float radius)
@@ -84,13 +87,16 @@ public class RhythmLine : MonoBehaviour
                 soundFXDie.clip = targetMonster.GetComponent<Monster>().mySoundFXDie.clip;
                 soundFXDie.Play();
             }
-            Destroy(targetMonster.gameObject);
+            //Destroy(targetMonster.gameObject);
 
             if (monsterScore != 0 && monsterScoreTextString != "")
             {
                 inst_Score.RenewMonsterScore(monsterScore, monsterScoreTextString);
                 inst_Score.RenewComboScore();
                 Instantiate(touchFX, targetMonster.transform.position, Quaternion.identity);
+                inst_ObjectPool.PushToPool("Monster", targetMonster.gameObject);
+                canKill = false;
+                targetMonster = null;
             }
         }
     }
