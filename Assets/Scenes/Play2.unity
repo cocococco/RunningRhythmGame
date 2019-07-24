@@ -1046,6 +1046,11 @@ Prefab:
       propertyPath: gamePlayPanel
       value: 
       objectReference: {fileID: 17180200}
+    - target: {fileID: 82889658454970198, guid: 31ee74d22cbeec34ca7d56c674354a96,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: acc549516f37b1b40b1997f917915483, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31ee74d22cbeec34ca7d56c674354a96, type: 2}
   m_IsPrefabAsset: 0
