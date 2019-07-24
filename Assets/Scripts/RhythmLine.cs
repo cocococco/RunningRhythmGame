@@ -7,9 +7,6 @@ public class RhythmLine : MonoBehaviour
 {
     private Score inst_Score;
 
-    private bool canKill = false;
-    private GameObject targetMonster;
-
     private string monsterScoreTextString;
     private int monsterScore;
 
@@ -18,29 +15,24 @@ public class RhythmLine : MonoBehaviour
 
     private ObjectPool inst_ObjectPool;
 
+    private float excellentDistance = 0.9f;
+    private float goodDistance = 1.4f;
+    private List<GameObject> monsters = new List<GameObject>();
+    private float myPosZ;
+
     private void Start()
     {
         inst_Score = Score.GetInstance();
         soundFXDie = GetComponent<AudioSource>();
         inst_ObjectPool = ObjectPool.GetInstance();
-    }
-
-    private float getUpperZ(Transform transform, float radius)
-    {
-        return transform.position.z + radius;
-    }
-
-    private float getLowerZ(Transform transform, float radius)
-    {
-        return transform.position.z - radius;
+        myPosZ = this.transform.position.z;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Monster")
         {
-            canKill = true;
-            targetMonster = other.gameObject;
+            monsters.Add(other.gameObject);
         }
     }
 
@@ -48,56 +40,44 @@ public class RhythmLine : MonoBehaviour
     {
         if (other.gameObject.tag == "Monster")
         {
-            canKill = false;
-            targetMonster = null;
+            monsters.RemoveAt(0);
         }
     }
 
     public void OnClickMonsterButton()
     {
-        if (canKill && targetMonster != null)
+        if (monsters != null)
         {
-            float lineUpZ = getUpperZ(this.transform, this.transform.GetComponent<SphereCollider>().radius);
-            float lineLowZ = getLowerZ(this.transform, this.transform.GetComponent<SphereCollider>().radius);
-            float targetUpZ = getUpperZ(targetMonster.GetComponent<Transform>(), targetMonster.GetComponent<SphereCollider>().radius);
-            float targetLowZ = getLowerZ(targetMonster.GetComponent<Transform>(), targetMonster.GetComponent<SphereCollider>().radius);
-
-            if (lineUpZ >= targetUpZ && lineLowZ <= targetLowZ) // 이게 맨 밑에 있으면 제대로 체크 안되는 문제 나중에 확인해보기
+            float targetPosZ = monsters[0].transform.position.z;
+            if (targetPosZ < myPosZ + excellentDistance && targetPosZ > myPosZ - excellentDistance) // target이 excellent range 안에 있을 때
             {
-                monsterScoreTextString = "Excellent!!!";
+                monsterScoreTextString = "Excellent!!!!!!";
                 monsterScore = 500;
             }
-            else if ((lineUpZ > targetLowZ && lineLowZ < targetUpZ) || (lineLowZ < targetUpZ && lineUpZ > targetLowZ))
+            else if (targetPosZ < myPosZ + goodDistance && targetPosZ > myPosZ - goodDistance) // target이 excellent range 안에 있을 때
             {
-                monsterScoreTextString = "Good!!!";
+                monsterScoreTextString = "Good!!!!!!";
                 monsterScore = 300;
             }
-            else if ((lineUpZ <= targetLowZ && lineLowZ < targetUpZ) || (lineLowZ >= targetUpZ && lineUpZ > targetLowZ))
+            else // target이 excellent range 안에 있을 때
             {
-                monsterScoreTextString = "Bad!!!";
+                monsterScoreTextString = "Bad!!!!!!";
                 monsterScore = 100;
             }
-            else
-            {
-                Debug.LogError("monster is not in rhythm range");
-            }
             // 몬스터 죽을 때 각각 죽는 소리 재생
-            if (targetMonster.GetComponent<Monster>().mySoundFXDie != null)
+            if (monsters[0].GetComponent<Monster>().mySoundFXDie != null)
             {
-                soundFXDie.clip = targetMonster.GetComponent<Monster>().mySoundFXDie.clip;
+                soundFXDie.clip = monsters[0].GetComponent<Monster>().mySoundFXDie.clip;
                 soundFXDie.Play();
             }
-            //Destroy(targetMonster.gameObject);
-
             if (monsterScore != 0 && monsterScoreTextString != "")
             {
                 inst_Score.RenewMonsterScore(monsterScore, monsterScoreTextString);
                 inst_Score.RenewComboScore();
-                Instantiate(touchFX, targetMonster.transform.position, Quaternion.identity);
-                inst_ObjectPool.PushToPool("Monster", targetMonster.gameObject);
-                canKill = false;
-                targetMonster = null;
+                Instantiate(touchFX, monsters[0].transform.position, Quaternion.identity);
+                inst_ObjectPool.PushToPool("Monster", monsters[0].gameObject);
             }
-        }
+            monsters.RemoveAt(0);
+        } // if end
     }
 }

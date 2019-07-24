@@ -37,7 +37,6 @@ GameObject:
   - component: {fileID: 33917535062510820}
   - component: {fileID: 23801839244171462}
   - component: {fileID: 65291035726055266}
-  - component: {fileID: 135088843668213038}
   - component: {fileID: 114599160731361060}
   - component: {fileID: 82192947337065272}
   m_Layer: 12
@@ -58,7 +57,6 @@ GameObject:
   - component: {fileID: 33511291072407640}
   - component: {fileID: 23621793930064682}
   - component: {fileID: 65316446990489550}
-  - component: {fileID: 135264740576050146}
   - component: {fileID: 114981686103093994}
   - component: {fileID: 82241055665673648}
   m_Layer: 12
@@ -94,7 +92,6 @@ GameObject:
   - component: {fileID: 33091085740813558}
   - component: {fileID: 23052577462679340}
   - component: {fileID: 65092102826054830}
-  - component: {fileID: 135005325662332960}
   - component: {fileID: 114283875968073112}
   - component: {fileID: 82868492228053118}
   m_Layer: 12
@@ -744,39 +741,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   touchFX: {fileID: 198610435964796724, guid: 620150a0806fc4c479a2e784a6af5873, type: 2}
---- !u!135 &135005325662332960
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1545948166206424}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.4
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &135088843668213038
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1109463037298206}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.4
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &135264740576050146
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1169317618132876}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.4
-  m_Center: {x: 0, y: 0, z: 0}
