@@ -33,6 +33,7 @@ public class RhythmLine : MonoBehaviour
         if (other.gameObject.tag == "Monster")
         {
             monsters.Add(other.gameObject);
+            Debug.Log("monster count : " + monsters.Count);
         }
     }
 
@@ -46,7 +47,7 @@ public class RhythmLine : MonoBehaviour
 
     public void OnClickMonsterButton()
     {
-        if (monsters != null)
+        if (monsters.Count > 0)
         {
             float targetPosZ = monsters[0].transform.position.z;
             if (targetPosZ < myPosZ + excellentDistance && targetPosZ > myPosZ - excellentDistance) // target이 excellent range 안에 있을 때
