@@ -40,6 +40,7 @@ public class GenerateNote : MonoBehaviour
         {
             if (beats[i].time <= inst_music.time)
             {
+                // pop from pool
                 GameObject beat = inst_ObjectPool.PopFromPool(beats[i].typeNum == 0 ? "Obstacle" : (beats[i].typeNum == 1 ? "Monster" : "Item"));
                 beat.transform.position = new Vector3(beats[i].xPos, 0, playerZPos + zPosInterval);
                 beat.SetActive(true);

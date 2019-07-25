@@ -54,13 +54,13 @@ MonoBehaviour:
   objectPool:
   - poolItemName: Obstacle
     prefab: {fileID: 1072333490596676, guid: 5e9fa25a9c6b3dd4294ee8bd8dfcb328, type: 2}
-    poolCount: 20
+    poolCount: 10
     poolList: []
   - poolItemName: Monster
     prefab: {fileID: 1955975458565448, guid: 572a29f818ef95c4186c12e2ae4733af, type: 2}
-    poolCount: 20
+    poolCount: 15
     poolList: []
   - poolItemName: Item
     prefab: {fileID: 1899442897645814, guid: cc5622d60993e5548a78d35a3677dc0b, type: 2}
-    poolCount: 5
+    poolCount: 6
     poolList: []

@@ -357,6 +357,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1021365426662184, guid: e93b3f9b63bb37549b3fb1525ca41fc3, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e93b3f9b63bb37549b3fb1525ca41fc3, type: 2}
   m_IsPrefabAsset: 0
@@ -421,6 +425,10 @@ Prefab:
     - target: {fileID: 4196695163813306, guid: b4efb3832173a1b4296cd25ac866bb1c, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1978436789422912, guid: b4efb3832173a1b4296cd25ac866bb1c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4efb3832173a1b4296cd25ac866bb1c, type: 2}
@@ -921,6 +929,81 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114052960212567342, guid: 31ee74d22cbeec34ca7d56c674354a96,
+        type: 2}
+      propertyPath: distanceText
+      value: 
+      objectReference: {fileID: 17180198}
+    - target: {fileID: 114052960212567342, guid: 31ee74d22cbeec34ca7d56c674354a96,
+        type: 2}
+      propertyPath: monsterScoreText
+      value: 
+      objectReference: {fileID: 17180197}
+    - target: {fileID: 114052960212567342, guid: 31ee74d22cbeec34ca7d56c674354a96,
+        type: 2}
+      propertyPath: monsterScoreGradeText
+      value: 
+      objectReference: {fileID: 1843072651}
+    - target: {fileID: 114052960212567342, guid: 31ee74d22cbeec34ca7d56c674354a96,
+        type: 2}
+      propertyPath: comboCountText
+      value: 
+      objectReference: {fileID: 17180196}
+    - target: {fileID: 114052960212567342, guid: 31ee74d22cbeec34ca7d56c674354a96,
+        type: 2}
+      propertyPath: totalObstacleScoreText
+      value: 
+      objectReference: {fileID: 651076145}
+    - target: {fileID: 114052960212567342, guid: 31ee74d22cbeec34ca7d56c674354a96,
+        type: 2}
+      propertyPath: itemScoreText
+      value: 
+      objectReference: {fileID: 1268398028}
+    - target: {fileID: 114052960212567342, guid: 31ee74d22cbeec34ca7d56c674354a96,
+        type: 2}
+      propertyPath: totalScoreText
+      value: 
+      objectReference: {fileID: 17180199}
+    - target: {fileID: 114969906386983422, guid: 31ee74d22cbeec34ca7d56c674354a96,
+        type: 2}
+      propertyPath: FXSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 931241941}
+    - target: {fileID: 114969906386983422, guid: 31ee74d22cbeec34ca7d56c674354a96,
+        type: 2}
+      propertyPath: FXSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 785032706}
+    - target: {fileID: 114969906386983422, guid: 31ee74d22cbeec34ca7d56c674354a96,
+        type: 2}
+      propertyPath: FXSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 455541620}
+    - target: {fileID: 114969906386983422, guid: 31ee74d22cbeec34ca7d56c674354a96,
+        type: 2}
+      propertyPath: FXSounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 196779856}
+    - target: {fileID: 114859307313331970, guid: 31ee74d22cbeec34ca7d56c674354a96,
+        type: 2}
+      propertyPath: gameOverPanel
+      value: 
+      objectReference: {fileID: 17180193}
+    - target: {fileID: 114859307313331970, guid: 31ee74d22cbeec34ca7d56c674354a96,
+        type: 2}
+      propertyPath: gamePausePanel
+      value: 
+      objectReference: {fileID: 17180192}
+    - target: {fileID: 114859307313331970, guid: 31ee74d22cbeec34ca7d56c674354a96,
+        type: 2}
+      propertyPath: gameMainPanel
+      value: 
+      objectReference: {fileID: 17180194}
+    - target: {fileID: 114859307313331970, guid: 31ee74d22cbeec34ca7d56c674354a96,
+        type: 2}
+      propertyPath: gamePlayPanel
+      value: 
+      objectReference: {fileID: 17180200}
     - target: {fileID: 114630629450169474, guid: 31ee74d22cbeec34ca7d56c674354a96,
         type: 2}
       propertyPath: imgMainBGSound
@@ -971,86 +1054,6 @@ Prefab:
       propertyPath: totalText
       value: 
       objectReference: {fileID: 1835548223}
-    - target: {fileID: 114969906386983422, guid: 31ee74d22cbeec34ca7d56c674354a96,
-        type: 2}
-      propertyPath: FXSounds.Array.data[0]
-      value: 
-      objectReference: {fileID: 931241941}
-    - target: {fileID: 114969906386983422, guid: 31ee74d22cbeec34ca7d56c674354a96,
-        type: 2}
-      propertyPath: FXSounds.Array.data[1]
-      value: 
-      objectReference: {fileID: 785032706}
-    - target: {fileID: 114969906386983422, guid: 31ee74d22cbeec34ca7d56c674354a96,
-        type: 2}
-      propertyPath: FXSounds.Array.data[2]
-      value: 
-      objectReference: {fileID: 455541620}
-    - target: {fileID: 114969906386983422, guid: 31ee74d22cbeec34ca7d56c674354a96,
-        type: 2}
-      propertyPath: FXSounds.Array.data[3]
-      value: 
-      objectReference: {fileID: 196779856}
-    - target: {fileID: 114052960212567342, guid: 31ee74d22cbeec34ca7d56c674354a96,
-        type: 2}
-      propertyPath: distanceText
-      value: 
-      objectReference: {fileID: 17180198}
-    - target: {fileID: 114052960212567342, guid: 31ee74d22cbeec34ca7d56c674354a96,
-        type: 2}
-      propertyPath: monsterScoreText
-      value: 
-      objectReference: {fileID: 17180197}
-    - target: {fileID: 114052960212567342, guid: 31ee74d22cbeec34ca7d56c674354a96,
-        type: 2}
-      propertyPath: monsterScoreGradeText
-      value: 
-      objectReference: {fileID: 1843072651}
-    - target: {fileID: 114052960212567342, guid: 31ee74d22cbeec34ca7d56c674354a96,
-        type: 2}
-      propertyPath: comboCountText
-      value: 
-      objectReference: {fileID: 17180196}
-    - target: {fileID: 114052960212567342, guid: 31ee74d22cbeec34ca7d56c674354a96,
-        type: 2}
-      propertyPath: totalObstacleScoreText
-      value: 
-      objectReference: {fileID: 651076145}
-    - target: {fileID: 114052960212567342, guid: 31ee74d22cbeec34ca7d56c674354a96,
-        type: 2}
-      propertyPath: itemScoreText
-      value: 
-      objectReference: {fileID: 1268398028}
-    - target: {fileID: 114052960212567342, guid: 31ee74d22cbeec34ca7d56c674354a96,
-        type: 2}
-      propertyPath: totalScoreText
-      value: 
-      objectReference: {fileID: 17180199}
-    - target: {fileID: 114859307313331970, guid: 31ee74d22cbeec34ca7d56c674354a96,
-        type: 2}
-      propertyPath: gameOverPanel
-      value: 
-      objectReference: {fileID: 17180193}
-    - target: {fileID: 114859307313331970, guid: 31ee74d22cbeec34ca7d56c674354a96,
-        type: 2}
-      propertyPath: gamePausePanel
-      value: 
-      objectReference: {fileID: 17180192}
-    - target: {fileID: 114859307313331970, guid: 31ee74d22cbeec34ca7d56c674354a96,
-        type: 2}
-      propertyPath: gameMainPanel
-      value: 
-      objectReference: {fileID: 17180194}
-    - target: {fileID: 114859307313331970, guid: 31ee74d22cbeec34ca7d56c674354a96,
-        type: 2}
-      propertyPath: gamePlayPanel
-      value: 
-      objectReference: {fileID: 17180200}
-    - target: {fileID: 82889658454970198, guid: 31ee74d22cbeec34ca7d56c674354a96,
-        type: 2}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: acc549516f37b1b40b1997f917915483, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31ee74d22cbeec34ca7d56c674354a96, type: 2}
   m_IsPrefabAsset: 0
@@ -1168,21 +1171,6 @@ Prefab:
     - target: {fileID: 4878599792241778, guid: 2f4e86e944facbf4d9406a6dffdbf5ee, type: 2}
       propertyPath: m_RootOrder
       value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 114865830134211028, guid: 2f4e86e944facbf4d9406a6dffdbf5ee,
-        type: 2}
-      propertyPath: objectPool.Array.data[0].poolCount
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114865830134211028, guid: 2f4e86e944facbf4d9406a6dffdbf5ee,
-        type: 2}
-      propertyPath: objectPool.Array.data[1].poolCount
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114865830134211028, guid: 2f4e86e944facbf4d9406a6dffdbf5ee,
-        type: 2}
-      propertyPath: objectPool.Array.data[2].poolCount
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f4e86e944facbf4d9406a6dffdbf5ee, type: 2}
