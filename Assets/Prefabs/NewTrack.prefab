@@ -1207,7 +1207,6 @@ GameObject:
   - component: {fileID: 33167170536758384}
   - component: {fileID: 23613806950165930}
   - component: {fileID: 65436412465324472}
-  - component: {fileID: 65041228175239442}
   - component: {fileID: 114450046884418930}
   m_Layer: 0
   m_Name: NewTrack
@@ -4635,18 +4634,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!65 &65041228175239442
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1978436789422912}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 5, z: 1}
-  m_Center: {x: 0, y: 0, z: 0.05}
 --- !u!65 &65436412465324472
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -5056,6 +5043,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb90ba84aaa9f7c4ca31f767c7b03f5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundFXDie:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114307605115210246
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5089,6 +5091,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb90ba84aaa9f7c4ca31f767c7b03f5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundFXDie:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114428192315891244
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5188,6 +5205,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb90ba84aaa9f7c4ca31f767c7b03f5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundFXDie:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114662109759796852
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5199,6 +5231,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb90ba84aaa9f7c4ca31f767c7b03f5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundFXDie:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114696043881124662
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5221,6 +5268,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb90ba84aaa9f7c4ca31f767c7b03f5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundFXDie:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114727850501080824
 MonoBehaviour:
   m_ObjectHideFlags: 1
