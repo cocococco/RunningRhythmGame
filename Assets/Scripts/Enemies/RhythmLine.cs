@@ -10,7 +10,6 @@ public class RhythmLine : MonoBehaviour
     private string monsterScoreTextString;
     private int monsterScore;
 
-    public ParticleSystem touchFX;
     private AudioSource soundFXDie;
 
     private ObjectPool inst_ObjectPool;
@@ -55,12 +54,12 @@ public class RhythmLine : MonoBehaviour
                 monsterScoreTextString = "Excellent!!!!!!";
                 monsterScore = 500;
             }
-            else if (targetPosZ < myPosZ + goodDistance && targetPosZ > myPosZ - goodDistance) // target이 excellent range 안에 있을 때
+            else if (targetPosZ < myPosZ + goodDistance && targetPosZ > myPosZ - goodDistance) // target이 good range 안에 있을 때
             {
                 monsterScoreTextString = "Good!!!!!!";
                 monsterScore = 300;
             }
-            else // target이 excellent range 안에 있을 때
+            else // target이 bad range 안에 있을 때
             {
                 monsterScoreTextString = "Bad!!!!!!";
                 monsterScore = 100;
@@ -75,7 +74,9 @@ public class RhythmLine : MonoBehaviour
             {
                 inst_Score.RenewMonsterScore(monsterScore, monsterScoreTextString);
                 inst_Score.RenewComboScore();
-                Instantiate(touchFX, monsters[0].transform.position, Quaternion.identity);
+                GameObject item = inst_ObjectPool.PopFromPool("MonsterDieFX");
+                item.transform.position = monsters[0].transform.position;
+                item.SetActive(true);
                 inst_ObjectPool.PushToPool("Monster", monsters[0].gameObject);
             }
             monsters.RemoveAt(0);
