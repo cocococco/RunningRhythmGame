@@ -42,25 +42,11 @@ public class Obstacle : MonoBehaviour
             isGone = true;
             inst_ObjectPool.PushToPool(poolItemName, gameObject); // push to pool
         }
-
-        //cheat
-        if (inst_SystemManager.canDamage == false)
-        {
-            gameObject.GetComponent<SphereCollider>().isTrigger = true;
-            gameObject.GetComponent<Rigidbody>().isKinematic = true;
-        }
-        else
-        {
-            gameObject.GetComponent<SphereCollider>().isTrigger = false;
-            gameObject.GetComponent<Rigidbody>().isKinematic = false;
-        }
     }
 
     protected void OnCollisionEnter(Collision collision)
     {
-        //만약 아이템 사용을 안했다면 -> 충돌 가능
-
-        if (collision.gameObject.tag == "Player" && inst_SystemManager.canDamage)
+        if (collision.gameObject.tag == "Player")
         {
             inst_SystemManager.GameOver();
         }

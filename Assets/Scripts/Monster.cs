@@ -38,17 +38,5 @@ public class Monster : Obstacle
             isGone = true;
             inst_ObjectPool.PushToPool(poolItemName, gameObject); // push to pool
         }
-
-        //cheat
-        if (inst_SystemManager.canDamage == false)
-        {
-            gameObject.GetComponent<SphereCollider>().isTrigger = true;
-            gameObject.GetComponent<Rigidbody>().isKinematic = true;
-        }
-        else
-        {
-            gameObject.GetComponent<SphereCollider>().isTrigger = false;
-            gameObject.GetComponent<Rigidbody>().isKinematic = false;
-        }
     }
 }

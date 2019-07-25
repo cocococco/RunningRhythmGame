@@ -415,6 +415,16 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 136693998139759518, guid: e93b3f9b63bb37549b3fb1525ca41fc3,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 54163489061599138, guid: e93b3f9b63bb37549b3fb1525ca41fc3,
+        type: 2}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e93b3f9b63bb37549b3fb1525ca41fc3, type: 2}
   m_IsPrefabAsset: 0
@@ -631,7 +641,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1693317169}
+      objectReference: {fileID: 1483477504}
     - target: {fileID: 114405687250068242, guid: c3d9cc352b121c149b36eeeb528c76ae,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -930,6 +940,16 @@ Prefab:
         type: 2}
       propertyPath: m_SizeDelta.y
       value: 38
+      objectReference: {fileID: 0}
+    - target: {fileID: 114627648437240320, guid: c3d9cc352b121c149b36eeeb528c76ae,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114081274426345470, guid: c3d9cc352b121c149b36eeeb528c76ae,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwitchIgnoreCollisions
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3d9cc352b121c149b36eeeb528c76ae, type: 2}

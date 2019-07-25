@@ -26,8 +26,6 @@ public class SystemManager : MonoBehaviour
     private Music inst_music;
     private UIManager inst_UIManager;
 
-    public bool canDamage = true;
-
     private void Awake()
     {
         if (instance == null)
@@ -76,10 +74,6 @@ public class SystemManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S))
         {
             OnClickPauseButtonOff();
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            canDamage = !canDamage;
         }
     }
 

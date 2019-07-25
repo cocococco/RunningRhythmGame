@@ -12,11 +12,24 @@ public class Player : MonoBehaviour
 
     private AudioSource footStepSound;
 
+    private Rigidbody myRigidbody;
+    private CapsuleCollider myCollider;
+
     private void Start()
     {
         footStepSound = GetComponent<AudioSource>();
         footStepSound.Play();
         footStepSound.loop = true;
+        myRigidbody = GetComponent<Rigidbody>();
+        myCollider = GetComponent<CapsuleCollider>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            SwitchIgnoreCollisions();
+        }
     }
 
     public void OnClickTrackButton1()
@@ -32,5 +45,11 @@ public class Player : MonoBehaviour
     public void OnClickTrackButton3()
     {
         this.transform.DOMoveX(posX3, speed);
+    }
+
+    public void SwitchIgnoreCollisions()
+    {
+        myRigidbody.isKinematic = !myRigidbody.isKinematic;
+        myCollider.isTrigger = !myCollider.isTrigger;
     }
 }
