@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4584681348984556}
   - component: {fileID: 33486181071111308}
   - component: {fileID: 23185847581910762}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: monster g
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4584015894053882}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MonsterG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 54274244283878804}
   - component: {fileID: 114106666073668784}
   - component: {fileID: 82283942658056238}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: MonsterG
   m_TagString: Monster
   m_Icon: {fileID: 0}

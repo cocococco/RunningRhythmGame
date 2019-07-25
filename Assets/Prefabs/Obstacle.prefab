@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 135118734293433922}
   - component: {fileID: 54438124890481188}
   - component: {fileID: 114626414057569836}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4472500367884362}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Log
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 33544638815710882}
   - component: {fileID: 23310484522676264}
   - component: {fileID: 95704344878045138}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: log
   m_TagString: Untagged
   m_Icon: {fileID: 0}
