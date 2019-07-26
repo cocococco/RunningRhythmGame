@@ -2,40 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item : MonoBehaviour
+public class Item : TrackObjects
 {
-    private float speed;
-
-    protected Score inst_Score;
     protected int itemScore = 1000;
 
-    protected ObjectPool inst_ObjectPool;
-    protected string poolItemName = "Item";
-    protected Transform playerTransform;
-    protected int interval = 2;
-
-    private void Start()
+    private new void Start()
     {
-        inst_Score = Score.GetInstance();
-        inst_ObjectPool = ObjectPool.GetInstance();
-        speed = Track.speed;
-        playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        base.Start();
+        poolItemName = "Item";
     }
 
-    // 쓰는 애들 다 묶어서 구현하면 좋을 듯
-    private void Update()
+    protected override void Reset()
     {
-        this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z - speed * Time.deltaTime);
-
         if (this.transform.position.z < playerTransform.position.z - interval)
         {
             inst_ObjectPool.PushToPool(poolItemName, gameObject); // push to pool
         }
     }
 
-    protected void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.GetComponent<Player>())
+        if (collision.gameObject.CompareTag("Player") == true)
         {
             inst_Score.RenewItemScore(itemScore);
             inst_ObjectPool.PushToPool(poolItemName, this.gameObject);

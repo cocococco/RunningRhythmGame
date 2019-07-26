@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Monster : Obstacle
+public class Monster : TrackObjects
 {
     public int pitchNum { get; set; }
 
     public AudioClip[] soundFXDie = new AudioClip[14];
 
     public AudioSource mySoundFXDie { get; set; }
+    private bool isGone = false;
 
-    protected override void Start()
+    private new void Start()
     {
         base.Start();
         mySoundFXDie = GetComponent<AudioSource>();
@@ -23,10 +24,8 @@ public class Monster : Obstacle
         poolItemName = "Monster";
     }
 
-    protected override void Update()
+    protected override void Reset()
     {
-        this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z - speed * Time.deltaTime);
-
         if (this.transform.position.z > playerTransform.position.z - interval) // reset
         {
             isGone = false;
@@ -37,6 +36,14 @@ public class Monster : Obstacle
             inst_Score.comboCount = 0;
             isGone = true;
             inst_ObjectPool.PushToPool(poolItemName, gameObject); // push to pool
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            inst_SystemManager.GameOver();
         }
     }
 }

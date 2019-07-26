@@ -2,35 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Obstacle : MonoBehaviour
+public class Obstacle : TrackObjects
 {
-    protected SystemManager inst_SystemManager;
-
-    protected float speed;
-
-    protected Transform playerTransform;
-
-    protected Score inst_Score;
     private int obstacleScore = 200;
-    protected bool isGone = false;
+    private bool isGone = false;
 
-    protected ObjectPool inst_ObjectPool;
-    protected string poolItemName = "Obstacle";
-    protected int interval = 2;
-
-    protected virtual void Start()
+    private new void Start()
     {
-        inst_SystemManager = SystemManager.GetInstance();
-        inst_Score = Score.GetInstance();
-        inst_ObjectPool = ObjectPool.GetInstance();
-        speed = Track.speed;
-        playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        base.Start();
+        poolItemName = "Obstacle";
     }
 
-    protected virtual void Update()
+    protected override void Reset()
     {
-        this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z - speed * Time.deltaTime);
-
         if (this.transform.position.z > playerTransform.position.z - interval) // reset
         {
             isGone = false;
@@ -44,9 +28,9 @@ public class Obstacle : MonoBehaviour
         }
     }
 
-    protected void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
             inst_SystemManager.GameOver();
         }
