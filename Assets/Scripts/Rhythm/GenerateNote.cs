@@ -8,9 +8,6 @@ public class GenerateNote : MonoBehaviour
     private int i = 0;
     private Music inst_music;
 
-    //public GameObject obstacleNote;
-    //public GameObject monsterNote;
-    //public GameObject itemNote;
     private float playerZPos;
 
     private float zPosInterval = 50;
@@ -20,7 +17,6 @@ public class GenerateNote : MonoBehaviour
     private void Awake()
     {
         playerZPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position.z;
-        //ReadFile read = new ReadFile();
     }
 
     private void Start()
@@ -44,10 +40,6 @@ public class GenerateNote : MonoBehaviour
                 GameObject beat = inst_ObjectPool.PopFromPool(beats[i].typeNum == 0 ? "Obstacle" : (beats[i].typeNum == 1 ? "Monster" : "Item"));
                 beat.transform.position = new Vector3(beats[i].xPos, beats[i].typeNum == 1 ? 1 : 0, playerZPos + zPosInterval);
                 beat.SetActive(true);
-
-                /* 버그 확인용 변수*/
-                //Debug.Log(beats[i].barNum + " " + beats[i].beatNum + " " + beats[i].posNum + " " + beats[i].typeNum + " " + beats[i].pitchNum);
-                //GameObject note = Instantiate(beats[i].typeNum == 0 ? obstacleNote : (beats[i].typeNum == 1 ? monsterNote : itemNote), new Vector3(beats[i].xPos, 0, playerZPos + zPosInterval), Quaternion.identity);
 
                 if (beats[i].typeNum == 1)
                 {

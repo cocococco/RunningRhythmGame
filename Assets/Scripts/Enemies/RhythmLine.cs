@@ -29,7 +29,7 @@ public class RhythmLine : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Monster")
+        if (other.gameObject.CompareTag("Monster"))
         {
             monsters.Add(other.gameObject);
             Debug.Log("monster count : " + monsters.Count);
@@ -38,7 +38,7 @@ public class RhythmLine : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Monster")
+        if (other.gameObject.CompareTag("Monster"))
         {
             monsters.RemoveAt(0);
         }
@@ -64,10 +64,11 @@ public class RhythmLine : MonoBehaviour
                 monsterScoreTextString = "Bad!!!!!!";
                 monsterScore = 100;
             }
-            // 몬스터 죽을 때 각각 죽는 소리 재생
-            if (monsters[0].GetComponent<Monster>().mySoundFXDie != null)
+
+            AudioSource sound = monsters[0].GetComponent<Monster>().mySoundFXDie;
+            if (sound != null)
             {
-                soundFXDie.clip = monsters[0].GetComponent<Monster>().mySoundFXDie.clip;
+                soundFXDie.clip = sound.clip;
                 soundFXDie.Play();
             }
             if (monsterScore != 0 && monsterScoreTextString != "")
