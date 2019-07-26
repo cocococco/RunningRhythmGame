@@ -44,6 +44,15 @@ public class Score : MonoBehaviour
 
     private SystemManager inst_SystemManager;
 
+    private float monsterTextTimer = 0;
+    private float monsterVanishDuration = 1;
+    private float obstacleTextTimer = 0;
+    private float obstacleVanishDuration = 0.5f;
+    private float itemTextTimer = 0;
+    private float itemVanishDuration = 1;
+    private float comboTextTimer = 0;
+    private float comboVanishDuration = 1;
+
     private void Awake()
     {
         if (instance == null)
@@ -69,39 +78,12 @@ public class Score : MonoBehaviour
         comboCountText.text = "";
     }
 
-    public void RenewMonsterScore(int score, string gradeText)
+    private void Update()
     {
-        monsterScore = score;
-        totalMonsterScore += score;
-        monsterScoreText.text = "+" + monsterScore.ToString();
-        monsterScoreGradeText.text = gradeText;
-        StartCoroutine(TextVanish(monsterScoreText));
-        StartCoroutine(TextVanish(monsterScoreGradeText));
-    }
-
-    public void RenewObstacleScore(int score)
-    {
-        totalObstacleScore += score;
-        totalObstacleScoreText.text = "Obstacle +" + totalObstacleScore.ToString();
-        //StartCoroutine(TextVanish(totalObstacleScoreText)); // 너무 빨라서 사라지게 안함
-    }
-
-    public void RenewItemScore(int score)
-    {
-        itemScore = score;
-        totalItemScore += itemScore;
-        itemScoreText.text = "Item +" + itemScore.ToString();
-        StartCoroutine(TextVanish(itemScoreText));
-    }
-
-    public void RenewComboScore()
-    {
-        comboCount++;
-        comboCountText.text = comboCount.ToString() + " COMBO";
-        StartCoroutine(TextVanish(comboCountText));
-        if (comboCount > 10)
+        if (inst_SystemManager.isGamePlaying == true)
         {
-            //추가 구현
+            SyncScore();
+            TextVanish();
         }
     }
 
@@ -123,17 +105,69 @@ public class Score : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void TextVanish()
     {
-        if (inst_SystemManager.isGamePlaying == true)
+        monsterTextTimer += Time.deltaTime;
+        obstacleTextTimer += Time.deltaTime;
+        itemTextTimer += Time.deltaTime;
+        comboTextTimer += Time.deltaTime;
+
+        if (monsterTextTimer > monsterVanishDuration)
         {
-            SyncScore();
+            monsterScoreText.text = "";
+            monsterScoreGradeText.text = "";
+        }
+        if (obstacleTextTimer > obstacleVanishDuration)
+        {
+            totalObstacleScoreText.text = "";
+        }
+        if (itemTextTimer > itemVanishDuration)
+        {
+            itemScoreText.text = "";
+        }
+        if (comboTextTimer > comboVanishDuration)
+        {
+            comboCountText.text = "";
         }
     }
 
-    private IEnumerator TextVanish(Text text)
+    public void RenewMonsterScore(int score, string gradeText)
     {
-        yield return new WaitForSeconds(1);
-        text.text = "";
+        monsterTextTimer = 0;
+        monsterScore = score;
+        totalMonsterScore += score;
+        monsterScoreText.text = "+" + monsterScore.ToString();
+        monsterScoreGradeText.text = gradeText;
+        //StartCoroutine(TextVanish(monsterScoreText));
+        //StartCoroutine(TextVanish(monsterScoreGradeText));
+    }
+
+    public void RenewObstacleScore(int score)
+    {
+        obstacleTextTimer = 0;
+        totalObstacleScore += score;
+        totalObstacleScoreText.text = "Obstacle +" + totalObstacleScore.ToString();
+        //StartCoroutine(TextVanish(totalObstacleScoreText)); // 너무 빨라서 사라지게 안함
+    }
+
+    public void RenewItemScore(int score)
+    {
+        itemTextTimer = 0;
+        itemScore = score;
+        totalItemScore += itemScore;
+        itemScoreText.text = "Item +" + itemScore.ToString();
+        //StartCoroutine(TextVanish(itemScoreText));
+    }
+
+    public void RenewComboScore()
+    {
+        comboTextTimer = 0;
+        comboCount++;
+        comboCountText.text = comboCount.ToString() + " COMBO";
+        //StartCoroutine(TextVanish(comboCountText));
+        if (comboCount > 10)
+        {
+            //추가 구현
+        }
     }
 }
