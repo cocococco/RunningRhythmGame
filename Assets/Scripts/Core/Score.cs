@@ -40,7 +40,7 @@ public class Score : MonoBehaviour
     public TextMeshProUGUI totalScoreText;
 
     public int highScore;
-    private string keyString = "HighScore";
+    private const string keyString = "HighScore";
 
     private SystemManager inst_SystemManager;
 
