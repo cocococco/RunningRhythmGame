@@ -42,7 +42,7 @@ public class GenerateNote : MonoBehaviour
             {
                 // pop from pool
                 GameObject beat = inst_ObjectPool.PopFromPool(beats[i].typeNum == 0 ? "Obstacle" : (beats[i].typeNum == 1 ? "Monster" : "Item"));
-                beat.transform.position = new Vector3(beats[i].xPos, 0, playerZPos + zPosInterval);
+                beat.transform.position = new Vector3(beats[i].xPos, beats[i].typeNum == 1 ? 1 : 0, playerZPos + zPosInterval);
                 beat.SetActive(true);
 
                 /* 버그 확인용 변수*/
