@@ -66,5 +66,5 @@ MonoBehaviour:
     poolList: []
   - poolItemName: MonsterDieFX
     prefab: {fileID: 1720348956290346, guid: 620150a0806fc4c479a2e784a6af5873, type: 2}
-    poolCount: 5
+    poolCount: 10
     poolList: []
