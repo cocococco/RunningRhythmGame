@@ -10,12 +10,20 @@ public class ParticleAutoDie : MonoBehaviour
     private void Start()
     {
         inst_ObjectPool = ObjectPool.GetInstance();
-        StartCoroutine(Deactivate());
     }
 
-    private IEnumerator Deactivate()
+    private void Update()
+    {
+        if (gameObject.activeInHierarchy)
+        {
+            StartCoroutine(Deactivate());
+        }
+    }
+
+    public IEnumerator Deactivate()
     {
         yield return new WaitForSeconds(1);
+        Debug.Log("vanish monster die fx");
         inst_ObjectPool.PushToPool(poolItemName, this.gameObject);
     }
 }
