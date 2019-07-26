@@ -38,7 +38,7 @@ public class Item : MonoBehaviour
         if (collision.gameObject.GetComponent<Player>())
         {
             inst_Score.RenewItemScore(itemScore);
-            Destroy(this.gameObject);
+            inst_ObjectPool.PushToPool(poolItemName, this.gameObject);
             // 이펙트 추가하기
         }
     }
