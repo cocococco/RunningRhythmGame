@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    protected Score inst_Score;
-
-    protected int itemScore;
-
     private float speed;
+
+    protected Score inst_Score;
+    protected int itemScore = 1000;
 
     private void Start()
     {
-        itemScore = 0;
         inst_Score = Score.GetInstance();
         speed = Track.speed;
     }
@@ -27,18 +25,9 @@ public class Item : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<Player>())
         {
-            itemScore = 1000;
-            inst_Score.itemScore = itemScore;
+            inst_Score.RenewItemScore(itemScore);
             Destroy(this.gameObject);
-        }
-        itemScore = 0;
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.GetComponent<Player>())
-        {
-            itemScore = 0;
+            // 이펙트 추가하기
         }
     }
 }

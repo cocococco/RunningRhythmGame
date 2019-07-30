@@ -325,7 +325,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0162abff486b39f41859766135135f6c, type: 3}
   - {fileID: 8300000, guid: 81857b2f29c3ad4498ced873dcf77437, type: 3}
   - {fileID: 8300000, guid: 615ca73fd7982a647b279c87d01e4263, type: 3}
-  mySoundFXDie: {fileID: 82283942658056238}
 --- !u!135 &135340491238252032
 SphereCollider:
   m_ObjectHideFlags: 1

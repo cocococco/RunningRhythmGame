@@ -5,16 +5,14 @@ using UnityEngine.UI;
 
 public class RhythmLine : MonoBehaviour
 {
-    private bool canDestroy = false;
-    private GameObject target;
-    public Text gradeText;
-    private string grade;
-    private int gradeScore;
-
     private Score inst_Score;
 
-    public Text scoreText;
-    private string score;
+    private bool canKill = false;
+    private GameObject targetMonster;
+
+    private string monsterScoreTextString;
+    private int monsterScore;
+
     public ParticleSystem touchFX;
     private AudioSource soundFXDie;
 
@@ -22,7 +20,6 @@ public class RhythmLine : MonoBehaviour
     {
         inst_Score = Score.GetInstance();
         soundFXDie = GetComponent<AudioSource>();
-        gradeText.text = "";
     }
 
     private float getUpperZ(Transform transform, float radius)
@@ -37,129 +34,63 @@ public class RhythmLine : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("someone enter");
-
         if (other.gameObject.tag == "Monster")
         {
-            Debug.Log("monster enter");
-
-            canDestroy = true;
-            target = other.gameObject;
-        }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        Debug.Log("someone stay");
-
-        if (other.gameObject.tag == "Monster")
-        {
-            Debug.Log("monster stay");
-            CalculateSync();
+            canKill = true;
+            targetMonster = other.gameObject;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("someone exit");
-
         if (other.gameObject.tag == "Monster")
         {
-            Debug.Log("monster exit");
-
-            canDestroy = false;
-            inst_Score.gradeScore = 0;
-            inst_Score.combo = 0;
-            grade = "";
-            gradeText.text = grade;
+            canKill = false;
         }
     }
 
-    private void CalculateSync()//calculate은 범위 들어오면 계속 하고, canDestroy 검사를 버튼이 눌렸을 때 하기로 하자
+    public void OnClickMonsterButton()
     {
-        Debug.Log("calculate");
+        if (canKill)
+        {
+            float lineUpZ = getUpperZ(this.transform, this.transform.GetComponent<SphereCollider>().radius);
+            float lineLowZ = getLowerZ(this.transform, this.transform.GetComponent<SphereCollider>().radius);
+            float targetUpZ = getUpperZ(targetMonster.GetComponent<Transform>(), targetMonster.GetComponent<SphereCollider>().radius);
+            float targetLowZ = getLowerZ(targetMonster.GetComponent<Transform>(), targetMonster.GetComponent<SphereCollider>().radius);
 
-        float lineUpZ = getUpperZ(this.transform, this.transform.GetComponent<SphereCollider>().radius);
-        float lineLowZ = getLowerZ(this.transform, this.transform.GetComponent<SphereCollider>().radius);
-        float targetUpZ = getUpperZ(target.GetComponent<Transform>(), target.GetComponent<SphereCollider>().radius);
-        float targetLowZ = getLowerZ(target.GetComponent<Transform>(), target.GetComponent<SphereCollider>().radius);
-
-        if (lineUpZ >= targetUpZ && lineLowZ <= targetLowZ) // 이게 맨 밑에 있으면 제대로 체크 안되는 문제 나중에 확인해보기
-        {
-            //excellent
-            Debug.Log("excellent");
-            grade = "Excellent!!!";
-            gradeScore = 500;
-        }
-        else if ((lineUpZ > targetLowZ && lineLowZ < targetUpZ) || (lineLowZ < targetUpZ && lineUpZ > targetLowZ))
-        {
-            //good
-            Debug.Log("good");
-            grade = "Good!!!";
-            gradeScore = 300;
-        }
-        else if ((lineUpZ <= targetLowZ && lineLowZ < targetUpZ) || (lineLowZ >= targetUpZ && lineUpZ > targetLowZ))
-        {
-            //bad
-            Debug.Log("bad");
-            grade = "Bad!!!";
-            gradeScore = 100;
-        }
-    }
-
-    // 같은 작업을 하는 메서드 3개를 각각 써야할까
-    public void OnClickMonsterButton1()
-    {
-        if (canDestroy)
-        {
-            if (target.GetComponent<Monster>().mySoundFXDie != null)
+            if (lineUpZ >= targetUpZ && lineLowZ <= targetLowZ) // 이게 맨 밑에 있으면 제대로 체크 안되는 문제 나중에 확인해보기
             {
-                soundFXDie.clip = target.GetComponent<Monster>().mySoundFXDie.clip;
+                monsterScoreTextString = "Excellent!!!";
+                monsterScore = 500;
+            }
+            else if ((lineUpZ > targetLowZ && lineLowZ < targetUpZ) || (lineLowZ < targetUpZ && lineUpZ > targetLowZ))
+            {
+                monsterScoreTextString = "Good!!!";
+                monsterScore = 300;
+            }
+            else if ((lineUpZ <= targetLowZ && lineLowZ < targetUpZ) || (lineLowZ >= targetUpZ && lineUpZ > targetLowZ))
+            {
+                monsterScoreTextString = "Bad!!!";
+                monsterScore = 100;
+            }
+            else
+            {
+                Debug.LogError("monster is not in rhythm range");
+            }
+            // 몬스터 죽을 때 각각 죽는 소리 재생
+            if (targetMonster.GetComponent<Monster>().mySoundFXDie != null)
+            {
+                soundFXDie.clip = targetMonster.GetComponent<Monster>().mySoundFXDie.clip;
                 soundFXDie.Play();
             }
-            Destroy(target.gameObject);
-            gradeText.text = grade;
-            inst_Score.gradeScore = gradeScore;
-            Instantiate(touchFX, target.transform.position, Quaternion.identity);
-            scoreText.text = score;
-            inst_Score.combo++;
-        }
-    }
+            Destroy(targetMonster.gameObject);
 
-    public void OnClickMonsterButton2()
-    {
-        if (canDestroy)
-        {
-            if (target.GetComponent<Monster>().mySoundFXDie != null)
+            if (monsterScore != 0 && monsterScoreTextString != "")
             {
-                soundFXDie.clip = target.GetComponent<Monster>().mySoundFXDie.clip;
-                soundFXDie.Play();
+                inst_Score.RenewMonsterScore(monsterScore, monsterScoreTextString);
+                inst_Score.RenewComboScore();
+                Instantiate(touchFX, targetMonster.transform.position, Quaternion.identity);
             }
-
-            Destroy(target.gameObject);
-            gradeText.text = grade;
-            inst_Score.gradeScore = gradeScore;
-            Instantiate(touchFX, target.transform.position, Quaternion.identity);
-            scoreText.text = score;
-            inst_Score.combo++;
-        }
-    }
-
-    public void OnClickMonsterButton3()
-    {
-        if (canDestroy)
-        {
-            if (target.GetComponent<Monster>().mySoundFXDie != null)
-            {
-                soundFXDie.clip = target.GetComponent<Monster>().mySoundFXDie.clip;
-                soundFXDie.Play();
-            }
-            Destroy(target.gameObject);
-            gradeText.text = grade;
-            inst_Score.gradeScore = gradeScore;
-            Instantiate(touchFX, target.transform.position, Quaternion.identity);
-            scoreText.text = score;
-            inst_Score.combo++;
         }
     }
 }

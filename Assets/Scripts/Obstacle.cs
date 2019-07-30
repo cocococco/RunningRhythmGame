@@ -8,15 +8,29 @@ public class Obstacle : MonoBehaviour
 
     protected float speed;
 
+    protected Transform playerTransform;
+
+    protected Score inst_Score;
+    private int obstacleScore = 200;
+    protected bool isGone = false;
+
     protected virtual void Start()
     {
         inst_SystemManager = SystemManager.GetInstance();
+        inst_Score = Score.GetInstance();
         speed = Track.speed;
+        playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
-    protected void Update()
+    protected virtual void Update()
     {
         this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z - speed * Time.deltaTime);
+
+        if (this.transform.position.z < playerTransform.position.z && isGone == false)
+        {
+            inst_Score.RenewObstacleScore(obstacleScore);
+            isGone = true;
+        }
     }
 
     protected void OnCollisionEnter(Collision collision)

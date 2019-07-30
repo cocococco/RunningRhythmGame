@@ -19,6 +19,7 @@ public class UIManager : MonoBehaviour
     public Image imgPauseFXSound;
     private Music inst_Music;
 
+    public TextMeshProUGUI highScoreText;
     public TextMeshProUGUI distanceText;
     public TextMeshProUGUI obstacleText;
     public TextMeshProUGUI monsterText;
@@ -40,8 +41,8 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        inst_Music = GetComponent<Music>();
-        inst_Score = GetComponent<Score>();
+        inst_Music = Music.GetInstance();
+        inst_Score = Score.GetInstance();
     }
 
     public void OnClickBGSoundButton()
@@ -60,10 +61,11 @@ public class UIManager : MonoBehaviour
 
     public void GenerateGameOverScore()
     {
-        distanceText.text = inst_Score.distance.ToString() + "M";
-        obstacleText.text = "0";
-        monsterText.text = inst_Score.totalGradeScore.ToString();
-        bonusText.text = inst_Score.totalItemScore.ToString();
-        totalText.text = inst_Score.totalScore.ToString();
+        highScoreText.text = inst_Score.highScore.ToString("#,##0");
+        distanceText.text = inst_Score.distance.ToString("#,##0") + " M";
+        obstacleText.text = inst_Score.totalObstacleScore.ToString("#,##0");
+        monsterText.text = inst_Score.totalMonsterScore.ToString("#,##0");
+        bonusText.text = inst_Score.totalItemScore.ToString("#,##0");
+        totalText.text = inst_Score.totalScore.ToString("#,##0");
     }
 }
