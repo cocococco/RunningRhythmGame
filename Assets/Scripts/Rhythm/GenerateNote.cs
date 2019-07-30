@@ -16,13 +16,13 @@ public class GenerateNote : MonoBehaviour
     private void Awake()
     {
         playerZPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position.z;
-        ReadFile read = new ReadFile();
+        //ReadFile read = new ReadFile();
         inst_music = GetComponent<Music>();
     }
 
-    public void MakeNote(int barNum, float beatNum, int posNum, int typeNum)
+    public void MakeNote(int barNum, float beatNum, int posNum, int typeNum, int pitchNum)
     {
-        beats.Add(new NoteContainer(barNum, beatNum, posNum, typeNum));
+        beats.Add(new NoteContainer(barNum, beatNum, posNum, typeNum, pitchNum));
     }
 
     private void Update()
@@ -31,7 +31,11 @@ public class GenerateNote : MonoBehaviour
         {
             if (beats[i].time <= inst_music.time)
             {
-                Instantiate(beats[i].typeNum == 0 ? obstacleNote : (beats[i].typeNum == 1 ? monsterNote : itemNote), new Vector3(beats[i].xPos, 0, playerZPos + zPosInterval), Quaternion.identity);
+                GameObject note = Instantiate(beats[i].typeNum == 0 ? obstacleNote : (beats[i].typeNum == 1 ? monsterNote : itemNote), new Vector3(beats[i].xPos, 0, playerZPos + zPosInterval), Quaternion.identity);
+                if (beats[i].typeNum == 1)
+                {
+                    note.GetComponent<Monster>().pitchNum = beats[i].pitchNum;
+                }
                 i++;
             }
         }

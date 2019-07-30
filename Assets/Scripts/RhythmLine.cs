@@ -16,10 +16,12 @@ public class RhythmLine : MonoBehaviour
     public Text scoreText;
     private string score;
     public ParticleSystem touchFX;
+    private AudioSource soundFXDie;
 
     private void Start()
     {
         inst_Score = Score.GetInstance();
+        soundFXDie = GetComponent<AudioSource>();
         gradeText.text = "";
     }
 
@@ -110,6 +112,11 @@ public class RhythmLine : MonoBehaviour
     {
         if (canDestroy)
         {
+            if (target.GetComponent<Monster>().mySoundFXDie != null)
+            {
+                soundFXDie.clip = target.GetComponent<Monster>().mySoundFXDie.clip;
+                soundFXDie.Play();
+            }
             Destroy(target.gameObject);
             gradeText.text = grade;
             inst_Score.gradeScore = gradeScore;
@@ -123,6 +130,12 @@ public class RhythmLine : MonoBehaviour
     {
         if (canDestroy)
         {
+            if (target.GetComponent<Monster>().mySoundFXDie != null)
+            {
+                soundFXDie.clip = target.GetComponent<Monster>().mySoundFXDie.clip;
+                soundFXDie.Play();
+            }
+
             Destroy(target.gameObject);
             gradeText.text = grade;
             inst_Score.gradeScore = gradeScore;
@@ -136,6 +149,11 @@ public class RhythmLine : MonoBehaviour
     {
         if (canDestroy)
         {
+            if (target.GetComponent<Monster>().mySoundFXDie != null)
+            {
+                soundFXDie.clip = target.GetComponent<Monster>().mySoundFXDie.clip;
+                soundFXDie.Play();
+            }
             Destroy(target.gameObject);
             gradeText.text = grade;
             inst_Score.gradeScore = gradeScore;

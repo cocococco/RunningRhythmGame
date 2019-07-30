@@ -32,14 +32,14 @@ public class Score : MonoBehaviour
     //}
 
     private float timer;
-    private int distance;
-    private int totalScore;
+    public int distance;
+    public int totalScore;
     private int distanceScore;
     public int gradeScore;
     public int combo;
-    private int totalGradeScore;
+    public int totalGradeScore;
     public int itemScore;
-    private int totalItemScore;
+    public int totalItemScore;
     public Text gradeScoreText;
     public Text itemScoreText;
     public Text distanceText;
