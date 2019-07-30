@@ -7,21 +7,22 @@ public class GenerateNote : MonoBehaviour
     public List<NoteContainer> beats = new List<NoteContainer>();
     private int i = 0;
     private Music inst_music;
-    public GameObject obstacleNote;
-    public GameObject monsterNote;
-    public GameObject itemNote;
+
     private float playerZPos;
+
     private float zPosInterval = 50;
+
+    private ObjectPool inst_ObjectPool;
 
     private void Awake()
     {
         playerZPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position.z;
-        //ReadFile read = new ReadFile();
     }
 
     private void Start()
     {
         inst_music = Music.GetInstance();
+        inst_ObjectPool = ObjectPool.GetInstance();
     }
 
     public void MakeNote(int barNum, float beatNum, int posNum, int typeNum, int pitchNum)
@@ -35,10 +36,14 @@ public class GenerateNote : MonoBehaviour
         {
             if (beats[i].time <= inst_music.time)
             {
-                GameObject note = Instantiate(beats[i].typeNum == 0 ? obstacleNote : (beats[i].typeNum == 1 ? monsterNote : itemNote), new Vector3(beats[i].xPos, 0, playerZPos + zPosInterval), Quaternion.identity);
+                // pop from pool
+                GameObject beat = inst_ObjectPool.PopFromPool(beats[i].typeNum == 0 ? "Obstacle" : (beats[i].typeNum == 1 ? "Monster" : "Item"));
+                beat.transform.position = new Vector3(beats[i].xPos, beats[i].typeNum == 1 ? 1 : 0, playerZPos + zPosInterval);
+                beat.SetActive(true);
+
                 if (beats[i].typeNum == 1)
                 {
-                    note.GetComponent<Monster>().pitchNum = beats[i].pitchNum;
+                    beat.GetComponent<Monster>().pitchNum = beats[i].pitchNum;
                 }
                 i++;
             }

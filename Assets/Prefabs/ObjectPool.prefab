@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1178863666404102}
+  m_IsPrefabAsset: 1
+--- !u!1 &1178863666404102
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4878599792241778}
+  - component: {fileID: 114865830134211028}
+  m_Layer: 0
+  m_Name: ObjectPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4878599792241778
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1178863666404102}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 550.5742, y: 1027.8309, z: -5.6250405}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114865830134211028
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1178863666404102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bdf79ed30b095a47bea797f4a11fbd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPool:
+  - poolItemName: Obstacle
+    prefab: {fileID: 1072333490596676, guid: 5e9fa25a9c6b3dd4294ee8bd8dfcb328, type: 2}
+    poolCount: 10
+    poolList: []
+  - poolItemName: Monster
+    prefab: {fileID: 1955975458565448, guid: 572a29f818ef95c4186c12e2ae4733af, type: 2}
+    poolCount: 15
+    poolList: []
+  - poolItemName: Item
+    prefab: {fileID: 1899442897645814, guid: cc5622d60993e5548a78d35a3677dc0b, type: 2}
+    poolCount: 6
+    poolList: []
+  - poolItemName: MonsterDieFX
+    prefab: {fileID: 1720348956290346, guid: 620150a0806fc4c479a2e784a6af5873, type: 2}
+    poolCount: 10
+    poolList: []

@@ -9,6 +9,11 @@ public class NoteContainer
     public int typeNum { get; set; }
     public int pitchNum { get; set; }
 
+    /* 버그 확인용 변수*/
+    public int barNum { get; set; }
+    public float beatNum { get; set; }
+    public int posNum { get; set; }
+
     private int beatInterval = 462; //한 박자 간격
     private int barInterval = 1848; //한 마디 간격
     private int priorInterval = 500; //노래 시작하기 전 쉬는 타임?
@@ -35,5 +40,8 @@ public class NoteContainer
         }
         this.typeNum = typeNum;
         this.pitchNum = pitchNum;
+        this.barNum = barNum;
+        this.beatNum = beatNum;
+        this.posNum = posNum;
     }
 }

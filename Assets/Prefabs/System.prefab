@@ -55,11 +55,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f127311ab9dcde146bb2a0f175a5a7b8, type: 3}
+  m_audioClip: {fileID: 8300000, guid: acc549516f37b1b40b1997f917915483, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -211,11 +211,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c200e0ded0247041aebf824708ad7bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleNote: {fileID: 1072333490596676, guid: 5e9fa25a9c6b3dd4294ee8bd8dfcb328,
-    type: 2}
-  monsterNote: {fileID: 1955975458565448, guid: 572a29f818ef95c4186c12e2ae4733af,
-    type: 2}
-  itemNote: {fileID: 1899442897645814, guid: cc5622d60993e5548a78d35a3677dc0b, type: 2}
 --- !u!114 &114859307313331970
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -227,13 +222,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33c9dfc31c20f5242833a9422d910180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isGamePlay: 0
-  isGamePause: 0
-  isGameOver: 0
+  isGamePlaying: 0
   gameOverPanel: {fileID: 0}
   gamePausePanel: {fileID: 0}
   gameMainPanel: {fileID: 0}
   gamePlayPanel: {fileID: 0}
+  canDamage: 1
 --- !u!114 &114969906386983422
 MonoBehaviour:
   m_ObjectHideFlags: 1

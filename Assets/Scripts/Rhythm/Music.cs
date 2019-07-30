@@ -32,10 +32,10 @@ public class Music : MonoBehaviour
     private const int dontMute = 1;
 
     private int isBGSoundMute;
-    private string BGKeyString = "BGSoundMute";
+    private const string BGKeyString = "BGSoundMute";
 
     private int isFXSoundMute;
-    private string FXKeyString = "FXSoundMute";
+    private const string FXKeyString = "FXSoundMute";
 
     private void Awake()
     {
