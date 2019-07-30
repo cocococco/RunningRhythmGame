@@ -46,12 +46,13 @@ public class RhythmLine : MonoBehaviour
         if (other.gameObject.tag == "Monster")
         {
             canKill = false;
+            targetMonster = null;
         }
     }
 
     public void OnClickMonsterButton()
     {
-        if (canKill)
+        if (canKill && targetMonster != null)
         {
             float lineUpZ = getUpperZ(this.transform, this.transform.GetComponent<SphereCollider>().radius);
             float lineLowZ = getLowerZ(this.transform, this.transform.GetComponent<SphereCollider>().radius);

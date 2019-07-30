@@ -42,6 +42,8 @@ public class Score : MonoBehaviour
     public int highScore;
     private string keyString = "HighScore";
 
+    private SystemManager inst_SystemManager;
+
     private void Awake()
     {
         if (instance == null)
@@ -59,6 +61,7 @@ public class Score : MonoBehaviour
 
     private void Start()
     {
+        inst_SystemManager = SystemManager.GetInstance();
         monsterScoreText.text = "";
         monsterScoreGradeText.text = "";
         totalObstacleScoreText.text = "";
@@ -122,7 +125,10 @@ public class Score : MonoBehaviour
 
     private void Update()
     {
-        SyncScore();
+        if (inst_SystemManager.isGamePlaying == true)
+        {
+            SyncScore();
+        }
     }
 
     private IEnumerator TextVanish(Text text)

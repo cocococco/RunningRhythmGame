@@ -12,19 +12,18 @@ public class SystemManager : MonoBehaviour
         return instance;
     }
 
-    public bool isGamePlay = false;
-    public bool isGamePause = false;
-    public bool isGameOver = false;
-    static public bool isReplay = false;
+    public bool isGamePlaying = false;
+    private static bool isReplay = false;
+
     public GameObject gameOverPanel;
     public GameObject gamePausePanel;
+    public GameObject gameMainPanel;
+    public GameObject gamePlayPanel;
+
     private GameObject player;
     private AudioSource footStepSound;
     private AudioSource mainMusic;
     private Music inst_music;
-    public GameObject gameMainPanel;
-    public GameObject gamePlayPanel;
-
     private UIManager inst_UIManager;
 
     private void Awake()
@@ -47,76 +46,26 @@ public class SystemManager : MonoBehaviour
         footStepSound = player.GetComponent<AudioSource>();
         inst_UIManager = UIManager.GetInstance();
 
-        Time.timeScale = 1;
         gameOverPanel.SetActive(false);
         gamePausePanel.SetActive(false);
-        isGameOver = false;
-        isGamePause = false;
         if (isReplay)
         {
             GameResume();
         }
         else
         {
-            gamePausePanel.SetActive(false);
-            gameOverPanel.SetActive(false);
-            gameMainPanel.SetActive(true);
-            gamePlayPanel.SetActive(false);
-
-            isGamePlay = false;
-            isGamePause = false;
-            isGameOver = false;
+            GameMain();
         }
     }
 
-    public void GameOver()
+    private void Update()
     {
-        footStepSound.Stop();
-        mainMusic.Stop();
-        inst_music.isPlaying = false;
-
-        Time.timeScale = 0;
-        gameOverPanel.SetActive(true);
-        gamePausePanel.SetActive(false);
-        gameMainPanel.SetActive(false);
-        gamePlayPanel.SetActive(false);
-        isGamePlay = false;
-        isGameOver = true;
-        isGamePause = false;
-        inst_UIManager.GenerateGameOverScore();
-    }
-
-    public void GamePause()
-    {
-        footStepSound.Stop();
-        mainMusic.Pause();
-        inst_music.isPlaying = false;
-
-        Time.timeScale = 0;
-        gamePausePanel.SetActive(true);
-        gameOverPanel.SetActive(false);
-        gameMainPanel.SetActive(false);
-        gamePlayPanel.SetActive(false);
-        isGamePlay = false;
-        isGamePause = true;
-        isGameOver = false;
-    }
-
-    public void GameResume()
-    {
-        footStepSound.Play();
-        footStepSound.loop = true;
-        mainMusic.Play();
-        inst_music.isPlaying = true;
-
-        Time.timeScale = 1;
-        gamePausePanel.SetActive(false);
-        gameOverPanel.SetActive(false);
-        gameMainPanel.SetActive(false);
-        gamePlayPanel.SetActive(true);
-        isGamePlay = true;
-        isGamePause = false;
-        isGameOver = false;
+#if UNITY_ANDROID
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+#endif
     }
 
     private void GameMain()
@@ -124,24 +73,12 @@ public class SystemManager : MonoBehaviour
         mainMusic.Stop();
         inst_music.isPlaying = false;
 
-        Time.timeScale = 0;
+        isGamePlaying = false;
+        Time.timeScale = 1;
+        gameMainPanel.SetActive(true);
         gamePausePanel.SetActive(false);
         gameOverPanel.SetActive(false);
-        gameMainPanel.SetActive(true);
         gamePlayPanel.SetActive(false);
-        isGamePlay = false;
-        isGamePause = false;
-        isGameOver = false;
-    }
-
-    public void OnClickPauseButtonOn()
-    {
-        GamePause();
-    }
-
-    public void OnClickPauseButtonOff()
-    {
-        GameResume();
     }
 
     public void OnClickStartButton()
@@ -152,6 +89,60 @@ public class SystemManager : MonoBehaviour
     public void OnClickContinueButton()
     {
         GameResume();
+    }
+
+    public void OnClickPauseButtonOff()
+    {
+        GameResume();
+    }
+
+    public void GameResume()
+    {
+        footStepSound.Play();
+        footStepSound.loop = true;
+        mainMusic.Play();
+        inst_music.isPlaying = true;
+
+        isGamePlaying = true;
+        Time.timeScale = 1;
+        gamePlayPanel.SetActive(true);
+        gamePausePanel.SetActive(false);
+        gameOverPanel.SetActive(false);
+        gameMainPanel.SetActive(false);
+    }
+
+    public void OnClickPauseButtonOn()
+    {
+        GamePause();
+    }
+
+    public void GamePause()
+    {
+        footStepSound.Stop();
+        mainMusic.Pause();
+        inst_music.isPlaying = false;
+
+        isGamePlaying = false;
+        Time.timeScale = 0;
+        gamePausePanel.SetActive(true);
+        gameOverPanel.SetActive(false);
+        gameMainPanel.SetActive(false);
+        gamePlayPanel.SetActive(false);
+    }
+
+    public void GameOver()
+    {
+        footStepSound.Stop();
+        mainMusic.Stop();
+        inst_music.isPlaying = false;
+
+        isGamePlaying = false;
+        Time.timeScale = 0;
+        gameOverPanel.SetActive(true);
+        gamePausePanel.SetActive(false);
+        gameMainPanel.SetActive(false);
+        gamePlayPanel.SetActive(false);
+        inst_UIManager.GenerateGameOverScore();
     }
 
     public void OnClickHomeButton()
