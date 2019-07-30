@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Track : MonoBehaviour
 {
-    public float speed = 4;
+    public static float speed = 18;
     private float length;
 
     private void Start()
