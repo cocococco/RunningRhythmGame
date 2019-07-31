@@ -20,30 +20,39 @@ ModelImporter:
     400012: pasted__pCylinder7
     400014: //RootNode
     2100000: blinn4
+    2100002: blinn1
     2300000: pasted__pasted__pasted__pCylinder7
     2300002: pasted__pasted__pasted__pCylinder8
     2300004: pasted__pasted__pasted__pPlatonic6
     2300006: pasted__pasted__pasted__pPlatonic7
     2300008: pasted__pasted__pasted__pPlatonic8
     2300010: pasted__pCylinder7
+    2300012: //RootNode
     3300000: pasted__pasted__pasted__pCylinder7
     3300002: pasted__pasted__pasted__pCylinder8
     3300004: pasted__pasted__pasted__pPlatonic6
     3300006: pasted__pasted__pasted__pPlatonic7
     3300008: pasted__pasted__pasted__pPlatonic8
     3300010: pasted__pCylinder7
+    3300012: //RootNode
     4300000: pasted__pCylinder7
     4300002: pasted__pasted__pasted__pCylinder7
     4300004: pasted__pasted__pasted__pCylinder8
     4300006: pasted__pasted__pasted__pPlatonic6
     4300008: pasted__pasted__pasted__pPlatonic7
     4300010: pasted__pasted__pasted__pPlatonic8
+    4300012: pasted__pasted__pPlatonic6
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: blinn4
     second: {fileID: 2100000, guid: eabe73c424f217b44aa01fdfb7cb9544, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 4tree
+    second: {fileID: 2800000, guid: 3ec5e4d5ebe1d9849a95e1ba594f095d, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
