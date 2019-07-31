@@ -169,6 +169,7 @@ MonoBehaviour:
   monsterScoreText: {fileID: 0}
   monsterScoreGradeText: {fileID: 0}
   totalMonsterScore: 0
+  pitchText: {fileID: 0}
   comboCount: 0
   comboCountText: {fileID: 0}
   totalObstacleScore: 0
@@ -227,7 +228,6 @@ MonoBehaviour:
   gamePausePanel: {fileID: 0}
   gameMainPanel: {fileID: 0}
   gamePlayPanel: {fileID: 0}
-  canDamage: 1
 --- !u!114 &114969906386983422
 MonoBehaviour:
   m_ObjectHideFlags: 1
