@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Track : TrackObjects
+public class Trees : TrackObjects
 {
-    private float startZ = 28;
+    private float startZ = 10;
     private float length;
 
     private new void Start()
@@ -15,9 +15,9 @@ public class Track : TrackObjects
 
     protected override void Reset()
     {
-        if (this.transform.position.z < startZ - 60)
+        if (this.transform.position.z < startZ - 20)
         {
-            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, startZ + 60);
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, startZ + 20);
         }
     }
 }
