@@ -9,6 +9,7 @@ public class RhythmLine : MonoBehaviour
 
     private string monsterScoreTextString;
     private int monsterScore;
+    private string pitchTextString;
 
     private AudioSource soundFXDie;
 
@@ -65,7 +66,8 @@ public class RhythmLine : MonoBehaviour
                 monsterScore = 100;
             }
 
-            AudioSource sound = monsters[0].GetComponent<Monster>().mySoundFXDie;
+            Monster m = monsters[0].GetComponent<Monster>();
+            AudioSource sound = m.mySoundFXDie;
             if (sound != null)
             {
                 soundFXDie.clip = sound.clip;
@@ -73,7 +75,8 @@ public class RhythmLine : MonoBehaviour
             }
             if (monsterScore != 0 && monsterScoreTextString != "")
             {
-                inst_Score.RenewMonsterScore(monsterScore, monsterScoreTextString);
+                pitchTextString = m.pitchNum.ToString();
+                inst_Score.RenewMonsterScore(monsterScore, monsterScoreTextString, pitchTextString);
                 inst_Score.RenewComboScore();
                 GameObject item = inst_ObjectPool.PopFromPool("MonsterDieFX");
                 item.transform.position = monsters[0].transform.position;

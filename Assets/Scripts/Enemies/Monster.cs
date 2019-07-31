@@ -16,12 +16,21 @@ public class Monster : TrackObjects
         base.Start();
         mySoundFXDie = GetComponent<AudioSource>();
 
-        if (pitchNum != 0)
-        {
-            mySoundFXDie.clip = soundFXDie[pitchNum];
-        }
-
         poolItemName = "Monster";
+    }
+
+    private new void Update()
+    {
+        base.Update();
+
+        if (gameObject.activeInHierarchy)
+        {
+            if (pitchNum != 0)
+            {
+                mySoundFXDie.clip = soundFXDie[pitchNum];
+                Debug.Log(pitchNum + " " + mySoundFXDie.clip.name);
+            }
+        }
     }
 
     protected override void Reset()

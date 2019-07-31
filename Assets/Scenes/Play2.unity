@@ -113,6 +113,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!224 &7277782 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 224141509429920958, guid: c3d9cc352b121c149b36eeeb528c76ae,
+    type: 2}
+  m_PrefabInternal: {fileID: 1269406210}
 --- !u!1 &17180192 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1412766012383330, guid: c3d9cc352b121c149b36eeeb528c76ae,
@@ -829,7 +834,7 @@ Prefab:
     - target: {fileID: 224551077470852776, guid: c3d9cc352b121c149b36eeeb528c76ae,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -613
+      value: -582
       objectReference: {fileID: 0}
     - target: {fileID: 224551077470852776, guid: c3d9cc352b121c149b36eeeb528c76ae,
         type: 2}
@@ -849,7 +854,7 @@ Prefab:
     - target: {fileID: 224825700882524354, guid: c3d9cc352b121c149b36eeeb528c76ae,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -657
+      value: -626
       objectReference: {fileID: 0}
     - target: {fileID: 224825700882524354, guid: c3d9cc352b121c149b36eeeb528c76ae,
         type: 2}
@@ -869,7 +874,7 @@ Prefab:
     - target: {fileID: 224149108838122756, guid: c3d9cc352b121c149b36eeeb528c76ae,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -710
+      value: -679
       objectReference: {fileID: 0}
     - target: {fileID: 224149108838122756, guid: c3d9cc352b121c149b36eeeb528c76ae,
         type: 2}
@@ -994,6 +999,85 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3d9cc352b121c149b36eeeb528c76ae, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1367929318
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1505550128338540, guid: c3d9cc352b121c149b36eeeb528c76ae,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1367929319}
+  - component: {fileID: 1367929321}
+  - component: {fileID: 1367929320}
+  m_Layer: 5
+  m_Name: PitchText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1367929319
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 224149108838122756, guid: c3d9cc352b121c149b36eeeb528c76ae,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1367929318}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7277782}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 540, y: -741}
+  m_SizeDelta: {x: 61, y: 62}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1367929320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114124332987345376, guid: c3d9cc352b121c149b36eeeb528c76ae,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1367929318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 682254f77404f2f479606d4d4b40ee1a, type: 3}
+    m_FontSize: 50
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 5
+    m_MaxSize: 50
+    m_Alignment: 7
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: c1
+--- !u!222 &1367929321
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 222108656110618182, guid: c3d9cc352b121c149b36eeeb528c76ae,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1367929318}
+  m_CullTransparentMesh: 0
 --- !u!114 &1483477504 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114735452365291516, guid: e93b3f9b63bb37549b3fb1525ca41fc3,
@@ -1164,6 +1248,11 @@ Prefab:
       propertyPath: totalText
       value: 
       objectReference: {fileID: 1835548223}
+    - target: {fileID: 114052960212567342, guid: 31ee74d22cbeec34ca7d56c674354a96,
+        type: 2}
+      propertyPath: pitchText
+      value: 
+      objectReference: {fileID: 1367929320}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31ee74d22cbeec34ca7d56c674354a96, type: 2}
   m_IsPrefabAsset: 0

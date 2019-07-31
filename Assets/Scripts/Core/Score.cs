@@ -23,6 +23,7 @@ public class Score : MonoBehaviour
     public Text monsterScoreText;
     public Text monsterScoreGradeText;
     public int totalMonsterScore;
+    public Text pitchText;
 
     public int comboCount;
     public Text comboCountText;
@@ -73,6 +74,8 @@ public class Score : MonoBehaviour
         inst_SystemManager = SystemManager.GetInstance();
         monsterScoreText.text = "";
         monsterScoreGradeText.text = "";
+        pitchText.text = "";
+
         totalObstacleScoreText.text = "";
         itemScoreText.text = "";
         comboCountText.text = "";
@@ -116,6 +119,7 @@ public class Score : MonoBehaviour
         {
             monsterScoreText.text = "";
             monsterScoreGradeText.text = "";
+            pitchText.text = "";
         }
         if (obstacleTextTimer > obstacleVanishDuration)
         {
@@ -131,13 +135,14 @@ public class Score : MonoBehaviour
         }
     }
 
-    public void RenewMonsterScore(int score, string gradeText)
+    public void RenewMonsterScore(int score, string gradeText, string text)
     {
         monsterTextTimer = 0;
         monsterScore = score;
         totalMonsterScore += score;
         monsterScoreText.text = "+" + monsterScore.ToString();
         monsterScoreGradeText.text = gradeText;
+        pitchText.text = text;
         //StartCoroutine(TextVanish(monsterScoreText));
         //StartCoroutine(TextVanish(monsterScoreGradeText));
     }
