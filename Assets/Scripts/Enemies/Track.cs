@@ -5,19 +5,17 @@ using UnityEngine;
 public class Track : TrackObjects
 {
     private float startZ = 28;
-    private float length;
 
     private new void Start()
     {
         base.Start();
-        length = GetComponent<Transform>().localScale.z;
     }
 
     protected override void Reset()
     {
         if (this.transform.position.z < startZ - 60)
         {
-            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, startZ + 60);
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, startZ + 180);
         }
     }
 }

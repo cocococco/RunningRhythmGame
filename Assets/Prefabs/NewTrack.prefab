@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 33167170536758384}
   - component: {fileID: 23613806950165930}
   - component: {fileID: 65436412465324472}
+  - component: {fileID: 114089992624252164}
   m_Layer: 0
   m_Name: NewTrack
   m_TagString: Untagged
@@ -255,3 +256,14 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114089992624252164
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1978436789422912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23a53df43cb535e47b3cee1b125e1b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
