@@ -28,7 +28,6 @@ public class Monster : TrackObjects
             if (pitchNum != 0)
             {
                 mySoundFXDie.clip = soundFXDie[pitchNum];
-                Debug.Log(pitchNum + " " + mySoundFXDie.clip.name);
             }
         }
     }

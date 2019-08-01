@@ -44,7 +44,6 @@ public class GenerateNote : MonoBehaviour
                 if (beats[i].typeNum == 1)
                 {
                     beat.GetComponent<Monster>().pitchNum = beats[i].pitchNum;
-                    Debug.Log(beat.GetComponent<Monster>().pitchNum);
                 }
                 i++;
             }
