@@ -58,12 +58,12 @@ public class RhythmLine : MonoBehaviour
             else if (targetPosZ < myPosZ + goodDistance && targetPosZ > myPosZ - goodDistance) // target이 good range 안에 있을 때
             {
                 monsterScoreTextString = "Good!!!!!!";
-                monsterScore = 300;
+                monsterScore = 200;
             }
             else // target이 bad range 안에 있을 때
             {
                 monsterScoreTextString = "Bad!!!!!!";
-                monsterScore = 100;
+                monsterScore = 50;
             }
 
             Monster m = monsters[0].GetComponent<Monster>();
