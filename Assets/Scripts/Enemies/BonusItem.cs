@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class BonusItem : Item
 {
-    //protected new void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.GetComponent<Player>())
-    //    {
-    //        itemScore = 10000;
-    //        inst_Score.itemScore = itemScore;
-    //        Destroy(this.gameObject);
-    //    }
-    //    itemScore = 0;
-    //}
+    private new void Start()
+    {
+        base.Start();
+        poolItemName = "Item2";
+        itemScore = 5000;
+        itemCombo = 20;
+    }
 }

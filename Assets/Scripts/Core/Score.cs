@@ -163,10 +163,18 @@ public class Score : MonoBehaviour
         //StartCoroutine(TextVanish(totalObstacleScoreText)); // 너무 빨라서 사라지게 안함
     }
 
-    public void RenewComboScore()
+    public void RenewComboScore(int itemCombo = 0)
     {
         comboTextTimer = 0;
-        comboCount++;
+        if (itemCombo > 0)
+        {
+            Debug.Log(itemCombo);
+            comboCount += itemCombo;
+        }
+        else
+        {
+            comboCount++;
+        }
         comboCountText.text = comboCount.ToString() + " COMBO";
         //StartCoroutine(TextVanish(comboCountText));
         if (comboCount > 100)
