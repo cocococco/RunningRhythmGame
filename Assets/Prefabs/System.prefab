@@ -180,6 +180,7 @@ MonoBehaviour:
   totalScore: 0
   totalScoreText: {fileID: 0}
   highScore: 0
+  shieldText: {fileID: 0}
 --- !u!114 &114630629450169474
 MonoBehaviour:
   m_ObjectHideFlags: 1
