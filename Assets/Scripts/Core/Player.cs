@@ -5,6 +5,13 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    private static Player instance;
+
+    public static Player GetInstance()
+    {
+        return instance;
+    }
+
     public float posX1 = -2;
     public float posX2 = 0;
     public float posX3 = 2;
@@ -15,6 +22,21 @@ public class Player : MonoBehaviour
     private Rigidbody myRigidbody;
     private CapsuleCollider myCollider;
 
+    public bool isShield { get; set; }
+    public bool shieldDone { get; set; }
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        if (instance != this)
+        {
+            DestroyImmediate(this);
+        }
+    }
+
     private void Start()
     {
         footStepSound = GetComponent<AudioSource>();
@@ -22,6 +44,8 @@ public class Player : MonoBehaviour
         footStepSound.loop = true;
         myRigidbody = GetComponent<Rigidbody>();
         myCollider = GetComponent<CapsuleCollider>();
+        isShield = false;
+        shieldDone = false;
     }
 
     private void Update()
@@ -51,5 +75,17 @@ public class Player : MonoBehaviour
     {
         myRigidbody.isKinematic = !myRigidbody.isKinematic;
         myCollider.isTrigger = !myCollider.isTrigger;
+    }
+
+    public void IgnoreCollisionsOn()
+    {
+        myRigidbody.isKinematic = true;
+        myCollider.isTrigger = true;
+    }
+
+    public void IgnoreCollisionsOff()
+    {
+        myRigidbody.isKinematic = false;
+        myCollider.isTrigger = false;
     }
 }

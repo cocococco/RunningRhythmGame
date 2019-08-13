@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Obstacle : TrackObjects
 {
-    private int obstacleScore = 200;
+    private int obstacleScore = 100;
     private bool isGone = false;
 
     private new void Start()

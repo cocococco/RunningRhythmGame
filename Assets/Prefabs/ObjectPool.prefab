@@ -68,3 +68,11 @@ MonoBehaviour:
     prefab: {fileID: 1720348956290346, guid: 620150a0806fc4c479a2e784a6af5873, type: 2}
     poolCount: 10
     poolList: []
+  - poolItemName: Item2
+    prefab: {fileID: 1615244860547512, guid: 631fa677d71cf7549a499f612c65ebdc, type: 2}
+    poolCount: 10
+    poolList: []
+  - poolItemName: ItemFX
+    prefab: {fileID: 1981979142797486, guid: 2a2ed007f00ae824d9792b116a688a78, type: 2}
+    poolCount: 2
+    poolList: []

@@ -23,7 +23,7 @@ public class ParticleAutoDie : MonoBehaviour
     public IEnumerator Deactivate()
     {
         yield return new WaitForSeconds(1);
-        Debug.Log("vanish monster die fx");
+        //Debug.Log("vanish monster die fx");
         inst_ObjectPool.PushToPool(poolItemName, this.gameObject);
     }
 }

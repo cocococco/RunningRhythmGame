@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Item : TrackObjects
 {
-    protected int itemScore = 1000;
+    protected int itemScore = 1500;
+    protected int itemCombo = 10;
 
     private new void Start()
     {
@@ -20,13 +21,18 @@ public class Item : TrackObjects
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    protected void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Player") == true)
+        if (other.gameObject.CompareTag("Player") == true)
         {
+            // effect
+            GameObject item = inst_ObjectPool.PopFromPool("ItemFX");
+            item.transform.position = transform.position;
+            item.SetActive(true);
+
             inst_Score.RenewItemScore(itemScore);
+            inst_Score.RenewComboScore(itemCombo);
             inst_ObjectPool.PushToPool(poolItemName, this.gameObject);
-            // 이펙트 추가하기
         }
     }
 }
