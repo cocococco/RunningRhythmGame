@@ -21,7 +21,6 @@ public class RhythmLine : MonoBehaviour
     private float myPosZ;
 
     private Player inst_Player;
-    private bool shielding = false;
 
     private void Start()
     {

@@ -21,14 +21,18 @@ public class Item : TrackObjects
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player") == true)
         {
+            // effect
+            GameObject item = inst_ObjectPool.PopFromPool("ItemFX");
+            item.transform.position = transform.position;
+            item.SetActive(true);
+
             inst_Score.RenewItemScore(itemScore);
             inst_Score.RenewComboScore(itemCombo);
             inst_ObjectPool.PushToPool(poolItemName, this.gameObject);
-            // 이펙트 추가하기
         }
     }
 }
