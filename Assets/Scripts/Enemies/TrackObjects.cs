@@ -26,7 +26,8 @@ public abstract class TrackObjects : MonoBehaviour
     {
         if (inst_SystemManager.isGamePlaying == true)
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - speed * Time.deltaTime);
+            Vector3 myPos = this.transform.position;
+            this.transform.position = new Vector3(myPos.x, myPos.y, myPos.z - speed * Time.deltaTime);
         }
         Reset();
     }

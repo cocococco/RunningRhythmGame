@@ -36,7 +36,7 @@ public class RhythmLine : MonoBehaviour
         if (other.gameObject.CompareTag("Monster"))
         {
             monsters.Add(other.gameObject);
-            Debug.Log(gameObject.name + " ; monster count : " + monsters.Count);
+            //Debug.Log(gameObject.name + " ; monster count : " + monsters.Count);
         }
     }
 
@@ -62,8 +62,8 @@ public class RhythmLine : MonoBehaviour
     {
         for (int i = 0; i < monsters.Count; i++)
         {
-            float targetPosZ = monsters[i].transform.position.z;
-            if (targetPosZ < myPosZ + 0.7f && targetPosZ > myPosZ - 0.7f) // target이 excellent range 안에 있을 때
+            Vector3 targetPos = monsters[i].transform.position;
+            if (targetPos.z < myPosZ + 0.7f && targetPos.z > myPosZ - 0.7f) // target이 excellent range 안에 있을 때
             {
                 monsterScoreTextString = "Excellent!!!!!!";
                 monsterScore = 500;
@@ -81,12 +81,12 @@ public class RhythmLine : MonoBehaviour
                     inst_Score.RenewMonsterScore(monsterScore, monsterScoreTextString, pitchTextString);
                     inst_Score.RenewComboScore();
                     GameObject item = inst_ObjectPool.PopFromPool("MonsterDieFX");
-                    item.transform.position = monsters[i].transform.position;
+                    item.transform.position = targetPos;
                     item.SetActive(true);
                     inst_ObjectPool.PushToPool("Monster", monsters[i].gameObject);
                 }
                 monsters.RemoveAt(i);
-                Debug.Log(gameObject.name + " ; monster dead : " + monsters.Count);
+                //Debug.Log(gameObject.name + " ; monster dead : " + monsters.Count);
             }
         }
     }

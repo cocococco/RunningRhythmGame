@@ -190,7 +190,7 @@ public class Score : MonoBehaviour
             comboMultiple = 1.5f;
             if (inst_Player.shieldDone == false)
             {
-                Debug.Log("start shield coroutine");
+                //Debug.Log("start shield coroutine");
                 StartCoroutine(ShieldOn());
             }
         }
@@ -202,7 +202,7 @@ public class Score : MonoBehaviour
         {
             comboMultiple = 1;
             inst_Player.shieldDone = false;
-            Debug.Log("shield done false");
+            //Debug.Log("shield done false");
         }
     }
 
@@ -212,13 +212,13 @@ public class Score : MonoBehaviour
         inst_Player.shieldDone = true;
         shieldText.SetActive(true);
         inst_Player.IgnoreCollisionsOn();
-        Debug.Log("shield on : " + Time.deltaTime);
+        //Debug.Log("shield on : " + Time.deltaTime);
         yield return new WaitForSeconds(9);
         shieldText.SetActive(false);
         yield return new WaitForSeconds(1);
         inst_Player.isShield = false;
         inst_Player.IgnoreCollisionsOff();
-        Debug.Log("shield off : " + Time.deltaTime);
+        //Debug.Log("shield off : " + Time.deltaTime);
     }
 
     public void RenewItemScore(int score)

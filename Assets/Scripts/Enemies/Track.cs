@@ -13,9 +13,11 @@ public class Track : TrackObjects
 
     protected override void Reset()
     {
-        if (this.transform.position.z < startZ - 60)
+        Vector3 myPos = this.transform.position;
+
+        if (myPos.z < startZ - 60)
         {
-            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, startZ + 180);
+            this.transform.position = new Vector3(myPos.x, myPos.y, startZ + 180);
         }
     }
 }

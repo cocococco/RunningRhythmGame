@@ -8,9 +8,11 @@ public class Trees : TrackObjects
 
     protected override void Reset()
     {
-        if (this.transform.position.z < firstStartZ - 20)
+        Vector3 myPos = this.transform.position;
+
+        if (myPos.z < firstStartZ - 20)
         {
-            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, firstStartZ + 60);
+            this.transform.position = new Vector3(myPos.x, myPos.y, firstStartZ + 60);
         }
     }
 }

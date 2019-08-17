@@ -34,12 +34,15 @@ public class Monster : TrackObjects
 
     protected override void Reset()
     {
-        if (this.transform.position.z > playerTransform.position.z - interval) // reset
+        float myPosZ = this.transform.position.z;
+        float playerPosZ = playerTransform.position.z;
+
+        if (myPosZ > playerPosZ - interval) // reset
         {
             isGone = false;
         }
 
-        if (this.transform.position.z < playerTransform.position.z - interval && isGone == false)
+        if (myPosZ < playerPosZ - interval && isGone == false)
         {
             inst_Score.comboCount = 0;
             isGone = true;
