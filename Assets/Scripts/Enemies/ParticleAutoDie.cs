@@ -5,11 +5,19 @@ using UnityEngine;
 public class ParticleAutoDie : MonoBehaviour
 {
     private ObjectPool inst_ObjectPool;
-    private const string poolItemName = "MonsterDieFX";
+    private string poolItemName;
 
     private void Start()
     {
         inst_ObjectPool = ObjectPool.GetInstance();
+        if (gameObject.name == "MonsterDieFX")
+        {
+            poolItemName = "MonsterDieFX";
+        }
+        else
+        {
+            poolItemName = "ItemFX";
+        }
     }
 
     private void Update()
