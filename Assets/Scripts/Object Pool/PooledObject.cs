@@ -32,7 +32,6 @@ public class PooledObject
         if (poolList.Count == 0)
         {
             poolList.Add(CreateItem(parent));
-            //Debug.Log(poolItemName + poolList.Count);
         }
         GameObject item = poolList[0];
         poolList.RemoveAt(0);

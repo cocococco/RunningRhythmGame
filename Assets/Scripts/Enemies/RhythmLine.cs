@@ -36,7 +36,6 @@ public class RhythmLine : MonoBehaviour
         if (other.gameObject.CompareTag("Monster"))
         {
             monsters.Add(other.gameObject);
-            //Debug.Log(gameObject.name + " ; monster count : " + monsters.Count);
         }
     }
 
@@ -86,7 +85,6 @@ public class RhythmLine : MonoBehaviour
                     inst_ObjectPool.PushToPool("Monster", monsters[i].gameObject);
                 }
                 monsters.RemoveAt(i);
-                //Debug.Log(gameObject.name + " ; monster dead : " + monsters.Count);
             }
         }
     }

@@ -85,7 +85,7 @@ public class Player : MonoBehaviour
 
     public void IgnoreCollisionsOff()
     {
-        myRigidbody.isKinematic = false;
-        myCollider.isTrigger = false;
+        //myRigidbody.isKinematic = false;
+        //myCollider.isTrigger = false;
     }
 }

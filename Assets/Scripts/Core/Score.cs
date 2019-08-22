@@ -147,10 +147,6 @@ public class Score : MonoBehaviour
     {
         monsterTextTimer = 0;
         monsterScore = Mathf.FloorToInt(score * comboMultiple);
-        if (comboMultiple != 1)
-        {
-            //Debug.Log(monsterScore);
-        }
         totalMonsterScore += score;
         monsterScoreText.text = "+" + monsterScore.ToString();
         monsterScoreGradeText.text = gradeText;
@@ -163,10 +159,6 @@ public class Score : MonoBehaviour
     {
         obstacleTextTimer = 0;
         totalObstacleScore += Mathf.FloorToInt(score * comboMultiple);
-        if (comboMultiple != 1)
-        {
-            //Debug.Log(Mathf.FloorToInt(score * comboMultiple));
-        }
         totalObstacleScoreText.text = "Obstacle +" + totalObstacleScore.ToString();
         //StartCoroutine(TextVanish(totalObstacleScoreText)); // 너무 빨라서 사라지게 안함
     }
@@ -176,7 +168,6 @@ public class Score : MonoBehaviour
         comboTextTimer = 0;
         if (itemCombo > 0)
         {
-            //Debug.Log(itemCombo);
             comboCount += itemCombo;
         }
         else
@@ -190,7 +181,6 @@ public class Score : MonoBehaviour
             comboMultiple = 1.5f;
             if (inst_Player.shieldDone == false)
             {
-                //Debug.Log("start shield coroutine");
                 StartCoroutine(ShieldOn());
             }
         }
@@ -202,7 +192,6 @@ public class Score : MonoBehaviour
         {
             comboMultiple = 1;
             inst_Player.shieldDone = false;
-            //Debug.Log("shield done false");
         }
     }
 
@@ -212,13 +201,11 @@ public class Score : MonoBehaviour
         inst_Player.shieldDone = true;
         shieldText.SetActive(true);
         inst_Player.IgnoreCollisionsOn();
-        //Debug.Log("shield on : " + Time.deltaTime);
         yield return new WaitForSeconds(9);
         shieldText.SetActive(false);
         yield return new WaitForSeconds(1);
         inst_Player.isShield = false;
         inst_Player.IgnoreCollisionsOff();
-        //Debug.Log("shield off : " + Time.deltaTime);
     }
 
     public void RenewItemScore(int score)
