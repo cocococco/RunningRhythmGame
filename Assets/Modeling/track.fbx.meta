@@ -9,6 +9,7 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: pPlane1
+    2186277476908879412: ImportLogs
   externalObjects:
   - first:
       type: UnityEngine:Texture2D
@@ -42,11 +43,11 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 0
+    meshCompression: 3
     addColliders: 0
     importVisibility: 1
     importBlendShapes: 1
@@ -70,9 +71,9 @@ ModelImporter:
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 3
+    tangentImportMode: 2
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
