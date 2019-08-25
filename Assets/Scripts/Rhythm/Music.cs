@@ -37,7 +37,8 @@ public class Music : MonoBehaviour
     private int isFXSoundMute;
     private const string FXKeyString = "FXSoundMute";
 
-    public int playCount = 0;
+    private int playCount = 0;
+    private GenerateNote inst_GenerateNote;
 
     private void Awake()
     {
@@ -52,6 +53,7 @@ public class Music : MonoBehaviour
         timer = 0;
         //DontDestroyOnLoad(this);
 
+        inst_GenerateNote = GenerateNote.GetInstance();
         BGSound = GetComponent<AudioSource>();
         isBGSoundMute = PlayerPrefs.GetInt(BGKeyString, dontMute);
         if (isBGSoundMute == mute)
@@ -105,11 +107,26 @@ public class Music : MonoBehaviour
         }
     }
 
-    public void PlayMusic()
+    public IEnumerator PlayMusic()
     {
         BGSound.Play();
-        isPlaying = true;
         playCount++;
+        isPlaying = true;
+        yield return new WaitForSeconds(BGSound.clip.length);
+        while (BGSound.time != 0)
+        {
+            yield return new WaitForSeconds(0.5f);
+        }
+        yield return new WaitForSeconds(1);
+
+        if (playCount % 2 == 0)
+        {
+            timer = 0;
+            inst_GenerateNote.index = 0;
+            TrackObjects.speed *= 1.5f;
+        }
+
+        StartCoroutine(PlayMusic());
     }
 
     public void ResumeMusic()

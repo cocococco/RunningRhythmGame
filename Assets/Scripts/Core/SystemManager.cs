@@ -48,7 +48,7 @@ public class SystemManager : MonoBehaviour
         gamePausePanel.SetActive(false);
         if (isReplay)
         {
-            GameResume();
+            GameStart();
         }
         else
         {
@@ -89,16 +89,33 @@ public class SystemManager : MonoBehaviour
 
     public void OnClickStartButton()
     {
-        GameResume();
+        // 시작
+        GameStart();
+    }
+
+    public void GameStart()
+    {
+        footStepSound.Play();
+        footStepSound.loop = true;
+        StartCoroutine(inst_music.PlayMusic());
+
+        isGamePlaying = true;
+        Time.timeScale = 1;
+        gamePlayPanel.SetActive(true);
+        gamePausePanel.SetActive(false);
+        gameOverPanel.SetActive(false);
+        gameMainPanel.SetActive(false);
     }
 
     public void OnClickContinueButton()
     {
+        // 이어하기
         GameResume();
     }
 
     public void OnClickPauseButtonOff()
     {
+        // 이어하기
         GameResume();
     }
 
@@ -106,7 +123,7 @@ public class SystemManager : MonoBehaviour
     {
         footStepSound.Play();
         footStepSound.loop = true;
-        inst_music.PlayMusic();
+        inst_music.ResumeMusic();
 
         isGamePlaying = true;
         Time.timeScale = 1;
@@ -156,6 +173,7 @@ public class SystemManager : MonoBehaviour
 
     public void OnClickRetryButton()
     {
+        // 다시하기
         isReplay = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

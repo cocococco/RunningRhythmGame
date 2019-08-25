@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class GenerateNote : MonoBehaviour
 {
+    private static GenerateNote instance;
+
+    public static GenerateNote GetInstance()
+    {
+        return instance;
+    }
+
     public List<NoteContainer> beats = new List<NoteContainer>();
-    private int i = 0;
+    public int index = 0;
     private Music inst_music;
 
     private float playerZPos;
@@ -16,6 +23,15 @@ public class GenerateNote : MonoBehaviour
 
     private void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        if (instance != this)
+        {
+            DestroyImmediate(this);
+        }
+
         playerZPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position.z;
     }
 
@@ -32,20 +48,25 @@ public class GenerateNote : MonoBehaviour
 
     private void Update()
     {
-        if (beats.Count > i && beats.Count > 0 && inst_music.isPlaying)
+        ShowNotes();
+    }
+
+    private void ShowNotes()
+    {
+        if (beats.Count > index && beats.Count > 0 && inst_music.isPlaying)
         {
-            if (beats[i].time <= inst_music.time)
+            if (beats[index].time <= inst_music.time)
             {
                 // pop from pool
-                GameObject beat = inst_ObjectPool.PopFromPool(beats[i].typeNum == 0 ? "Obstacle" : (beats[i].typeNum == 1 ? "Monster" : "Item"));
-                beat.transform.position = new Vector3(beats[i].xPos, beats[i].typeNum == 1 ? 1 : 0, playerZPos + zPosInterval);
+                GameObject beat = inst_ObjectPool.PopFromPool(beats[index].typeNum == 0 ? "Obstacle" : (beats[index].typeNum == 1 ? "Monster" : "Item"));
+                beat.transform.position = new Vector3(beats[index].xPos, beats[index].typeNum == 1 ? 1 : 0, playerZPos + zPosInterval);
                 beat.SetActive(true);
 
-                if (beats[i].typeNum == 1)
+                if (beats[index].typeNum == 1)
                 {
-                    beat.GetComponent<Monster>().pitchNum = beats[i].pitchNum;
+                    beat.GetComponent<Monster>().pitchNum = beats[index].pitchNum;
                 }
-                i++;
+                index++;
             }
         }
     }
