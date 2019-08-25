@@ -22,7 +22,6 @@ public class SystemManager : MonoBehaviour
 
     private GameObject player;
     private AudioSource footStepSound;
-    private AudioSource mainMusic;
     private Music inst_music;
     private UIManager inst_UIManager;
 
@@ -42,7 +41,6 @@ public class SystemManager : MonoBehaviour
     private void Start()
     {
         inst_music = Music.GetInstance();
-        mainMusic = inst_music.BGSound;
         footStepSound = player.GetComponent<AudioSource>();
         inst_UIManager = UIManager.GetInstance();
 
@@ -79,8 +77,7 @@ public class SystemManager : MonoBehaviour
 
     private void GameMain()
     {
-        mainMusic.Stop();
-        inst_music.isPlaying = false;
+        inst_music.StopMusic();
 
         isGamePlaying = false;
         Time.timeScale = 1;
@@ -109,8 +106,7 @@ public class SystemManager : MonoBehaviour
     {
         footStepSound.Play();
         footStepSound.loop = true;
-        mainMusic.Play();
-        inst_music.isPlaying = true;
+        inst_music.PlayMusic();
 
         isGamePlaying = true;
         Time.timeScale = 1;
@@ -128,8 +124,7 @@ public class SystemManager : MonoBehaviour
     public void GamePause()
     {
         footStepSound.Stop();
-        mainMusic.Pause();
-        inst_music.isPlaying = false;
+        inst_music.PauseMusic();
 
         isGamePlaying = false;
         Time.timeScale = 0;
@@ -142,8 +137,7 @@ public class SystemManager : MonoBehaviour
     public void GameOver()
     {
         footStepSound.Stop();
-        mainMusic.Stop();
-        inst_music.isPlaying = false;
+        inst_music.StopMusic();
 
         isGamePlaying = false;
         Time.timeScale = 0;

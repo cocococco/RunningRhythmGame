@@ -59,7 +59,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -263,3 +263,4 @@ MonoBehaviour:
   imgPauseFXSounds:
   - {fileID: 21300000, guid: 601374996c493ff46bd62026f54352f3, type: 3}
   - {fileID: 21300000, guid: 74e7e469410c69e4da717b64b10e7d40, type: 3}
+  playCount: 0

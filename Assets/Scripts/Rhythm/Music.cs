@@ -15,7 +15,7 @@ public class Music : MonoBehaviour
 
     private float timer;
     public bool isPlaying = false;
-    public AudioSource BGSound;
+    private AudioSource BGSound;
     public AudioSource[] FXSounds;
 
     public Sprite imgMainBGSound;
@@ -36,6 +36,8 @@ public class Music : MonoBehaviour
 
     private int isFXSoundMute;
     private const string FXKeyString = "FXSoundMute";
+
+    public int playCount = 0;
 
     private void Awake()
     {
@@ -100,16 +102,32 @@ public class Music : MonoBehaviour
         {
             timer += Time.deltaTime;
             time = Mathf.FloorToInt(timer * 1000);
-            //Debug.Log("music : " + time);
         }
     }
 
-    private IEnumerator PlayMusic()
+    public void PlayMusic()
     {
-        yield return new WaitForSeconds(1);
-        isPlaying = true;
         BGSound.Play();
-        BGSound.loop = true;
+        isPlaying = true;
+        playCount++;
+    }
+
+    public void ResumeMusic()
+    {
+        BGSound.Play();
+        isPlaying = true;
+    }
+
+    public void PauseMusic()
+    {
+        BGSound.Pause();
+        isPlaying = false;
+    }
+
+    public void StopMusic()
+    {
+        BGSound.Stop();
+        isPlaying = false;
     }
 
     public void BGSoundMute()

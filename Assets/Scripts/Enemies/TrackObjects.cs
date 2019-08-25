@@ -6,7 +6,7 @@ public abstract class TrackObjects : MonoBehaviour
 {
     protected SystemManager inst_SystemManager;
     protected int interval = 2;
-    protected float speed = 18;
+    public float speed { get; set; }
     protected string poolItemName = null;
     protected Transform playerTransform;
     protected ObjectPool inst_ObjectPool;
@@ -18,6 +18,7 @@ public abstract class TrackObjects : MonoBehaviour
         playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         inst_ObjectPool = ObjectPool.GetInstance();
         inst_Score = Score.GetInstance();
+        speed = 18;
 
         //StartCoroutine(Move());
     }
