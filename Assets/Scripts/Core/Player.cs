@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
 
     public bool isShield { get; set; }
     public bool shieldDone { get; set; }
+    private bool isIgenoreCollision = false;
 
     private void Awake()
     {
@@ -73,19 +74,40 @@ public class Player : MonoBehaviour
 
     public void SwitchIgnoreCollisions()
     {
-        myRigidbody.isKinematic = !myRigidbody.isKinematic;
-        myCollider.isTrigger = !myCollider.isTrigger;
+        bool isKinematic = myRigidbody.isKinematic;
+        bool isTrigger = myCollider.isTrigger;
+
+        if (isKinematic == true && isTrigger == true) // 실드 상태일 때에도 치트 끄면 충돌 활성화됨. 중요한 게 아니니 보류.
+        {
+            myRigidbody.isKinematic = false;
+            myCollider.isTrigger = false;
+            isIgenoreCollision = false;
+        }
+        else if (isKinematic == false && isTrigger == false)
+        {
+            myRigidbody.isKinematic = true;
+            myCollider.isTrigger = true;
+            isIgenoreCollision = true;
+        }
+        else
+        {
+            Debug.LogError("ignore collision error");
+        }
     }
 
-    public void IgnoreCollisionsOn()
+    public void ShieldCollisionOn()
     {
+        if (isIgenoreCollision == true) return;
+
         myRigidbody.isKinematic = true;
         myCollider.isTrigger = true;
     }
 
-    public void IgnoreCollisionsOff()
+    public void ShieldCollisionOff()
     {
-        //myRigidbody.isKinematic = false;
-        //myCollider.isTrigger = false;
+        if (isIgenoreCollision == true) return;
+
+        myRigidbody.isKinematic = false;
+        myCollider.isTrigger = false;
     }
 }

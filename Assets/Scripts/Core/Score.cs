@@ -200,12 +200,12 @@ public class Score : MonoBehaviour
         inst_Player.isShield = true;
         inst_Player.shieldDone = true;
         shieldText.SetActive(true);
-        inst_Player.IgnoreCollisionsOn();
+        inst_Player.ShieldCollisionOn();
         yield return new WaitForSeconds(9);
         shieldText.SetActive(false);
         yield return new WaitForSeconds(1);
         inst_Player.isShield = false;
-        inst_Player.IgnoreCollisionsOff();
+        inst_Player.ShieldCollisionOff();
     }
 
     public void RenewItemScore(int score)
