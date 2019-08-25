@@ -213,6 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c200e0ded0247041aebf824708ad7bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  index: 0
 --- !u!114 &114859307313331970
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -229,6 +230,7 @@ MonoBehaviour:
   gamePausePanel: {fileID: 0}
   gameMainPanel: {fileID: 0}
   gamePlayPanel: {fileID: 0}
+  tutorialPanel: {fileID: 0}
 --- !u!114 &114969906386983422
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -241,7 +243,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlaying: 0
-  BGSound: {fileID: 82889658454970198}
   FXSounds:
   - {fileID: 0}
   - {fileID: 0}
@@ -263,4 +264,3 @@ MonoBehaviour:
   imgPauseFXSounds:
   - {fileID: 21300000, guid: 601374996c493ff46bd62026f54352f3, type: 3}
   - {fileID: 21300000, guid: 74e7e469410c69e4da717b64b10e7d40, type: 3}
-  playCount: 0

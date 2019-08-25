@@ -19,6 +19,10 @@ public class SystemManager : MonoBehaviour
     public GameObject gamePausePanel;
     public GameObject gameMainPanel;
     public GameObject gamePlayPanel;
+    public GameObject tutorialPanel;
+
+    private const string keyString = "TutorialEx";
+    private int tutorialCount;
 
     private GameObject player;
     private AudioSource footStepSound;
@@ -43,6 +47,7 @@ public class SystemManager : MonoBehaviour
         inst_music = Music.GetInstance();
         footStepSound = player.GetComponent<AudioSource>();
         inst_UIManager = UIManager.GetInstance();
+        tutorialCount = PlayerPrefs.GetInt(keyString, 0);
 
         gameOverPanel.SetActive(false);
         gamePausePanel.SetActive(false);
@@ -85,6 +90,7 @@ public class SystemManager : MonoBehaviour
         gamePausePanel.SetActive(false);
         gameOverPanel.SetActive(false);
         gamePlayPanel.SetActive(false);
+        tutorialPanel.SetActive(false);
     }
 
     public void OnClickStartButton()
@@ -105,6 +111,41 @@ public class SystemManager : MonoBehaviour
         gamePausePanel.SetActive(false);
         gameOverPanel.SetActive(false);
         gameMainPanel.SetActive(false);
+
+        if (PlayerPrefs.GetInt(keyString, 0) < 5) // 5번까지만 튜토리얼 띄움
+        {
+            StartCoroutine(TimeGap(0.5f));
+            TutorialOn();
+        }
+    }
+
+    private IEnumerator TimeGap(float time)
+    {
+        yield return new WaitForSeconds(time);
+    }
+
+    private void TutorialOn()
+    {
+        footStepSound.Stop();
+        inst_music.PauseMusic();
+
+        isGamePlaying = false;
+        Time.timeScale = 0;
+
+        tutorialPanel.SetActive(true);
+        PlayerPrefs.SetInt(keyString, ++tutorialCount);
+    }
+
+    public void TutorialOff()
+    {
+        footStepSound.Play();
+        footStepSound.loop = true;
+        inst_music.ResumeMusic();
+
+        isGamePlaying = true;
+        Time.timeScale = 1;
+
+        tutorialPanel.SetActive(false);
     }
 
     public void OnClickContinueButton()
