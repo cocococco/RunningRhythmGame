@@ -66,7 +66,7 @@ public class GenerateNote : MonoBehaviour
                         break;
 
                     case 1: // monster green
-                        poolItemName = "Monster";
+                        poolItemName = "MonsterGreen";
                         break;
 
                     case 2: // cookie
@@ -79,19 +79,20 @@ public class GenerateNote : MonoBehaviour
                         break;
 
                     case 4: // yellow
-                        poolItemName = "Monster";
+                        poolItemName = "MonsterYellow";
                         break;
 
                     case 5: // orange
-                        poolItemName = "Monster";
+                        poolItemName = "MonsterOrange";
                         break;
                 }
 
                 GameObject beat = inst_ObjectPool.PopFromPool(poolItemName);
-                beat.transform.position = new Vector3(beats[index].xPos, 1, playerZPos + zPosInterval);
+                beat.transform.position = new Vector3(beats[index].xPos,
+                    (beats[index].typeNum == 1 || beats[index].typeNum == 4 || beats[index].typeNum == 5) ? 1 : 0, playerZPos + zPosInterval);
                 beat.SetActive(true);
 
-                if (beats[index].typeNum == 1)
+                if (beats[index].typeNum == 1 || beats[index].typeNum == 4 || beats[index].typeNum == 5)
                 {
                     beat.GetComponent<Monster>().pitchNum = beats[index].pitchNum;
                 }

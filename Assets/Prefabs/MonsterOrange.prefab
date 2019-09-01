@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 114269906487288802}
   - component: {fileID: 82384185965153736}
   m_Layer: 10
-  m_Name: Monster_Orange
+  m_Name: MonsterOrange
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -310,6 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb90ba84aaa9f7c4ca31f767c7b03f5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poolItemName: 
   soundFXDie:
   - {fileID: 0}
   - {fileID: 8300000, guid: d2bd9453460aedb4d8ec9d859a01e347, type: 3}

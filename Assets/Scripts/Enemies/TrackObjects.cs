@@ -7,7 +7,7 @@ public abstract class TrackObjects : MonoBehaviour
     protected SystemManager inst_SystemManager;
     protected int interval = 2;
     public static float speed { get; set; }
-    protected string poolItemName = null;
+    public string poolItemName = null;
     protected Transform playerTransform;
     protected ObjectPool inst_ObjectPool;
     protected Score inst_Score;

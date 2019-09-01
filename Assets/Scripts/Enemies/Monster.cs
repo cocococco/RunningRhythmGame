@@ -6,7 +6,7 @@ public class Monster : TrackObjects
 {
     public int pitchNum { get; set; }
 
-    public AudioClip[] soundFXDie = new AudioClip[14];
+    public AudioClip[] soundFXDie = new AudioClip[15];
 
     public AudioSource mySoundFXDie { get; set; }
     private bool isGone = false;
@@ -16,7 +16,22 @@ public class Monster : TrackObjects
         base.Start();
         mySoundFXDie = GetComponent<AudioSource>();
 
-        poolItemName = "Monster";
+        if (this.gameObject.name.CompareTo("MonsterGreen") == 0)
+        {
+            poolItemName = "MonsterGreen";
+        }
+        else if (this.gameObject.name.CompareTo("MonsterYellow") == 0)
+        {
+            poolItemName = "MonsterYellow";
+        }
+        else if (this.gameObject.name.CompareTo("MonsterOrange") == 0)
+        {
+            poolItemName = "MonsterOrange";
+        }
+        else
+        {
+            Debug.LogError("monster name error");
+        }
     }
 
     private new void Update()

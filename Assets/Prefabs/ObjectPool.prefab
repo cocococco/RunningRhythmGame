@@ -56,13 +56,13 @@ MonoBehaviour:
     prefab: {fileID: 1072333490596676, guid: 5e9fa25a9c6b3dd4294ee8bd8dfcb328, type: 2}
     poolCount: 10
     poolList: []
-  - poolItemName: Monster
-    prefab: {fileID: 1330924440787220, guid: 7128130e83340a24f8041722f4068af6, type: 2}
-    poolCount: 15
+  - poolItemName: MonsterGreen
+    prefab: {fileID: 1554015845755594, guid: 2d88076e0ef1c184299847c215fa4676, type: 2}
+    poolCount: 8
     poolList: []
   - poolItemName: ItemCookie
     prefab: {fileID: 1899442897645814, guid: cc5622d60993e5548a78d35a3677dc0b, type: 2}
-    poolCount: 6
+    poolCount: 3
     poolList: []
   - poolItemName: MonsterDieFX
     prefab: {fileID: 1720348956290346, guid: 620150a0806fc4c479a2e784a6af5873, type: 2}
@@ -70,9 +70,17 @@ MonoBehaviour:
     poolList: []
   - poolItemName: ItemCake
     prefab: {fileID: 1615244860547512, guid: 631fa677d71cf7549a499f612c65ebdc, type: 2}
-    poolCount: 10
+    poolCount: 3
     poolList: []
   - poolItemName: ItemFX
     prefab: {fileID: 1981979142797486, guid: 2a2ed007f00ae824d9792b116a688a78, type: 2}
     poolCount: 2
+    poolList: []
+  - poolItemName: MonsterYellow
+    prefab: {fileID: 1330924440787220, guid: 7128130e83340a24f8041722f4068af6, type: 2}
+    poolCount: 8
+    poolList: []
+  - poolItemName: MonsterOrange
+    prefab: {fileID: 1723508851476788, guid: 4823bb4667f0bd94fba003b4ed95b288, type: 2}
+    poolCount: 17
     poolList: []

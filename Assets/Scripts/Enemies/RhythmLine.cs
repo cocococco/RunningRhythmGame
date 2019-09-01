@@ -82,7 +82,7 @@ public class RhythmLine : MonoBehaviour
                     GameObject item = inst_ObjectPool.PopFromPool("MonsterDieFX");
                     item.transform.position = targetPos;
                     item.SetActive(true);
-                    inst_ObjectPool.PushToPool("Monster", monsters[i].gameObject);
+                    inst_ObjectPool.PushToPool(m.poolItemName, monsters[i].gameObject);
                 }
                 monsters.RemoveAt(i);
             }
@@ -127,7 +127,7 @@ public class RhythmLine : MonoBehaviour
                 GameObject item = inst_ObjectPool.PopFromPool("MonsterDieFX");
                 item.transform.position = monsters[0].transform.position;
                 item.SetActive(true);
-                inst_ObjectPool.PushToPool("Monster", monsters[0].gameObject);
+                inst_ObjectPool.PushToPool(m.poolItemName, monsters[0].gameObject);
             }
             monsters.RemoveAt(0);
         } // if end
