@@ -88,10 +88,10 @@ GameObject:
   - component: {fileID: 33734700174900440}
   - component: {fileID: 23970581071422984}
   - component: {fileID: 136128236876908106}
-  - component: {fileID: 114915265929942558}
   - component: {fileID: 54637341680141430}
+  - component: {fileID: 114133162561568198}
   m_Layer: 10
-  m_Name: Item
+  m_Name: ItemCookie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -343,7 +343,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114915265929942558
+--- !u!114 &114133162561568198
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}

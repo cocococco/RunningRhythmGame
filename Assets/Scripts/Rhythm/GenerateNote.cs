@@ -58,8 +58,37 @@ public class GenerateNote : MonoBehaviour
             if (beats[index].time <= inst_music.time)
             {
                 // pop from pool
-                GameObject beat = inst_ObjectPool.PopFromPool(beats[index].typeNum == 0 ? "Obstacle" : (beats[index].typeNum == 1 ? "Monster" : "Item"));
-                beat.transform.position = new Vector3(beats[index].xPos, beats[index].typeNum == 1 ? 1 : 0, playerZPos + zPosInterval);
+                string poolItemName = null;
+                switch (beats[index].typeNum)
+                {
+                    case 0: // obstacle
+                        poolItemName = "Obstacle";
+                        break;
+
+                    case 1: // monster green
+                        poolItemName = "Monster";
+                        break;
+
+                    case 2: // cookie
+                        poolItemName = "ItemCookie";
+
+                        break;
+
+                    case 3: // cake
+                        poolItemName = "ItemCake";
+                        break;
+
+                    case 4: // yellow
+                        poolItemName = "Monster";
+                        break;
+
+                    case 5: // orange
+                        poolItemName = "Monster";
+                        break;
+                }
+
+                GameObject beat = inst_ObjectPool.PopFromPool(poolItemName);
+                beat.transform.position = new Vector3(beats[index].xPos, 1, playerZPos + zPosInterval);
                 beat.SetActive(true);
 
                 if (beats[index].typeNum == 1)

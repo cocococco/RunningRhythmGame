@@ -85,9 +85,9 @@ GameObject:
   - component: {fileID: 23959505195031534}
   - component: {fileID: 136958005751816298}
   - component: {fileID: 54837626640959558}
-  - component: {fileID: 114379323221468718}
+  - component: {fileID: 114889185934877198}
   m_Layer: 10
-  m_Name: Item2
+  m_Name: ItemCake
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -445,7 +445,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114379323221468718
+--- !u!114 &114889185934877198
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}

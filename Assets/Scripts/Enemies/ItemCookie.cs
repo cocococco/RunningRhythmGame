@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item : TrackObjects
+public class ItemCookie : TrackObjects
 {
     protected int itemScore = 1500;
     protected int itemCombo = 10;
@@ -10,7 +10,7 @@ public class Item : TrackObjects
     private new void Start()
     {
         base.Start();
-        poolItemName = "Item";
+        poolItemName = "ItemCookie";
     }
 
     protected override void Reset()

@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BonusItem : Item
+public class ItemCake : ItemCookie
 {
     private new void Start()
     {
         base.Start();
-        poolItemName = "Item2";
+        poolItemName = "ItemCake";
         itemScore = 5000;
         itemCombo = 20;
     }

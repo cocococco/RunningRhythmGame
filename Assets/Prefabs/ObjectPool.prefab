@@ -57,10 +57,10 @@ MonoBehaviour:
     poolCount: 10
     poolList: []
   - poolItemName: Monster
-    prefab: {fileID: 1955975458565448, guid: 572a29f818ef95c4186c12e2ae4733af, type: 2}
+    prefab: {fileID: 1330924440787220, guid: 7128130e83340a24f8041722f4068af6, type: 2}
     poolCount: 15
     poolList: []
-  - poolItemName: Item
+  - poolItemName: ItemCookie
     prefab: {fileID: 1899442897645814, guid: cc5622d60993e5548a78d35a3677dc0b, type: 2}
     poolCount: 6
     poolList: []
@@ -68,7 +68,7 @@ MonoBehaviour:
     prefab: {fileID: 1720348956290346, guid: 620150a0806fc4c479a2e784a6af5873, type: 2}
     poolCount: 10
     poolList: []
-  - poolItemName: Item2
+  - poolItemName: ItemCake
     prefab: {fileID: 1615244860547512, guid: 631fa677d71cf7549a499f612c65ebdc, type: 2}
     poolCount: 10
     poolList: []
