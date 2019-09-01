@@ -20,6 +20,7 @@ public class SystemManager : MonoBehaviour
     public GameObject gameMainPanel;
     public GameObject gamePlayPanel;
     public GameObject tutorialPanel;
+    public GameObject scoreInfoPanel;
 
     private const string keyString = "TutorialEx";
     private int tutorialCount;
@@ -91,6 +92,7 @@ public class SystemManager : MonoBehaviour
         gameOverPanel.SetActive(false);
         gamePlayPanel.SetActive(false);
         tutorialPanel.SetActive(false);
+        scoreInfoPanel.SetActive(false);
     }
 
     public void OnClickStartButton()
@@ -111,6 +113,7 @@ public class SystemManager : MonoBehaviour
         gamePausePanel.SetActive(false);
         gameOverPanel.SetActive(false);
         gameMainPanel.SetActive(false);
+        scoreInfoPanel.SetActive(false);
 
         if (PlayerPrefs.GetInt(keyString, 0) < 5) // 5번까지만 튜토리얼 띄움
         {
@@ -146,6 +149,18 @@ public class SystemManager : MonoBehaviour
         Time.timeScale = 1;
 
         tutorialPanel.SetActive(false);
+    }
+
+    public void OnClickScoreInfoButtonOn()
+    {
+        scoreInfoPanel.SetActive(true);
+        gamePausePanel.SetActive(false);
+    }
+
+    public void OnClickScoreInfoButtonOff()
+    {
+        scoreInfoPanel.SetActive(false);
+        gamePausePanel.SetActive(true);
     }
 
     public void OnClickContinueButton()
