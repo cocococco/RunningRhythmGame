@@ -57,9 +57,6 @@ public class Score : MonoBehaviour
 
     private Player inst_Player;
 
-    [SerializeField]
-    private GameObject shieldText;
-
     private void Awake()
     {
         if (instance == null)
@@ -86,8 +83,6 @@ public class Score : MonoBehaviour
         totalObstacleScoreText.text = "";
         itemScoreText.text = "";
         comboCountText.text = "";
-
-        shieldText.SetActive(false);
     }
 
     private void Update()
@@ -199,10 +194,8 @@ public class Score : MonoBehaviour
     {
         inst_Player.isShield = true;
         inst_Player.shieldDone = true;
-        shieldText.SetActive(true);
         inst_Player.ShieldCollisionOn();
-        yield return new WaitForSeconds(9);
-        shieldText.SetActive(false);
+        yield return new WaitForSeconds(4);
         yield return new WaitForSeconds(1);
         inst_Player.isShield = false;
         inst_Player.ShieldCollisionOff();

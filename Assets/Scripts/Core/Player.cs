@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
     public bool isShield { get; set; }
     public bool shieldDone { get; set; }
     private bool isIgenoreCollision = false;
+    public GameObject shieldFx;
 
     private void Awake()
     {
@@ -47,6 +48,7 @@ public class Player : MonoBehaviour
         myCollider = GetComponent<CapsuleCollider>();
         isShield = false;
         shieldDone = false;
+        shieldFx.SetActive(false);
     }
 
     private void Update()
@@ -97,6 +99,8 @@ public class Player : MonoBehaviour
 
     public void ShieldCollisionOn()
     {
+        shieldFx.SetActive(true);
+
         if (isIgenoreCollision == true) return;
 
         myRigidbody.isKinematic = true;
@@ -105,6 +109,8 @@ public class Player : MonoBehaviour
 
     public void ShieldCollisionOff()
     {
+        shieldFx.SetActive(false);
+
         if (isIgenoreCollision == true) return;
 
         myRigidbody.isKinematic = false;
