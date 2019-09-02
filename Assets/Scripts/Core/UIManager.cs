@@ -19,12 +19,12 @@ public class UIManager : MonoBehaviour
     public Image imgPauseFXSound;
     private Music inst_Music;
 
-    public TextMeshProUGUI highScoreText;
-    public TextMeshProUGUI distanceText;
-    public TextMeshProUGUI obstacleText;
-    public TextMeshProUGUI monsterText;
-    public TextMeshProUGUI bonusText;
-    public TextMeshProUGUI totalText;
+    public Text highScoreText;
+    public Text distanceText;
+    public Text obstacleText;
+    public Text monsterText;
+    public Text bonusText;
+    public Text totalText;
     private Score inst_Score;
 
     private void Awake()
