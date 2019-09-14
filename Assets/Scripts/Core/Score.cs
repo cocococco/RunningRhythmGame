@@ -98,7 +98,7 @@ public class Score : MonoBehaviour
     {
         timer += Time.deltaTime;
         distance = Mathf.FloorToInt(timer * 100);
-        distanceScore = Mathf.FloorToInt(distance * comboMultiple);
+        distanceScore = Mathf.FloorToInt(distance * 10 * comboMultiple);
         totalScore = distanceScore + totalMonsterScore + totalObstacleScore + totalItemScore; // add combo score
 
         distanceText.text = distance.ToString("#,##0") + "M";
