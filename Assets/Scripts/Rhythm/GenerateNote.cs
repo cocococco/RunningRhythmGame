@@ -88,8 +88,9 @@ public class GenerateNote : MonoBehaviour
                 }
 
                 GameObject beat = inst_ObjectPool.PopFromPool(poolItemName);
-                beat.transform.position = new Vector3(beats[index].xPos,
-                    (beats[index].typeNum == 1 || beats[index].typeNum == 4 || beats[index].typeNum == 5) ? 1 : 0, playerZPos + zPosInterval);
+                //beat.transform.position = new Vector3(beats[index].xPos,
+                //    (beats[index].typeNum == 1 || beats[index].typeNum == 4 || beats[index].typeNum == 5) ? 1 : 0, playerZPos + zPosInterval);
+                beat.transform.position = new Vector3(beats[index].xPos, 0, playerZPos + zPosInterval);
                 beat.SetActive(true);
 
                 if (beats[index].typeNum == 1 || beats[index].typeNum == 4 || beats[index].typeNum == 5)
