@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 222639837430907400}
   - component: {fileID: 114518199084562246}
   m_Layer: 5
-  m_Name: Obstacle
+  m_Name: ObstacleScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 222046345879454096}
   - component: {fileID: 114810939774508934}
   m_Layer: 5
-  m_Name: Bonus
+  m_Name: ItemScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 114627648437240320}
   - component: {fileID: 114081274426345470}
   m_Layer: 5
-  m_Name: PauseButton
+  m_Name: CheatButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -422,7 +422,7 @@ GameObject:
   - component: {fileID: 222184090796533492}
   - component: {fileID: 114093698074539390}
   m_Layer: 5
-  m_Name: ObstacleText
+  m_Name: ObstacleScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -634,7 +634,7 @@ GameObject:
   - component: {fileID: 222227448110272816}
   - component: {fileID: 114284592295166758}
   m_Layer: 5
-  m_Name: Total
+  m_Name: TotalScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -656,7 +656,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1496241491293086
 GameObject:
   m_ObjectHideFlags: 1
@@ -770,7 +770,7 @@ GameObject:
   - component: {fileID: 222100358213376664}
   - component: {fileID: 114528263605686932}
   m_Layer: 5
-  m_Name: BonusText
+  m_Name: ItemScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1046,7 +1046,7 @@ GameObject:
   - component: {fileID: 222262392411609708}
   - component: {fileID: 114676173851207960}
   m_Layer: 5
-  m_Name: Monster
+  m_Name: MonsterScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1063,7 +1063,7 @@ GameObject:
   - component: {fileID: 222098721379186180}
   - component: {fileID: 114500160347486382}
   m_Layer: 5
-  m_Name: MonsterText
+  m_Name: MonsterScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1186,7 +1186,7 @@ GameObject:
   - component: {fileID: 222372594333841950}
   - component: {fileID: 114248630666878070}
   m_Layer: 5
-  m_Name: TotalText
+  m_Name: TotalScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1577,7 +1577,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 767540000
+  m_Text: 0
 --- !u!114 &114094381907203980
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2068,7 +2068,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 767540000
+  m_Text: 0
 --- !u!114 &114254643997557162
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2101,7 +2101,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: +1000
+  m_Text: + 0
 --- !u!114 &114255268596027144
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2194,7 +2194,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: good!
+  m_Text: Good!
 --- !u!114 &114282358245529258
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2287,7 +2287,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: +500
+  m_Text: + 0
 --- !u!114 &114300408725388660
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2761,7 +2761,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 767540000
+  m_Text: 0
 --- !u!114 &114478830276144180
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2873,7 +2873,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 767540000
+  m_Text: 0
 --- !u!114 &114511546249764020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3015,7 +3015,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 767540000
+  m_Text: 0
 --- !u!114 &114537107132047752
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3048,7 +3048,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 767540000
+  m_Text: 0
 --- !u!114 &114537898315872750
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3292,7 +3292,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1183713355796058}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -3397,7 +3397,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 50 COMBO
+  m_Text: 0 COMBO
 --- !u!114 &114663904739419736
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3509,7 +3509,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: +1000
+  m_Text: + 0
 --- !u!114 &114676173851207960
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3789,7 +3789,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.11764706}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4399,7 +4399,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 767540000
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f931dcbee454d7645aed0ca90c11282a, type: 2}
   m_sharedMaterial: {fileID: 21850167352725460, guid: f931dcbee454d7645aed0ca90c11282a,
@@ -4468,7 +4468,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 0}
-    characterCount: 9
+    characterCount: 1
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -4675,7 +4675,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 767540000
+  m_Text: 0 M
 --- !u!114 &114996302648869810
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5210,7 +5210,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 540, y: -189}
-  m_SizeDelta: {x: 96, y: 38}
+  m_SizeDelta: {x: 46, y: 38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224046386736633160
 RectTransform:
@@ -5246,7 +5246,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 540, y: -227}
-  m_SizeDelta: {x: 96, y: 38}
+  m_SizeDelta: {x: 46, y: 38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224089647649839004
 RectTransform:
@@ -5299,8 +5299,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 540, y: -522.1}
-  m_SizeDelta: {x: 89, y: 44}
+  m_AnchoredPosition: {x: 540, y: -553.1}
+  m_SizeDelta: {x: 53, y: 44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224116636086748096
 RectTransform:
@@ -5431,8 +5431,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 540, y: -619.1}
-  m_SizeDelta: {x: 143, y: 62}
+  m_AnchoredPosition: {x: 540, y: -650.1}
+  m_SizeDelta: {x: 149, y: 62}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224150008813386424
 RectTransform:
@@ -5701,7 +5701,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 76.333374, y: -85.900024}
+  m_AnchoredPosition: {x: 76.333336, y: -85.900024}
   m_SizeDelta: {x: 152.66667, y: 171.80005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224437492818501038
@@ -6188,7 +6188,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 375, y: -19}
-  m_SizeDelta: {x: 171, y: 38}
+  m_SizeDelta: {x: 51, y: 38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224807546984016426
 RectTransform:
@@ -6243,8 +6243,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 540, y: -566.1}
-  m_SizeDelta: {x: 185, y: 44}
+  m_AnchoredPosition: {x: 540, y: -597.1}
+  m_SizeDelta: {x: 163, y: 44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224827116235271776
 RectTransform:
@@ -6299,7 +6299,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 374.1, y: -66.90002}
-  m_SizeDelta: {x: 303.44, y: 62.27}
+  m_SizeDelta: {x: 31.75, y: 62.27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224881302987492866
 RectTransform:

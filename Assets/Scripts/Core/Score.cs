@@ -101,7 +101,7 @@ public class Score : MonoBehaviour
         distanceScore = Mathf.FloorToInt(distance * 10 * comboMultiple);
         totalScore = distanceScore + totalMonsterScore + totalObstacleScore + totalItemScore; // add combo score
 
-        distanceText.text = distance.ToString("#,##0") + "M";
+        distanceText.text = distance.ToString("#,##0") + " M";
         totalScoreText.text = totalScore.ToString("#,##0");
 
         if (totalScore > highScore)
@@ -143,7 +143,7 @@ public class Score : MonoBehaviour
         monsterTextTimer = 0;
         monsterScore = Mathf.FloorToInt(score * comboMultiple);
         totalMonsterScore += score;
-        monsterScoreText.text = "+" + monsterScore.ToString();
+        monsterScoreText.text = "+ " + monsterScore.ToString();
         monsterScoreGradeText.text = gradeText;
         pitchText.text = text;
         //StartCoroutine(TextVanish(monsterScoreText));
@@ -154,7 +154,7 @@ public class Score : MonoBehaviour
     {
         obstacleTextTimer = 0;
         totalObstacleScore += Mathf.FloorToInt(score * comboMultiple);
-        totalObstacleScoreText.text = "Obstacle +" + totalObstacleScore.ToString();
+        totalObstacleScoreText.text = "+ " + totalObstacleScore.ToString();
         //StartCoroutine(TextVanish(totalObstacleScoreText)); // 너무 빨라서 사라지게 안함
     }
 
@@ -206,7 +206,7 @@ public class Score : MonoBehaviour
         itemTextTimer = 0;
         itemScore = score;
         totalItemScore += itemScore;
-        itemScoreText.text = "Item +" + itemScore.ToString();
+        itemScoreText.text = "+ " + itemScore.ToString();
         //StartCoroutine(TextVanish(itemScoreText));
     }
 }
