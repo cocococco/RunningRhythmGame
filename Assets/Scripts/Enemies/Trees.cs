@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Trees : TrackObjects
 {
-    private float firstStartZ = 10;
+    private float firstStartZ = 112;
+    private float length = 24;
 
     protected override void Reset()
     {
         Vector3 myPos = this.transform.position;
 
-        if (myPos.z < firstStartZ - 20)
+        if (myPos.z < firstStartZ - length)
         {
-            this.transform.position = new Vector3(myPos.x, myPos.y, firstStartZ + 60);
+            this.transform.position = new Vector3(myPos.x, myPos.y, firstStartZ + length * 3);
         }
     }
 }
