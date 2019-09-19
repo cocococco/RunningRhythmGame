@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Trees : TrackObjects
 {
-    private float firstStartZ = 10;
-    private float length = 40;
+    private float firstStartZ = 112;
+    private float length = 24;
 
     protected override void Reset()
     {
@@ -13,7 +13,7 @@ public class Trees : TrackObjects
 
         if (myPos.z < firstStartZ - length)
         {
-            this.transform.position = new Vector3(myPos.x, myPos.y, firstStartZ + length);
+            this.transform.position = new Vector3(myPos.x, myPos.y, firstStartZ + length * 3);
         }
     }
 }
