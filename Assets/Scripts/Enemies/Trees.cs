@@ -13,7 +13,7 @@ public class Trees : TrackObjects
 
         if (myPos.z < firstStartZ - length)
         {
-            this.transform.position = new Vector3(myPos.x, myPos.y, firstStartZ + length * 3);
+            this.transform.position = new Vector3(myPos.x, myPos.y, firstStartZ + length * 2);
         }
     }
 }

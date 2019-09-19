@@ -115,11 +115,14 @@ public class SystemManager : MonoBehaviour
         gameMainPanel.SetActive(false);
         scoreInfoPanel.SetActive(false);
 
-        if (PlayerPrefs.GetInt(keyString, 0) < 5) // 5번까지만 튜토리얼 띄움
-        {
-            StartCoroutine(TimeGap(0.5f));
-            TutorialOn();
-        }
+        // 무조건 튜토리얼 띄움
+        StartCoroutine(TimeGap(0.5f));
+        TutorialOn();
+        //if (PlayerPrefs.GetInt(keyString, 0) < 5) // 5번까지만 튜토리얼 띄움
+        //{
+        //    StartCoroutine(TimeGap(0.5f));
+        //    TutorialOn();
+        //}
     }
 
     private IEnumerator TimeGap(float time)
