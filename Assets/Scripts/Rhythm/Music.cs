@@ -11,7 +11,7 @@ public class Music : MonoBehaviour
         return instance;
     }
 
-    public int time { get; set; }
+    public double time { get; set; }
 
     private float timer;
     public bool isPlaying = false;
@@ -103,7 +103,7 @@ public class Music : MonoBehaviour
         if (isPlaying)
         {
             timer += Time.deltaTime;
-            time = Mathf.FloorToInt(timer * 1000);
+            time = timer * 1000;
         }
     }
 

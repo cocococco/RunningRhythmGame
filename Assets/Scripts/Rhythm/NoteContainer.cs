@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NoteContainer
 {
-    public float time { get; set; }
+    public double time { get; set; }
     public float xPos { get; set; }
     public int typeNum { get; set; }
     public int pitchNum { get; set; }
@@ -16,8 +16,8 @@ public class NoteContainer
 
     // BPM 130 = 1분에 130박자 = 60초에 130박자 = 60초 : 130박자 = x초 : 1박자. x = 0.'461538'461538'.....초
 
-    private int beatInterval = 461; //한 박자 간격
-    private int barInterval = 1844; //한 마디 간격
+    private double beatInterval = 461.53846153846153f; //한 박자 간격
+    private double barInterval = 1846.1538461538461f; //한 마디 간격
     private int priorInterval = 500; //노래 시작하기 전 쉬는 타임?
     private int gap = 150; // 플레이어한테 오기까지 간격
 
