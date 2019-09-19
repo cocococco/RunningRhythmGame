@@ -117,7 +117,7 @@ public class Music : MonoBehaviour
         {
             yield return new WaitForSeconds(0.5f);
         }
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2.615f);
 
         if (playCount % 2 == 0)
         {
