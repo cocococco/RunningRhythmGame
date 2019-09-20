@@ -42,7 +42,7 @@ public class Score : MonoBehaviour
     public TextMeshProUGUI totalScoreText;
 
     public int highScore;
-    private const string keyString = "HighScore";
+    private const string keyString = "HighScore_0";
 
     private SystemManager inst_SystemManager;
 
@@ -171,7 +171,7 @@ public class Score : MonoBehaviour
         }
         comboCountText.text = comboCount.ToString() + " COMBO";
         //StartCoroutine(TextVanish(comboCountText));
-        if (comboCount >= 50)
+        if (comboCount >= 100)
         {
             comboMultiple = 1.5f;
             if (inst_Player.shieldDone == false)
@@ -179,7 +179,7 @@ public class Score : MonoBehaviour
                 StartCoroutine(ShieldOn());
             }
         }
-        else if (comboCount >= 25)
+        else if (comboCount >= 50)
         {
             comboMultiple = 1.2f;
         }

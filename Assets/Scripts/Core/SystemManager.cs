@@ -22,7 +22,7 @@ public class SystemManager : MonoBehaviour
     public GameObject tutorialPanel;
     public GameObject scoreInfoPanel;
 
-    private const string keyString = "TutorialEx";
+    private const string keyString = "Tutorial_0";
     private int tutorialCount;
 
     private GameObject player;
@@ -116,13 +116,13 @@ public class SystemManager : MonoBehaviour
         scoreInfoPanel.SetActive(false);
 
         // 무조건 튜토리얼 띄움
-        StartCoroutine(TimeGap(0.5f));
-        TutorialOn();
-        //if (PlayerPrefs.GetInt(keyString, 0) < 5) // 5번까지만 튜토리얼 띄움
-        //{
-        //    StartCoroutine(TimeGap(0.5f));
-        //    TutorialOn();
-        //}
+        //StartCoroutine(TimeGap(0.5f));
+        //TutorialOn();
+        if (PlayerPrefs.GetInt(keyString, 0) < 5) // 5번까지만 튜토리얼 띄움
+        {
+            StartCoroutine(TimeGap(0.5f));
+            TutorialOn();
+        }
     }
 
     private IEnumerator TimeGap(float time)
