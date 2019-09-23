@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PooledObject" Collapsed="true">
+    <Position X="12" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAEQAAAAAAAAIAAAAAAAAYAAEAAAAAAgA=</HashCode>
+      <FileName>Assets\Scripts\Object Pool\PooledObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ItemCake" Collapsed="true">
+    <Position X="5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemies\ItemCake.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ItemCookie" Collapsed="true">
+    <Position X="5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAACAABAAAAAAAAAAAAAAAAAAAQAAAAAAAABA=</HashCode>
+      <FileName>Assets\Scripts\Enemies\ItemCookie.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monster" Collapsed="true">
+    <Position X="7.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQBCAAAACAABAAAAAAAAAAAgAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemies\Monster.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Obstacle" Collapsed="true">
+    <Position X="0.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAASAABAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemies\Obstacle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ParticleAutoDie" Collapsed="true">
+    <Position X="13.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACBAEAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemies\ParticleAutoDie.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhythmLine" Collapsed="true">
+    <Position X="15.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQAAAEASCIAAAgAAIAAAAAAgAAAAJAAQEEAAAAAAIQ=</HashCode>
+      <FileName>Assets\Scripts\Enemies\RhythmLine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Track" Collapsed="true">
+    <Position X="2.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAABAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemies\Track.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TrackObjects" Collapsed="true">
+    <Position X="5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>oAQAAAAAACAAFAAAAIAAAACAAAAAAQAAAAAQAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemies\TrackObjects.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Trees" Collapsed="true">
+    <Position X="9.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAkAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemies\Trees.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Player" Collapsed="true">
+    <Position X="13.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AwQEAAAAQCAgAEABAQASAAABBABAAQAAAEBYAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Core\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Score" Collapsed="true">
+    <Position X="13.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>lCSBAAAAACYAQCIAAAIIxC4AZUDAkFIAIBoAAQBAIOA=</HashCode>
+      <FileName>Assets\Scripts\Core\Score.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemManager" Collapsed="true">
+    <Position X="15.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>iUQAgCKAQCAyAIICBAIAAAgIVARAACABgAABIAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Core\SystemManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UIManager" Collapsed="true">
+    <Position X="12" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YCAAAACAAHACAACAAAAEAIgABABAQgAAAAAEAAAAIEA=</HashCode>
+      <FileName>Assets\Scripts\Core\UIManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObjectPool" Collapsed="true">
+    <Position X="12" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAABABAAAQIAAEAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Object Pool\ObjectPool.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GenerateNote" Collapsed="true">
+    <Position X="12" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAAiAAAAgAAIAEAAAABARAAAAAAAAAABABAEA=</HashCode>
+      <FileName>Assets\Scripts\Rhythm\GenerateNote.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Music" Collapsed="true">
+    <Position X="12" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QGQBAAAACEAICAAQABAEgEUABgBAQgAEAAAAAAKAQEA=</HashCode>
+      <FileName>Assets\Scripts\Rhythm\Music.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NoteContainer" Collapsed="true">
+    <Position X="13.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABFAAAAAEAAAEAAAAAAAAAACBAAAIAAAAAAAAAgBAA=</HashCode>
+      <FileName>Assets\Scripts\Rhythm\NoteContainer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReadFile" Collapsed="true">
+    <Position X="15.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEBAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAACAEA=</HashCode>
+      <FileName>Assets\Scripts\Rhythm\ReadFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>
