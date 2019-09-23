@@ -23,7 +23,6 @@ public class Player : MonoBehaviour
     private CapsuleCollider myCollider;
 
     public bool isShield { get; set; }
-    public bool shieldDone { get; set; }
     private bool isIgenoreCollision = false;
     public GameObject shieldFx;
 
@@ -47,7 +46,6 @@ public class Player : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody>();
         myCollider = GetComponent<CapsuleCollider>();
         isShield = false;
-        shieldDone = false;
         shieldFx.SetActive(false);
     }
 

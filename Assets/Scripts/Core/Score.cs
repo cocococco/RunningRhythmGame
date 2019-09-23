@@ -29,7 +29,7 @@ public class Score : MonoBehaviour
     public Text comboCountText;
     private int comboScore;
     private int totalComboScore;
-    private float comboMultiple = 1;
+    private float scoreMultiple = 1;
 
     public int totalObstacleScore;
     public Text totalObstacleScoreText;
@@ -54,6 +54,9 @@ public class Score : MonoBehaviour
     private float itemVanishDuration = 1;
     private float comboTextTimer = 0;
     private float comboVanishDuration = 1;
+
+    private int befComboMult = 0;
+    private int curComboMult = 0;
 
     private Player inst_Player;
 
@@ -98,7 +101,7 @@ public class Score : MonoBehaviour
     {
         timer += Time.deltaTime;
         distance = Mathf.FloorToInt(timer * 100);
-        distanceScore = Mathf.FloorToInt(distance * 10 * comboMultiple);
+        distanceScore = Mathf.FloorToInt(distance * 10 * scoreMultiple);
         totalScore = distanceScore + totalMonsterScore + totalObstacleScore + totalItemScore; // add combo score
 
         distanceText.text = distance.ToString("#,##0") + " M";
@@ -141,7 +144,7 @@ public class Score : MonoBehaviour
     public void RenewMonsterScore(int score, string gradeText, string text)
     {
         monsterTextTimer = 0;
-        monsterScore = Mathf.FloorToInt(score * comboMultiple);
+        monsterScore = Mathf.FloorToInt(score * scoreMultiple);
         totalMonsterScore += score;
         monsterScoreText.text = "+ " + monsterScore.ToString();
         monsterScoreGradeText.text = gradeText;
@@ -153,7 +156,7 @@ public class Score : MonoBehaviour
     public void RenewObstacleScore(int score)
     {
         obstacleTextTimer = 0;
-        totalObstacleScore += Mathf.FloorToInt(score * comboMultiple);
+        totalObstacleScore += Mathf.FloorToInt(score * scoreMultiple);
         totalObstacleScoreText.text = "+ " + totalObstacleScore.ToString();
         //StartCoroutine(TextVanish(totalObstacleScoreText)); // 너무 빨라서 사라지게 안함
     }
@@ -171,29 +174,38 @@ public class Score : MonoBehaviour
         }
         comboCountText.text = comboCount.ToString() + " COMBO";
         //StartCoroutine(TextVanish(comboCountText));
+
+        curComboMult = comboCount / 100;
+        if (curComboMult == 0) befComboMult = 0;
+        else if (curComboMult > befComboMult)
+        {
+            Debug.Log(befComboMult + " " + curComboMult);
+            befComboMult = curComboMult; // before combo multiple update
+            // sield
+            StartCoroutine(ShieldOn());
+        }
+
         if (comboCount >= 100)
         {
-            comboMultiple = 1.5f;
-            if (inst_Player.shieldDone == false)
+            scoreMultiple = (comboCount - 100) / 10 * 0.1f + 1.5f; // 100 -> 1.5f, 110 -> 1.6f, 120 -> 1.7f ...
+            if (scoreMultiple > 5)
             {
-                StartCoroutine(ShieldOn());
+                scoreMultiple = 5;
             }
         }
         else if (comboCount >= 50)
         {
-            comboMultiple = 1.2f;
+            scoreMultiple = 1.2f;
         }
         else
         {
-            comboMultiple = 1;
-            inst_Player.shieldDone = false;
+            scoreMultiple = 1;
         }
     }
 
     private IEnumerator ShieldOn()
     {
         inst_Player.isShield = true;
-        inst_Player.shieldDone = true;
         inst_Player.ShieldCollisionOn();
         yield return new WaitForSeconds(4);
         yield return new WaitForSeconds(1);
