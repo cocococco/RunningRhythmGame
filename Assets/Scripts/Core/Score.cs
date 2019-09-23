@@ -15,8 +15,8 @@ public class Score : MonoBehaviour
 
     private float timer;
 
-    public int distance;
-    private int distanceScore;
+    private int distance;
+    public int distanceScore;
     public Text distanceText;
 
     public int monsterScore;
