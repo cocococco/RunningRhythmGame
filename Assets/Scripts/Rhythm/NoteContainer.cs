@@ -18,12 +18,10 @@ public class NoteContainer
 
     private double beatInterval = 461.53846153846153f; //한 박자 간격
     private double barInterval = 1846.1538461538461f; //한 마디 간격
-    private int priorInterval = 500; //노래 시작하기 전 쉬는 타임?
-    private int gap = 150; // 플레이어한테 오기까지 간격
 
     public NoteContainer(int barNum, float beatNum, int posNum, int typeNum, int pitchNum) // pitchNum = 0~14
     {
-        this.time = (barNum * barInterval + beatNum * beatInterval + priorInterval - gap);
+        this.time = (barNum * barInterval + beatNum * beatInterval);
         if (posNum == 1)
         {
             this.xPos = -2; // 위치 지정해주지 말고 각 트랙 위치의 가운데로 변형가능하게 수정 필요할 듯

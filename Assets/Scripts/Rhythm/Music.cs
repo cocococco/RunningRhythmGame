@@ -13,7 +13,6 @@ public class Music : MonoBehaviour
 
     public double time { get; set; }
 
-    private float timer;
     public bool isPlaying = false;
     private AudioSource BGSound;
     public AudioSource[] FXSounds;
@@ -50,7 +49,6 @@ public class Music : MonoBehaviour
         {
             DestroyImmediate(this);
         }
-        timer = 0;
         //DontDestroyOnLoad(this);
 
         inst_GenerateNote = GenerateNote.GetInstance();
@@ -102,31 +100,38 @@ public class Music : MonoBehaviour
     {
         if (isPlaying)
         {
-            timer += Time.deltaTime;
-            time = timer * 1000;
+            time += Time.deltaTime * 1000;
         }
+    }
+
+    public IEnumerator ReadyMusic(float time)
+    {
+        isPlaying = true;
+        yield return new WaitForSeconds(time);
+        StartCoroutine(PlayMusic());
     }
 
     public IEnumerator PlayMusic()
     {
         BGSound.Play();
         playCount++;
-        isPlaying = true;
         yield return new WaitForSeconds(BGSound.clip.length);
-        while (BGSound.time != 0)
+        while (BGSound.time != 0) // 음악이 재생중
         {
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.1f);
         }
-        yield return new WaitForSeconds(2.615f);
-
+        // 음악 끝남
         if (playCount % 2 == 0)
         {
-            timer = 0;
+            time = 0;
             inst_GenerateNote.index = 0;
             TrackObjects.speed *= 1.5f;
+            StartCoroutine(ReadyMusic(84.0f / TrackObjects.speed));
         }
-
-        StartCoroutine(PlayMusic());
+        else
+        {
+            StartCoroutine(PlayMusic());
+        }
     }
 
     public void ResumeMusic()

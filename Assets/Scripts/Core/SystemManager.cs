@@ -108,7 +108,7 @@ public class SystemManager : MonoBehaviour
     {
         footStepSound.Play();
         footStepSound.loop = true;
-        StartCoroutine(inst_music.PlayMusic());
+        StartCoroutine(inst_music.ReadyMusic(84.0f / TrackObjects.speed));
 
         isGamePlaying = true;
         Time.timeScale = 1;

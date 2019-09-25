@@ -17,7 +17,7 @@ public class GenerateNote : MonoBehaviour
 
     private float playerZPos;
 
-    private float zPosInterval = 50;
+    private float zPosInterval = 90; // 라인은 6정도 ; 라인 - 생성 위치 차이는 84
 
     private ObjectPool inst_ObjectPool;
 
