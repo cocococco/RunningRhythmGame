@@ -26,6 +26,7 @@ public class Score : MonoBehaviour
     public Text pitchText;
 
     public int comboCount;
+    public int maxComboCount = 0;
     public Text comboCountText;
     private int comboScore;
     private int totalComboScore;
@@ -95,13 +96,17 @@ public class Score : MonoBehaviour
             SyncScore();
             TextVanish();
         }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            CheatShieldSwitch();
+        }
     }
 
     private void SyncScore()
     {
-        timer += Time.deltaTime;
-        distance = Mathf.FloorToInt(timer * 100);
-        distanceScore = Mathf.FloorToInt(distance * 10 * scoreMultiple);
+        distance += Mathf.FloorToInt(Time.deltaTime * 100);
+        distanceScore += Mathf.FloorToInt(Time.deltaTime * 1000 * scoreMultiple);
+
         totalScore = distanceScore + totalMonsterScore + totalObstacleScore + totalItemScore; // add combo score
 
         distanceText.text = distance.ToString("#,##0") + " M";
@@ -167,6 +172,7 @@ public class Score : MonoBehaviour
         if (itemCombo > 0)
         {
             comboCount += itemCombo;
+            maxComboCount = Mathf.Max(maxComboCount, comboCount);
         }
         else
         {
@@ -179,10 +185,12 @@ public class Score : MonoBehaviour
         if (curComboMult == 0) befComboMult = 0;
         else if (curComboMult > befComboMult)
         {
-            Debug.Log(befComboMult + " " + curComboMult);
             befComboMult = curComboMult; // before combo multiple update
             // sield
-            StartCoroutine(ShieldOn());
+            if (inst_Player.isShield == false)
+            {
+                StartCoroutine(ShieldOn());
+            }
         }
 
         if (comboCount >= 100)
@@ -203,12 +211,25 @@ public class Score : MonoBehaviour
         }
     }
 
+    public void CheatShieldSwitch()
+    {
+        if (inst_Player.isShield == true)
+        {
+            inst_Player.isShield = false;
+            inst_Player.ShieldCollisionOff();
+        }
+        else
+        {
+            inst_Player.isShield = true;
+            inst_Player.ShieldCollisionOn();
+        }
+    }
+
     private IEnumerator ShieldOn()
     {
         inst_Player.isShield = true;
         inst_Player.ShieldCollisionOn();
-        yield return new WaitForSeconds(4);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(5);
         inst_Player.isShield = false;
         inst_Player.ShieldCollisionOff();
     }

@@ -20,6 +20,7 @@ public class UIManager : MonoBehaviour
     private Music inst_Music;
 
     public Text highScoreText;
+    public Text maxComboCountText;
     public Text distanceText;
     public Text obstacleText;
     public Text monsterText;
@@ -67,6 +68,7 @@ public class UIManager : MonoBehaviour
     public void GenerateGameOverScore()
     {
         highScoreText.text = inst_Score.highScore.ToString("#,##0");
+        maxComboCountText.text = inst_Score.maxComboCount.ToString("#,##0");
         distanceText.text = inst_Score.distanceScore.ToString("#,##0");
         obstacleText.text = inst_Score.totalObstacleScore.ToString("#,##0");
         monsterText.text = inst_Score.totalMonsterScore.ToString("#,##0");

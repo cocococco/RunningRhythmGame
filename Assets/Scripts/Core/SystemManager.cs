@@ -71,13 +71,16 @@ public class SystemManager : MonoBehaviour
         }
 #endif
 
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            OnClickPauseButtonOn();
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            OnClickPauseButtonOff();
+            if (gamePausePanel.activeInHierarchy == true)
+            {
+                OnClickPauseButtonOff();
+            }
+            else
+            {
+                OnClickPauseButtonOn();
+            }
         }
     }
 
