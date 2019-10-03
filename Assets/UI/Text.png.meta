@@ -1,7 +1,11 @@
 fileFormatVersion: 2
-guid: 4918679e1fd58bb48baf1e80859be0e1
+guid: 71ac38f77b2422845a65cc4d55366bb1
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Start
+    21300002: Pause
+    21300004: ScoreInfo
+    21300006: GameOver
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -40,7 +44,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -93,11 +97,91 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Start
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 512
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41ef591581d0dcc4bbc9596613536383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pause
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 512
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1c9b4a1167223c40b1653e796261dbc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ScoreInfo
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 512
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5a13dc1500a9cf4bbb1127322be0f5e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameOver
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 512
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad6b71f1901a5f5418639bde5bccd83e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: fda055f040bd78b44a43b8975f5d980a
     vertices: []
     indices: 
     edges: []
